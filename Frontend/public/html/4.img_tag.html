@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>img tag</title>
+</head>
+<body>
+
+	<!-- 상대경로 : 현재 파일을 기준으로 해당 파일의 경로 -->
+	
+	<!-- 1. 현재 HTML(기준)과 같은 폴더에 있을 경우 -->
+	<img src="travle1.jpg" />
+	
+	<!-- 2. 현재 HTML의 상위 폴더[public]에 있을 경우 -->
+	<img src="../travle1.jpg" />
+	
+	<!-- 3. 현재 public 안에 [img] 폴더에 있을 경우  -->
+	<img src="../img/travle1.jpg" />
+	
+	
+	<!-- 절대경로 : 실제 파일의 모든 경로의 주소 -->
+		<!-- 해당 파일 오른쪽 클릭 -> properties -> location -->
+		<!-- PC 마다 경로가 다를 수도 있음 -->
+		
+	<img width="50%" src="C:\Users\504\git\dlwldbs\Frontend\public\img\travle1.jpg" />
+			
+	
+	<img width="50px" alt="여행사진" src="../img/travle1.jpg"/>
+	
+	
+
+</body>
+</html>
