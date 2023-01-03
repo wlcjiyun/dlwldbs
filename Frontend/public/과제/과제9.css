@@ -1,0 +1,15 @@
+@charset "UTF-8";
+h3{ text-align: center; }
+
+.login_t{
+	margin: 0 auto;
+	width: 400px;
+}
+.input_id, .input_pw{
+	height: 30px;
+	width: 150px;
+}
+.iogin_btn{
+	padding: 35px 20px;
+	/* height, width으로 사이즈 조절 가능 */
+}

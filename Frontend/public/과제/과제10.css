@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+h3{ 
+	text-align: center;	
+	font-family: "굴림";
+}
+
+
+.signup_form{
+	width: 600px;
+	margin: 0 auto;	
+	padding: 10px;
+	border-top: solid 2px red;
+	border-bottom: solid 2px red;
+}
+
+.signup_box{
+	/* 글머리 제거 */
+	list-style: none;
+}
+.colums{
+	padding: 5px;	
+}
+
+/* li[ block -> inline-block] */
+.colums li{
+	display: inline-block;
+}
+
+.colums .col1{
+	width: 100px;
+}
+
+.colums .col2 input{
+	width: 200px;
+	height: 20px;
+}
+.se_box{
+	width: 100px;
+	height: 25px;
+}
+
+.btn_box{
+	text-align: right;	
+}
+.btn_box input{
+	padding: 10px 20px;
+	margin: 10px 3px 0 0 ;
+}
+.hello{
+	vertical-align: top;
+}

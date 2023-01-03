@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.img1{
+	width: 300px;
+	height: 400px;
+}
+
+h3{
+	font-size: 40px;
+	color: #FFA500;
+}
+span{
+	font-size: 20px;
+	color: black;
+}
+.t1, .t2{
+	color: #FFA500;
+	font-size: 15px;
+}
+
+p{
+	/* border: solid 1px black; */
+	width: 500px;
+	padding: 35px 15px;
+	margin-top: -25px;
+	background-color: #008080;
+	color: #fff;
+}

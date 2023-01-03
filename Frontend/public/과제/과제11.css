@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.signup_form{
+	width: 600px;
+	margin: 0 auto;	
+	padding: 5px;
+	border-top: solid 2px black;
+}
+
+.col1{
+	padding: 5px 0;
+}
+
+.text_box{
+	width: 365px;
+}
+
+
+
+.btn_box{
+	margin: 10px 0;
+	text-align: right;
+}
+.btn_box input{
+	padding: 5px 20px;
+	text-align: right;
+}
