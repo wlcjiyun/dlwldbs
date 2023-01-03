@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* css 주석 */
+
+/* 모든곳에 적용 */
+*{ color : blue; }
+
+/* 태그에 적용 */
+p{ color : red; }
+
+/* class에 적용 */
+.p1{ color : green; }
+
+/* id에 적용 */
+#p2{ color : orange; }
+

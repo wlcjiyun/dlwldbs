@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+h2{
+	font-family: "굴림";
+	text-align: left
+}
+
+tr{
+	text-align: center;
+	font-weight: bold;
+	font-family: "굴림";
+}
+
+.btnbox{
+	text-align: center;
+}

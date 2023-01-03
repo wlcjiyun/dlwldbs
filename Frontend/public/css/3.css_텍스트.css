@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* 모든 곳에 적용 */
+*{
+	/* 글꼴 */
+	font-family:"궁서"; 
+	/* 색상 */
+	color : blue;
+}
+
+/* h3 태그에 적용 */
+h3{				      /*윗줄*/	/*취소선*/	/*밑줄*/
+	text-decoration: overline line-through underline;
+	text-shadow: -5px 2px 2px orange; /*그림자*/
+	text-align: center;
+}
+
+/* p 태그에 적용 */
+p{
+	font-size: 8px;
+	font-family: "굴림";
+	font-style: italic;
+	font-weight: bold;
+	/* 어간 */
+	word-spacing: 10px;
+	/* 자간 */
+	letter-spacing: 10px;
+	/* 줄간격(%) */
+	line-height: 200%;
+	color: black;
+	background-color: green;
+}
