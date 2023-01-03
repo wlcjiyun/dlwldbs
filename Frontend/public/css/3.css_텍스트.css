@@ -2,16 +2,14 @@
 
 /* 모든 곳에 적용 */
 *{
-	/* 글꼴 */
 	font-family:"궁서"; 
-	/* 색상 */
 	color : blue;
 }
 
 /* h3 태그에 적용 */
-h3{				      /*윗줄*/	/*취소선*/	/*밑줄*/
+h3{				      
 	text-decoration: overline line-through underline;
-	text-shadow: -5px 2px 2px orange; /*그림자*/
+	text-shadow: -5px 2px 2px orange; 
 	text-align: center;
 }
 
@@ -21,12 +19,31 @@ p{
 	font-family: "굴림";
 	font-style: italic;
 	font-weight: bold;
-	/* 어간 */
 	word-spacing: 10px;
-	/* 자간 */
 	letter-spacing: 10px;
-	/* 줄간격(%) */
 	line-height: 200%;
 	color: black;
 	background-color: green;
 }
+
+/*
+	text-decoration : 텍스트 선
+		- overline : 윗줄
+		- line-through : 취소선 
+		- underline : 밑줄
+		
+	text-shadow : 글자 그림자
+	text-align : 정렬
+	
+	font-size : 글자 크기
+	font-family : 글꼴
+	font-style : 기울기
+	font-weight : 굵기
+	word-spacing : 어간
+	letter-spacing : 자간
+	line-height : 줄간격(%)
+	
+	background-color : 배경 색상
+	color : 글자 색상
+	
+*/
