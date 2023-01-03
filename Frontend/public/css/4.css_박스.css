@@ -2,9 +2,7 @@
 /* 준비물 : 누구를 어떻게 꾸밀 것인가*/
 /* 1.선택자 2.속성 3.속성값*/
 
-h4{
-	border: solid 1px red;
-}
+h4{ border: solid 1px red; }
 
 h5{
 	border-top: solid 1px blue;
@@ -48,7 +46,26 @@ h1{
 	margin: 0 auto; /* 박스 자체 가운데 정렬 */
 }
 
+/* CLASS */
+.box1{
+	width: 100px;
+	margin: 60px;
+	padding: 60px;
+	border: solid 10px red;
+	box-sizing: border-box;
+}
+
+/* ID */
+#box2{
+	width: 100px;
+	margin: 60px;
+	padding: 60px;
+	border: solid 10px red; 
+	box-sizing: content-box;
+}
+
 /* 	
+	
 	border(테투리,밑줄,구분선) : 선유형, 굵기, 색상	
 	border-top	  : 위쪽 테두리	
 	border-right  : 오른쪽 테두리
@@ -75,6 +92,10 @@ h1{
 	margin-bottom 	: 아래
 	margin-left 	: 왼쪽
 	margin: 0 auto  : 위&아래 여백 X / 왼&오 여백 자동 가운데 정렬
+	
+	box-sizing
+		- border(테두리)-box  : 사이즈 고정 불가 //내용물이 크면 커짐
+		- content(내용물)-box : 사이즈 고정 가능 //내용물이 크면 넘침
 	
 	width	: 가로 길이
 	height	: 세로 길이
