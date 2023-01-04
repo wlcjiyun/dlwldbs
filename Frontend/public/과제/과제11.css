@@ -1,10 +1,14 @@
 @charset "UTF-8";
 
-.signup_form{
+.write_t{
 	width: 600px;
 	margin: 0 auto;	
-	padding: 5px;
-	border-top: solid 2px black;
+	padding: 5px 0;
+	border-top: solid 3px black;
+}
+
+td{
+	border-bottom: 1px solid #e6e6e6;
 }
 
 .col1{
