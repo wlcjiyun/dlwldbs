@@ -22,7 +22,6 @@ h3{
 	padding: 5px;	
 }
 
-/* li[ block -> inline-block] */
 .colums li{
 	display: inline-block;
 }
