@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="6.css_flex.css" rel="stylesheet">
+</head>
+<body>
+
+	<!-- 
+		FLEX : 구버전 브라우저 지원 X ( vs float vs grid : 브라우저 지원 차이 ) 
+			- 레이아웃 배치 전용
+			- 상위 요소에 적용 
+		
+		flex-direction 
+			- row : 기본값(가로)
+			- column : 세로 배치(세로)
+			- row-reverse : 가로 오른쪽 배치
+			- column-reverse : 세로 배치 반대
+	-->
+
+	<h3> FLEX </h3>
+	
+	<div class="flex_box1"> <!-- flex-direction : row; -->
+		<div class="box">box1</div>
+		<div class="box">box2</div>
+		<div class="box">box3</div>
+	</div>
+	
+	
+	<div class="flex_box2"> <!-- flex-direction : column; -->
+		<div class="box">box1</div>
+		<div class="box">box2</div>
+		<div class="box">box3</div>
+	</div>
+	
+	
+	<div class="flex_box3"> <!-- flex-direction : row-reverse; -->
+		<div class="box">box1</div>
+		<div class="box">box2</div>
+		<div class="box">box3</div>
+	</div>
+	
+	
+	<div class="flex_box4"> <!-- flex-direction : column-reverse; -->
+		<div class="box">box1</div>
+		<div class="box">box2</div>
+		<div class="box">box3</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.warp{
+	/* border: solid 1px red; */
+}
+.head{
+	/* border: solid 1px blue; */
+	height: 200px;
+	background-color: blue;
+}
+.cont{
+	/* border: solid 1px pink; */
+	width: 1200px;
+	height: 600px;
+	margin: 0 auto;
+	display: flex;
+	background-color: pink;
+}
+
+.cont .left{
+	/* border: solid 1px green; */
+	width: 900px;
+	height: 600px;
+	background-color: #408080;
+}
+.cont .right{
+	/* border: solid 1px #8080c0; */
+	width: 300px;
+	height: 600px;
+	background-color: #0080c0;
+} 
+
+.foot{
+	/* border: solid 1px yellow; */
+	height: 200px;
+	background-color: yellow;
+}
