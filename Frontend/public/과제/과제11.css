@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 .write_t{
-	width: 600px;
+	width: 700px;
 	margin: 0 auto;	
-	padding: 5px 0;
+	padding: 7px 0;
 	border-top: solid 3px black;
 }
 
@@ -15,8 +15,13 @@ td{
 	padding: 5px 0;
 }
 
-.text_box{
-	width: 365px;
+.write_t input{
+	width: 500px;
+}
+
+.write_t textarea{
+	width: 500px;
+	height: 100px;
 }
 
 .btn_box{
@@ -26,5 +31,4 @@ td{
 
 .btn_box input{
 	padding: 5px 20px;
-	text-align: right;
 }
