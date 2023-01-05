@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+*{
+	border: solid 1px red;
+}
+li{ list-style-type: none; }
+ul{ padding: 0; }
+
+#header{
+	width: 1200px; height: 100px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
