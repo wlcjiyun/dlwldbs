@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 *{ 
-	/* border: solid 1px red */
+	border: solid 1px red;
 	margin: 0; padding: 0;
 	font-family: "맑은 고딕";
 }
@@ -29,37 +29,15 @@ ul{ padding: 0; }
 }
 
 /* ------------------ 메인 배너 ------------------- */
-#banner{
-	display: flex; justify-content: center;
+#sub_img{ background-image: url("img/");}
+
+/* ------------------본문 ------------------- */
+#contents{ 
+	width: 1200px; 
+	margin: 0 auto;
 }
 
-/* ------------------ 본단 ------------------- */
-#contents{
-	width: 1200px;
-	margin: 0 auto;  
-}
-
-/* 위 */
-#cont1{ display: flex; justify-content: space-between; }
-#left{ /* 왼쪽 */
-	display: flex; justify-content: space-between;
-	width: 450px; 
-	margin: 80px 50px; 
-	}
-#left img{ margin-right: 15px; }
-#right{ /* 오른쪽 */
-	display: flex; justify-content: space-between;
-	width: 450px; 
-	margin: 80px 50px; 
-	}
-#right img{ margin-right: 15px; }
-
-/* 아래 */
-/* #cont2{ background-color: #eeeeee; } */
-#items{ display: flex; justify-content: space-around;}
-.item{ width: 270px; }
-.item li{ margin-bottom: 5px; padding: 8px 0; }
-.item img{ width: 100%; }
+#cont2{ height: 400px; }
 
 /* ------------------ 하단 ------------------- */
 #footer{
