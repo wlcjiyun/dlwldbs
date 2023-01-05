@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 *{ 
-	border: solid 1px red;
+	/* border: solid 1px red; */
 	margin: 0; padding: 0;
 	font-family: "맑은 고딕";
 }
@@ -38,66 +38,49 @@ ul{ padding: 0; }
 	color: #ffffff;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ------------------ 본문 ------------------- */
 #contents{
 	width: 1200px;
-	margin: 0 auto;  
+	margin: 0 auto;
+	display: flex;
+	padding: 20px;  
+}
+#cont_txt{ 
+	background-color: #FAFAD2;
+	/* width: 600px; */ height: 500px;
+	margin: 20px;
+}
+#right h5{ 
+	text-align: center;
+	margin-top: 20px;
+}
+#right h4{ 
+	text-align: center;
+	margin-top: 10px;
 }
 
+/* -------------------달력----------------- */
+#date_box{ border: solid 1px black; }
+#date1 li{ 
+	display: inline-block;
+	width: 70px; height: 20px;
+	text-align: center;
+	border: solid 1px black;
+	margin: 0 auto;
+}
+.date li{ 
+	display: inline-block;
+	width: 70px; height: 80px;
+	margin: 0 auto;
+	border: solid 1px black;
+}
 
+/* -------------------달력----------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#left{ width: 600px; }
+#left h3{ margin-top: 20px; }
+#left li{ margin: 5px; }
+#left p{ color: green; margin: 15px 0; }
 
 /* ------------------ 하단 ------------------- */
 #footer{

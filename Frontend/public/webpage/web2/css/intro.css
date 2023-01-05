@@ -53,6 +53,7 @@ ul{ padding: 0; }
 	padding: 40px 10px;
 }
 #contents h2, h4, p{ margin-bottom: 15px;}
+#cont{ background-color: #eeeeee; }
 #items{
 	width: 1200px;
 	margin: 0 auto;
