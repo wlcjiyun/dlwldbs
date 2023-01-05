@@ -55,8 +55,8 @@ ul{ padding: 0; }
 #right img{ margin-right: 15px; }
 
 /* 아래 */
-/* #cont2{ background-color: #eeeeee; } */
-#items{ display: flex; justify-content: space-around;}
+#items{ background-color: #eeeeee; } 
+/* #items{ display: flex; justify-content: space-around;} */
 .item{ width: 270px; }
 .item li{ margin-bottom: 5px; padding: 8px 0; }
 .item img{ width: 100%; }

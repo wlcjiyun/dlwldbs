@@ -29,16 +29,43 @@ ul{ padding: 0; }
 }
 
 /* ------------------ 메인 배너 ------------------- */
-#sub_img{ background-image: url("img/");}
-
-/* ------------------본문 ------------------- */
-#contents{ 
-	width: 1200px; 
-	margin: 0 auto;
+#sub_img{ 
+	background-image: url("../img/sub_intro.jpg");
+	width: 100%; height: 300px;
+	display: flex; flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-#cont2{ height: 400px; }
-
+/* ------------------ 본문 ------------------- */
+#contents{
+	width: 1200px;
+	margin: 0 auto;
+	display: flex; 
+}
+#contents img{
+	width: 600px;
+	padding: 40px 10px; 
+}
+#contents div{
+	width: 600px; 
+	padding: 40px 10px;
+}
+#contents h2, h4, p{ margin-bottom: 15px;}
+#items{
+	width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row-reverse;
+}
+#items img{
+	width: 600px;
+	padding: 40px 10px;
+}
+#items div{
+	width: 600px; 
+	padding: 40px 10px;
+}
 /* ------------------ 하단 ------------------- */
 #footer{
 	margin: 0 auto; 
