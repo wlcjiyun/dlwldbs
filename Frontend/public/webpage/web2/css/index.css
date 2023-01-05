@@ -1,21 +1,82 @@
 @charset "UTF-8";
 
-*{ border: solid 1px red; }
+*{ 
+	/* border: solid 1px red */; 
+	margin: 0; padding: 0;
+	font-family: "맑은 고딕";
+}
+a{
+	text-decoration: none;
+	color: black; 
+}
 li{ list-style-type: none; }
 ul{ padding: 0; }
 
+/* ------------------ 상단 ------------------- */
 #header{
 	width: 1200px; height: 100px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 }
-
-#cont1{
-	width: 800px;
+#logo{ margin-top: 30px; }
+#logo span{ color: #1E90FF; }
+#memus{ margin-top: 60px; }
+#memus li{
+	display: inline-block;
+	margin-left: 50px;
+	font-size: 18px;
 }
 
+/* ------------------ 메인 배너 ------------------- */
+#banner{
+	display: flex; justify-content: center;
+}
+
+/* ------------------ 본단 ------------------- */
+#contents{
+	width: 1200px;
+	margin: 0 auto;  
+}
+
+/* 위 */
+#cont1{ display: flex; justify-content: space-between; }
+#left{ /* 왼쪽 */
+	display: flex; justify-content: space-between;
+	width: 450px; 
+	margin: 80px 50px; 
+	}
+#left img{ margin-right: 15px; }
+#right{ /* 오른쪽 */
+	display: flex; justify-content: space-between;
+	width: 450px; 
+	margin: 80px 50px; 
+	}
+#right img{ margin-right: 15px; }
+
+/* 아래 */
+/* #cont2{ background-color: #eeeeee; } */
+#items{ display: flex; justify-content: space-around;}
+.item{ width: 270px; }
+.item li{ margin-bottom: 5px; padding: 8px 0; }
+.item img{ width: 100%; }
+
+/* ------------------ 하단 ------------------- */
 #footer{
-	background-color: #191970;
-	height: 200px;
+	margin: 0 auto; 
+	background-color: #292C32;
+	color: #ffffff;
+}
+#ft_cont{ 
+	width: 1200px; 
+	margin: 0 auto;
+	display: flex; justify-content: space-between;
+	padding: 50px 0px;
+	color: #ffffff;	
+}
+.ft_item{ width: 450px; }
+#ft_cont li{ display: inline-block; }
+#sns_item{ 
+	width: 200px; 
+	margin-left: 100px;
 }
