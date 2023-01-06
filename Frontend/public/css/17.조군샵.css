@@ -43,15 +43,21 @@ li{
 /* -------------------본문-------------------- */
 #contents{ width: 1200px; height:600px; margin: 0 auto; }
 /* -------------------푸터-------------------- */
-#ft_top{ background-color: #eeeeee; }
-.tfbox1, .tfbox2, .tfbox3, .tfbox4{ 
-	width: 300px;
+#footer{
 	margin: 0 auto;
+}
+#ft_top{ background-color: #f7f7f7; }
+.tfbox1, .tfbox2, .tfbox3, .tfbox4{ 
+	/* width: 300px; */
+	margin: 0 95px; padding: 50px 0;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 13px;
 }
 #ft_bottom{
 	text-align: center;
 	/* height: 200px; */
-	color: #8e8e8e;
+	color: #9e9e9e;
 	padding: 50px 0;
 	font-size: 13px;
 }
