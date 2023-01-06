@@ -86,7 +86,7 @@ ul{ padding: 0; }
 .date span{ color: red; }
 /* -------------------달력----------------- */
 
-#left{ width: 600px; }
+#left{ width: 600px; margin-left: 10px; }
 #left h3{ margin-top: 20px; }
 #left li{ margin: 5px; }
 #left p{ color: green; margin: 15px 0; }
