@@ -1,0 +1,24 @@
+@charset "UTF-8";
+body{ background-color: #eeeeee;}
+#header{
+	display: flex; justify-content: space-between;
+	/* position:fixed; top: 0px; */
+	position: sticky; top: 0px;	
+			
+	background-color: yellow;
+	border-bottom: solid 1px black; 
+		
+	z-index: 1; /* 우선순위 */
+} 
+.menu li{ display: inline-block; }
+
+.popup{ 
+	width: 20%; 
+	border: solid 1px black;
+		
+	opacity: 0.5;
+	background-color: #ffffff;
+	/* background-color: transparent; */
+		
+	position: fixed; right: 0px; top: 50%;
+}
