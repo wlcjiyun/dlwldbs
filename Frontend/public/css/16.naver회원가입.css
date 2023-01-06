@@ -1,0 +1,116 @@
+@charset "UTF-8";
+body{background-color: #F5F6F7;} /* 전체 배경색 */
+*{ font-family: "굴림"; /* border: 1px solid red; */ }
+*:focus{ outline: none; } /* 해당 요소에 포커스가 생겼을 때에 대한 이벤트 */
+a{ color: black; text-decoration: none; }
+
+/* --------------------------헤더------------------------- */
+.logo{
+	width: 460px; /* 로고 박스권 */
+	margin: 0 auto; /* 가운데 배치 */
+	text-align: center; /* 하위요소 가운데 정렬 */
+	display: flex; justify-content: center;
+}
+.logo img{
+	height: 50px; /* 사진 사이즈 */
+	margin: 50px 0; /* 위/아래 여백 */
+}
+/* ---------------------------본문--------------------------- */
+#join_form{ 
+	width: 460px; 
+	margin: 0 auto;
+}
+h3{
+	text-align: left;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+/* 1. 입력 상자 */
+.signup_input{
+	border: 1px solid #dadada; /* 아이디 입력 상자(input, span) 테두리 */
+	background-color: #ffffff;
+	padding: 10px;
+	display: flex; 
+	align-items: center; /* 세로 정렬 */
+}
+.input_id{
+	border: none; /* 테두리 지우기 */
+	width: 100%; /* input 가로 사이즈 */ height: 30px; /* input 세로 사이즈 */
+}
+.signup_at{ color: #8e8e8e; } /* 아이디 폰트 색상 */
+.signup_lock{
+	/* 네이버 아이콘 주소 */
+	background-image: url("https://static.nid.naver.com/images/ui/join/m_icon_pw_step.png");
+	width: 25px; height: 25px; /* 요소 사이즈 */
+	background-size: 120px 75px; /* 이미지 사이즈 */
+	
+}
+
+/* -------------------------------생년월일----------------------------- */
+.birthbox{ 
+	display: flex; 
+	justify-content: space-between;
+}
+#birth_y, #birth_m, #birth_d{ width: 120px; }
+#birth_m{ margin: 0px 20px; }
+
+/* ----------------------------본인 확인 이메일-------------------------- */
+.s_text{
+	font-size: 10px;
+	color: 8e8e8e;
+	font-weight: normal;
+}
+/* ---------------휴대전화, 인증버튼 -------------*/
+.phonebox{ 
+	display: flex; justify-content: space-between; /* 가로 배치 */
+	margin: 10px 0;
+}
+.btn_auth{ /* 인증버튼 */
+	background-color: #03C75A;
+	border: none;
+	color: #ffffff;
+	width: 120px;
+	font-size: 15px;
+	font-weight: bold;
+}
+.btn_auth:hover{ cursor: pointer; }
+#input_phone{ width: 300px; }
+#authbox, #input_auth{ background-color: #F5F6F7; }
+
+/* -------------------------------가입하기 버튼---------------------------- */
+#join_btnbox{ 
+	background-color: #03C75A;
+	margin: 30px 0;
+}
+.join_btn{
+	border: none;
+	width: 100%; height: 40px;
+	background-color: #03C75A;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+}
+/* ------------------------------------푸터-------------------------------- */
+.ft_box{
+	width: 460px;
+	margin: 0 auto; 
+	text-align: center;
+}
+.ft_top a{ font-size: 12px; }
+.ft_top a:hover {
+	color: #03C75A;
+	text-decoration: underline;
+}
+.aline{ color: #eeeeee; }
+.ft_sub{ 
+	display: flex; justify-content: center;
+	margin-top: 10px;
+	align-items: center;
+}
+.ft_sub img{
+	height: 12px;
+	padding: 0 10px;
+}
+.ft_sub div{font-size: 10px;}
+.ft_top a span{ font-weight: bold;}
+.ft_sub span{ font-weight: bold;}
