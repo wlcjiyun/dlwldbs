@@ -1,6 +1,6 @@
 @charset "UTF-8";
 *{
-	/* margin: 0 auto; */ padding: 0;
+	margin: 0px; padding: 0;
 	border: 1px solid black;
 }
 a{
@@ -12,6 +12,10 @@ li{
 	list-style: none;
 }
 /* -------------------헤더-------------------- */
+#header{
+	width: 1200px;
+	margin: 0 auto;
+}
 #top{ border-bottom: 1px solid #eeeeee;}
 /* -------------------헤더/위-------------------- */
 .topmenu{ text-align: right;}
@@ -32,6 +36,7 @@ li{
 }
 /* -------------------로고-------------------- */
 #mainlogo img{ padding: 30px; }
+
 /* -------------------헤더/아래-------------------- */
 #left{ display: flex; align-items: center;}
 #tmenu{ display: flex; justify-content: space-between;}
@@ -53,6 +58,9 @@ li{
 /* -------------------본문-------------------- */
 #contents{ width: 1200px; height:600px; margin: 0 auto; }
 /* -------------------푸터-------------------- */
+#footer{
+	margin: 0 auto;
+}
 #ft_top{ 
 	background-color: #f7f7f7;
 	margin: 0 auto;
