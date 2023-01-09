@@ -63,42 +63,41 @@ console.log('&& : ' + (10>3 && 10>5)) // T and T => T
 console.log('|| : ' + (10>3 || 3>5)) // T or F => T
 console.log('!= : ' + !(10>3)) // T->F / F->T
 
-
-	// 문제1
-	/*
-		1. 국어, 영어, 수학 점수를 입력받아 3개의 변수에 저장
-		2. 총점 출력, 평균 출력
-	*/	
-
+/*
 //문제1
-/*let 국어 = Number(prompt('국어'))
+let 국어 = Number(prompt('국어'))
 let 영어 = Number(prompt('영어'))
 let 수학 = Number(prompt('수학'))
 console.log('총점 : ' + (국어+영어+수학))
-console.log('평균 : ' + (국어+영어+수학)/3)*/
-
+console.log('평균 : ' + (국어+영어+수학)/3)
+*/
+/*
 //문제2
-/*let 반지름 = Number(prompt('반지름'))
-console.log('원넓이 : ' + (반지름*반지름*3.14))*/
-
+let 반지름 = Number(prompt('반지름'))
+console.log('원넓이 : ' + (반지름*반지름*3.14))
+*/
+/*
 //문제3
-/*let 실수1 = Number(prompt('실수1'))
+let 실수1 = Number(prompt('실수1'))
 let 실수2 = Number(prompt('실수2'))
-console.log('실수2의 실수1 백분율 : ' + (실수1/실수2)*100 + '%')*/
-
+console.log('실수2의 실수1 백분율 : ' + (실수1/실수2)*100 + '%')
+*/
+/*
 //문제4
-/*let 정수1 = Number(prompt('정수1'))
-console.log('홀짝 판단 : ' + (정수1%2==1))*/
+let 정수1 = Number(prompt('정수1'))
+console.log('홀짝 판단 : ' + (정수1%2==1))
 	// 홀수 찾기 : 수%2==1 --> 나머지 0[짝수] 1[홀수]
 	// 짝수 찾기 : 수%2==0 --> 나머지 0[짝수] 1[홀수]
-	
+*/
+/*
 //문제5
-/*let 정수2 = prompt('정수2')
-console.log('7의 배수 : ' + (정수2%7==0))*/
+let 정수2 = prompt('정수2')
+console.log('7의 배수 : ' + (정수2%7==0))
 	// 배수 찾기 : 수/값==0 나머지가 0이면 수는 해당 값의 배수
-	
+*/
+/*	
 //문제6 [ 몫 : parseInt(3.75) --> 3 ]
-/*let 금액 = Number(prompt('금액'))
+let 금액 = Number(prompt('금액'))
 console.log('입력받은 금액: ' + 금액)
 console.log('십만원권: ' + parseInt(금액/100000) + '장')
 // ! 금액에서 십만원권 제외*
@@ -113,7 +112,6 @@ let 아이디 = prompt('아이디')
 let 비밀번호 = prompt('비밀번호')
 console.log('로그인상태 : ' + (아이디=='admin' && 비밀번호=='1234'))
 */
-
 /*
 //문제8
 let 정수3 = Number(prompt('정수3'))
@@ -134,3 +132,60 @@ data1 /= 3
 console.log('/= 대입 후 : ' + data1)
 data1 %= 3
 console.log('%= 대입 후 : ' + data1)
+
+// 5. 증감 연산자 [ data++ dats+=1 data = data+1]
+let data2 = 10
+console.log('변수 값  : ' + data2) // 10
+console.log('변수++ : ' + (data2++)) // 10 : 출력 후 증가
+console.log('변수 값 : ' + data2) // 11
+console.log('++변수 : ' + (++data2)) // 12 : 출력 전 증가
+
+console.log('변수-- 값 : ' + (data2--)) // 12 : 출력 후 감소
+console.log('변수 값 : ' + data2) // 11
+console.log('--변수 값 : ' + (--data2)) // 10 : 출력 전 감소
+
+// 6. 삼항연산자 [ 조건 ? 참 : 거짓 ] 
+let age = 38;
+let 나이대 = age<=19 ? '청소년' : '성인'	// 조건[ 38<=19 ]이 false 니까 '성인' 대입 
+console.log( ' 38의 나이대 : ' + 나이대 )
+
+let 점수 = 78;
+let 등급 = 	점수>=90 ? 'A등급' : 			// 점수가 90점이상이면 a등급
+			점수>=80 ? 'B등급' : 			// 아니면 점수가 80점이상이면 b등급
+			점수>=70 ? 'C등급' : '탈락'		// 아니면 점수가 70점이상이면 c등급 그외 탈락
+console.log( '78점수의 등급 : ' + 등급 )
+
+/*
+	문제9 : 정수를 입력받아서 홀수인지 짝수인지 출력
+	문제10 : 정수 2개를 입력받아서 더 큰 수를 출력 
+	문제11 : 정수 3개를 입력받아서 가장 큰 수를 출력
+	문제12 : 정수 3개를 입력받아서 오름차순으로 출력
+*/
+/*
+//문제9
+let value1 = Number(prompt('정수'))
+console.log( value1 + '의 홀짝 판단 : ' + (정수1%2==0 ? '짝수' : '홀수'))
+*/
+/*
+//문제10
+let value2 = Number(prompt('정수2'))
+let value3 = Number(prompt('정수3'))
+console.log( value2 + '과' + value3 + ' 중 더 큰 수는 : ' +
+			value2>value3 ? value2 : value2<value3 ? value3 : '같다'
+			)
+//첫 번쨰 값이 더 크면 첫 번째 값 출력, 두 번째 값이 더 크면 두 번쨰 값 출력 아니면 두 수는 같다
+*/
+/*
+//문제11
+let value4 = Number(prompt('정수4'))
+let value5 = Number(prompt('정수5'))
+let value6 = Number(prompt('정수6'))
+let max = value4 // 가장 큰 수 변수에 첫 번째 값 대입
+max = max < value5 ? value5 : max //만약에 max보다 더 크면 max에 대입
+max = max < value6 ? value6 : max
+console.log('가장 큰 수는 : ' + max)
+*/
+ㄴ
+//문제12
+
+
