@@ -20,14 +20,14 @@ a{ color: black; text-decoration: none; }
 .dep{ position: relative; }
 .dep1{
 	position: absolute; 
-	/* display: none; */ 
+	display: none; 
 	z-index: 1;
 	/* margin: 0px 10px; */
 }
 .dep2{ position: relative;}
 .dep2 li{
 	position: absolute;
-	/* display: none; */ 
+	display: none;
 	/* z-index: 1; */
 	width: 75px;
 	height: auto;
