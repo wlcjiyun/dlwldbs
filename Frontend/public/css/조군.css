@@ -8,7 +8,10 @@ a{ color: black; text-decoration: none; }
 
 /* -------------------- 헤더 ------------------- */
 #header{ /* height: 130px; */}
-#h_top{ border-bottom: 1px solid #dbdbdb;}
+#h_top{ 
+	border-bottom: 1px solid #dbdbdb;
+	
+}
 #h_top li{
    display: inline-block;
    padding: 0px 12px;
@@ -36,9 +39,10 @@ a{ color: black; text-decoration: none; }
 #h_bottom{
    position: relative;
    height: 78px;
-   z-index: 1;
+   z-index: 0;
+   /* position: sticky; top: 0px; */
    background-color: #dddddd;
-   opacity: 0.5;
+   /* opacity: 0.5; */
 }
 #h_bottom #headlogo{ /* 로고 */
    position: absolute;
