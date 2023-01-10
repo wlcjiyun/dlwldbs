@@ -36,7 +36,7 @@ function onLogin(){
 
 /*------------------------------------과제2------------------------------------*/
 console.log('실행') //확인용
-studentArray = push(index(0, 1, 2));
+studentArray = push(index(0, 1, 2))
 function onBtn(){
 		
 	let num = document.querySelector('.num')
