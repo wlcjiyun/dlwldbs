@@ -1,7 +1,7 @@
 @charset "UTF-8";
 *{ 
-	border: 1px solid red;
-	margin: 0px; padding: 0px;
+   border: 1px solid red;
+   margin: 0px; padding: 0px;
 }
 li{ list-style: none; }
 a{ color: black; text-decoration: none; }
@@ -9,78 +9,78 @@ a{ color: black; text-decoration: none; }
 /* -------------------- 헤더 ------------------- */
 #h_top{ border-bottom: 1px solid #dbdbdb;}
 #h_top li{
-	display: inline-block;
-	padding: 0px 12px;
-	font-size: 12px;
+   display: inline-block;
+   padding: 0px 12px;
+   font-size: 12px;
 }
 #h_top ul{ 
-	text-align: right;
-	margin: 10px 0px;
+   text-align: right;
+   margin: 10px 0px;
 }
 .dep{ position: relative; }
 .dep1{
-	position: absolute; 
-	display: none; 
-	z-index: 1;
-	/* margin: 0px 10px; */
+   position: absolute; 
+   display: none; 
+   z-index: 1;
+   /* margin: 0px 10px; */
 }
-.dep2{ position: relative;}
+.dep2{ position: relative; display: none; }
 .dep2 li{
-	position: absolute;
-	display: none;
-	/* z-index: 1; */
-	width: 75px;
-	height: auto;
-	right: -14px;
-	text-align: left;
-	background-color: blue; 
+   position: absolute;
+   display: none;
+   /* z-index: 1; */
+   width: 75px;
+   height: auto;
+   right: -14px;
+   text-align: left;
+   background-color: blue; 
 }
-.dep:hover .dep1{display: block;}
+.dep:hover .dep1 , .dep:hover .dep2{display: block;}
 #h_bottom{
-	position: relative;
+   position: relative;
 }
 #h_bottom #headlogo{ /* 로고 */
-	position: absolute;
-	top: 27px;
-	left: 25px;
+   position: absolute;
+   top: 27px;
+   left: 25px;
 } 
 #h_bottom #headmenu{ /* 메인메뉴 */
-	position: absolute;
-	top: 2px; left: 240px;
+   position: absolute;
+   top: 2px; left: 240px;
 }
 #headmenu .h_maenu{
-	position: relative;
-	display: inline-block;
-	padding: 0px 12px;
-	line-height: 78px;
-	font-size: 12px;
+   position: relative;
+   display: inline-block;
+   padding: 0px 12px;
+   line-height: 78px;
+   font-size: 12px;
 }
 .h_submenu a {
-	display: block;
+   display: block;
     line-height: 24px;
     font-size: 13px;
     font-weight: 400;
 }
 #headmenu .h_maenu ul li{ 
-	width: 90px;
-	margin: 0px;
-	line-height: 30px;
-	background-color: red;
+   width: 90px;
+   margin: 0px;
+   line-height: 30px;
+   background-color: red;
 }
 #headmenu .h_maenu ul{
-	text-align: center;
-	left: -15px;
+   text-align: center;
+   left: -15px;
 }
 .h_menu:hover .h_submenu { display: block; }
 .topright{
-	border-bottom: 1px solid black;
-	position: absolute;
-	top: 25px;
-	right: 30px;
+   border-bottom: 1px solid black;
+   position: absolute;
+   top: 25px;
+   right: 30px;
 }
 .topright input{
-	border: none;
-	padding: 10px 0;
+   border: none;
+   padding: 10px 0;
 }
 .search{ border: none; }
 
