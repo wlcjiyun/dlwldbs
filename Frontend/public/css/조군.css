@@ -1,12 +1,13 @@
 @charset "UTF-8";
 *{ 
-   border: 1px solid red;
+  border: 1px solid red;
    margin: 0px; padding: 0px;
 }
 li{ list-style: none; }
 a{ color: black; text-decoration: none; }
 
 /* -------------------- 헤더 ------------------- */
+#header{ /* height: 130px; */}
 #h_top{ border-bottom: 1px solid #dbdbdb;}
 #h_top li{
    display: inline-block;
@@ -21,16 +22,12 @@ a{ color: black; text-decoration: none; }
 .dep1{
    position: absolute; 
    display: none; 
-   z-index: 1;
-   /* margin: 0px 10px; */
 }
 .dep2{ position: relative; display: none; }
 .dep2 li{
    position: absolute;
    display: none;
-   /* z-index: 1; */
    width: 75px;
-   height: auto;
    right: -14px;
    text-align: left;
    background-color: blue; 
@@ -38,15 +35,19 @@ a{ color: black; text-decoration: none; }
 .dep:hover .dep1 , .dep:hover .dep2{display: block;}
 #h_bottom{
    position: relative;
+   height: 78px;
+   z-index: 1;
+   background-color: #dddddd;
+   opacity: 0.5;
 }
 #h_bottom #headlogo{ /* 로고 */
    position: absolute;
-   top: 27px;
+   top: 25px;
    left: 25px;
 } 
 #h_bottom #headmenu{ /* 메인메뉴 */
    position: absolute;
-   top: 2px; left: 240px;
+   left: 245px;
 }
 #headmenu .h_maenu{
    position: relative;
@@ -62,20 +63,21 @@ a{ color: black; text-decoration: none; }
     font-weight: 400;
 }
 #headmenu .h_maenu ul li{ 
-   width: 90px;
+   width: 120px;
    margin: 0px;
    line-height: 30px;
-   background-color: red;
+   background-color: #ffffff;
+   border: 1px solid black;
 }
 #headmenu .h_maenu ul{
    text-align: center;
-   left: -15px;
+   left: -22px;
 }
 .h_menu:hover .h_submenu { display: block; }
 .topright{
    border-bottom: 1px solid black;
    position: absolute;
-   top: 25px;
+   top: 20px;
    right: 30px;
 }
 .topright input{
@@ -86,7 +88,7 @@ a{ color: black; text-decoration: none; }
 
 
 /* -------------------- 배너 ------------------- */
-#banner{height: 300px;}
+#banner{height: 300px; background-color: #eeeeee;}
 /* -------------------- 본문 ------------------- */
 #contents{height: 600px;}
 /* -------------------- 푸터 ------------------- */
