@@ -47,8 +47,8 @@ let 배열명 = ['유재석', '강호동', '신동엽', '김현수']
 
 //2. 배열 호출
 console.log(배열명)
-dacument.write(배열명)
-dacument.write( '<h3>' + 배열명 +'<h3>' ) //HTML 마크업은 JS 내에서는 문자열 처리
+document.write(배열명)
+document.write( '<h3>' + 배열명 +'<h3>' ) //HTML 마크업은 JS 내에서는 문자열 처리
 
 //3. 배열 내 특정 요소 : 배열명 [인덱스]
 console.log(배열명[0] + 배열명[1] + 배열명[2] + 배열명[3])
@@ -61,7 +61,7 @@ document.write( '</ol>' )
 
 //4. 배열의 길이
 console.log(배열명.length + '명')
-docunment.write( '<p>현재 인원수' + 배열명.length + '명</p>' )
+document.write( '<p>현재 인원수' + 배열명.length + '명</p>' )
 
 //5. 배열의 요소[자료] 추가 
 배열명.push('전현무')
@@ -75,7 +75,7 @@ console.log(배열명)
 let sindex = 배열명.indexOf( '신동엽' ); console.log('신동엽 인덱스 : ' + sindex)
 
 //8. 데이터로 요소 삭제
-배열명.splice( 배열명.indexOf('신동엽') , 1 ); conlsole.log(배열명)
+배열명.splice( 배열명.indexOf('신동엽') , 1 ); console.log(배열명)
 
 //9. 배열 내 요소 데이터 변경
 배열명.splice( 0 , 1 , '서장훈'); console.log(배열명)
