@@ -1,6 +1,6 @@
 @charset "UTF-8";
 *{ 
-  border: 1px solid red;
+  /* border: 1px solid red; */
    margin: 0px; padding: 0px;
 }
 li{ list-style: none; }
@@ -10,7 +10,7 @@ a{ color: black; text-decoration: none; }
 #header{ /* height: 130px; */}
 #h_top{ 
 	border-bottom: 1px solid #dbdbdb;
-	
+	z-index: 1	
 }
 #h_top li{
    display: inline-block;
@@ -20,6 +20,7 @@ a{ color: black; text-decoration: none; }
 #h_top ul{ 
    text-align: right;
    margin: 10px 0px;
+   position: sticky; top: 0px; 
 }
 .dep{ position: relative; }
 .dep1{
@@ -39,9 +40,8 @@ a{ color: black; text-decoration: none; }
 #h_bottom{
    position: relative;
    height: 78px;
-   z-index: 0;
+   /* z-index: 0; */
    /* position: sticky; top: 0px; */
-   background-color: #dddddd;
    /* opacity: 0.5; */
 }
 #h_bottom #headlogo{ /* 로고 */
@@ -71,25 +71,31 @@ a{ color: black; text-decoration: none; }
    margin: 0px;
    line-height: 30px;
    background-color: #ffffff;
-   border: 1px solid black;
+   /* border: 1px solid black; */
 }
 #headmenu .h_maenu ul{
    text-align: center;
    left: -22px;
 }
 .h_menu:hover .h_submenu { display: block; }
-.topright{
+.search_input{
    border-bottom: 1px solid black;
+   background-color: #ffffff;
    position: absolute;
-   top: 20px;
+   display: flex; 
+   align-items: center;
+   top: 23px;
    right: 30px;
 }
-.topright input{
+.input_search{
    border: none;
-   padding: 10px 0;
+   padding: 5px;
 }
 .search{ border: none; }
-
+.search img{
+	background-color: #ffffff;
+	width: 30px; height: 30px;
+}
 
 /* -------------------- 배너 ------------------- */
 #banner{height: 300px; background-color: #eeeeee;}
