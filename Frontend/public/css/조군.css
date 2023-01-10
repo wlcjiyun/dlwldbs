@@ -7,7 +7,6 @@ li{ list-style: none; }
 a{ color: black; text-decoration: none; }
 
 /* -------------------- 헤더 ------------------- */
-#header{ height: 130px;}
 #h_top{ border-bottom: 1px solid #dbdbdb;}
 #h_top li{
 	display: inline-block;
@@ -18,6 +17,16 @@ a{ color: black; text-decoration: none; }
 	text-align: right;
 	margin: 10px 0px;
 }
+.dep{ position: relative; }
+.dep1{
+	position: absolute; 
+	/* display: none; */ 
+	z-index: 1;
+}
+.dep2 li{
+	background-color: blue;
+}
+.dep:hover .dep1{display: block;}
 #h_bottom{
 	position: relative;
 }
@@ -28,15 +37,32 @@ a{ color: black; text-decoration: none; }
 } 
 #h_bottom #headmenu{ /* 메인메뉴 */
 	position: absolute;
-	top: 0px; left: 240px;
+	top: 2px; left: 240px;
 }
 #headmenu .h_maenu{
 	position: relative;
 	display: inline-block;
-	padding: 0px 10px;
+	padding: 0px 12px;
 	line-height: 78px;
 	font-size: 12px;
 }
+.h_submenu a {
+	display: block;
+    line-height: 24px;
+    font-size: 13px;
+    font-weight: 400;
+}
+#headmenu .h_maenu ul li{ 
+	width: 90px;
+	margin: 0px;
+	line-height: 30px;
+	background-color: red;
+}
+#headmenu .h_maenu ul{
+	text-align: center;
+	left: -15px;
+}
+.h_menu:hover .h_submenu { display: block; }
 .topright{
 	border-bottom: 1px solid black;
 	position: absolute;
@@ -48,18 +74,20 @@ a{ color: black; text-decoration: none; }
 	padding: 10px 0;
 }
 .search{ border: none; }
+
+
 /* -------------------- 배너 ------------------- */
 #banner{height: 300px;}
 /* -------------------- 본문 ------------------- */
 #contents{height: 600px;}
 /* -------------------- 푸터 ------------------- */
 /* 위 */
-#footer{width: 1200px; margin: 0 auto;}
+#footer{/*width: 1200px;*/ margin: 0 auto;}
 #ft_top{ 
    background: #f7f7f7; 
    padding: 50px 0px;
 }
-.inner{display: flex; justify-content: space-between;}
+.inner{display: flex; justify-content: space-around;}
 .inner .innerbox h1, h3, p{ margin-bottom: 28px; } 
 .inner div p { font-size: 12px;}
 .inner div h1 { 
