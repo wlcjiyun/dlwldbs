@@ -36,6 +36,7 @@ function onLogin(){
 
 /*------------------------------------과제2------------------------------------*/
 console.log('실행') //확인용
+/*
 studentArray = push(index(0, 1, 2))
 function onBtn(){
 		
@@ -55,5 +56,24 @@ function onBtn(){
 		document.querySelector('.resultbox').innnerHTML = '등록'
 	}	
 }
+*/
 
+function join(){
+	let cnum = document.querySelector('.cnum') /* 마크업 변수로 가져오기 */
+	let sname2 = cnum.value
+	let long2 = sname2.length
+	console.log(long2)
+	let sindex2 = studentArray.indexOf(sname2);
+	if(sname2=="")
+		document.querySelector('.resultbox2').innerHTML = '학번을 입력해주세요!';
+	else if(long2!=8)
+		document.querySelector('.resultbox2').innerHTML = '학번을 8자리로 입력해주세요!';
+	else if(sindex2 != -1) 
+		document.querySelector('.resultbox2').innerHTML = '이미 있는 학번입니다!';
+	else {
+		studentArray.push(class_num2.value); 
+		document.querySelector('.resultbox2').innerHTML = '학번 등록 성공!'; 
+		}
+	console.log(studentArray)
+}
 /*------------------------------------과제3------------------------------------*/
