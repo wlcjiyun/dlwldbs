@@ -71,9 +71,8 @@ function join(){
 	else if(sindex2 != -1) 
 		document.querySelector('.resultbox2').innerHTML = '이미 있는 학번입니다!';
 	else {
-		studentArray.push(class_num2.value); 
+		studentArray.push(cnum.value); 
 		document.querySelector('.resultbox2').innerHTML = '학번 등록 성공!'; 
 		}
 	console.log(studentArray)
 }
-/*------------------------------------과제3------------------------------------*/
