@@ -16,43 +16,32 @@
 		1. 관리자 입장
 			- 기능
 				1. 도서 등록[도서명]
-					* 중복불가능(length)
-					* 도서명 5~10글자 사이만 가능(indexOf)
+					* 중복불가능(indexOf)
+					* 도서명 5~10글자 사이만 가능(length)
 				2. 도서 현황 출력
-					- 번호
-					-도서명
-					-도서대여여부
-					-삭제[대여중에는 불가능]
-		2. 고객 입장
-			- 기능
-				1. 도서 목록
 					- 번호
 					- 도서명
 					- 도서대여여부
-					- 도서대여버튼
-					- 도서반납버튼
-					
-				2. 도서 대여
-					- 없는 도서명 불가능
-					- 대여중인 도서 불가능
-					
-				3. 도서 반납 
-					- 없는 도서명 불가능
-					- 대여 도서가 아니면 불가능
+					- 삭제[대여중에는 불가능]
 					
  -->
  
 	<div class="wrap">
-		<div class="content">
+
+	
+		<div class="content1">
 			<h3>관리자 페이지</h3>
-			<table>
-				
-			</table>
+			
+			도서명 : 
+			<input class="도서명" type="text">
+			
+			<button onclick="addContent()" type="button" >등록</button>
+			
+			<table class="contentTable" border="1"></table>
+			
 		</div>
-		<div class="content">
-			<h3>고객 페이지</h3>
-		</div>
-	</div> 
+		
+	</div>
 
 
 	<script src="과제4.js"></script>

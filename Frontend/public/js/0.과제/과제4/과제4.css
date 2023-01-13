@@ -1,9 +1,9 @@
 @charset "UTF-8";
-*{ background-color: black; color: #ffffff; } /* 연동 확인용 */
-
-.wrap{ display: flex; }
-
-.content{
-	width: 50%;
-	border: 1px solid red;
+.content1{ 
+	background-color: #006400; 
+	color: #ffffff; 
+	padding: 15px;
+	text-align: center;
 }
+.contentTable{ margin: 0 auto; }
+.contentTable th{ padding: 10px; }
