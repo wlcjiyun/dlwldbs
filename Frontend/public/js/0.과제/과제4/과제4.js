@@ -14,7 +14,6 @@ function addContent(){
 	printContent()
 }
 
-
 function printContent(){
 	// 출력할 html 구성
 	let html = `<tr>			
@@ -26,7 +25,7 @@ function printContent(){
 	// 내용추가 
 	for( let i = 0 ; i<도서목록.length; i++ ){
 		html += `<tr>
-					<td>${ i+1 }</td>
+					<td>${ i }</td>
 					<td>${ 도서목록[i] }</td>
 					<td>${ [i] }</td>
 					<td><button onclick="onDelete( ${i} )">삭제</button></td>
