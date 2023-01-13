@@ -1,16 +1,34 @@
-/*console.log('실행')//확인용
-*/
-let 테이블행 = '<tr> <th>번호</th> <th>방문록</th> </tr>';
+/*console.log('실행')*/
 
-function onResult(){
-	console.log('클릭함')//확인용
+
+
+let contentArray = [ ]
+let 테이블행 =' <tr> <th> 번호 </th> <th> 방문록 </th> </tr>' ;
+
+
+
+
+function addContent(){
 	
-	let contentArray = [ ]
-	let txt_box = document.querySelector('.txt_box').value
 	
-	contentArray
+	let textBox = document.querySelector( '.textBox' ).value	
 	
-	document.querySelector('.box_table').innerHTML = 테이블행
+		/*console.log('클릭')*/
+	
+	contentArray.push(textBox)
+	
+	console.log( contentArray )
+	
+	let 번호 =contentArray.length
+	
+	테이블행 +=
+	' <tr> <th> ' + 번호 + ' </th> <th>'+ textBox + '</th> </tr>'
+	document.querySelector( '.vTable' ).innerHTML = 테이블행
+	
+	
+	
+	
+	
 }
 
 
