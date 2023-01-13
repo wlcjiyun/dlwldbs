@@ -6,10 +6,25 @@
 </head>
 <body>
 	
+	<!-- 2. 로또 구매 버튼 만들기 -->
+	<button onclick="버튼출력()">로또 구매하기</button>
+	<button 
+		class="취소버튼" 
+		style="display: none;" 
+		onclick="버튼출력취소()"
+	>로또 구매 취소</button>
+	
+	<!-- 2-1. 로또 숫자 버튼이 표시되는 구역 -->
+	<div class="버튼목록상자"></div>
+	
+	<!-- 4. 선택된 숫자버튼 목록 표시되는 구역 -->
+	<h3>선택한 번호</h3>
+	<div class="선택번호상자"></div>
 	
 	
 	
 	
+	<!-- 1. js 가져오기 -->
 	<script src="4.로또구매.js"></script>
 </body>
 </html>
