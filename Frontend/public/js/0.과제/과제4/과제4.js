@@ -1,6 +1,7 @@
 //console.log('실행') //연동 확인용
 
 let 도서목록 = [ '혼자공부하는자바', '이것이자바다', '열형 C언어' ]
+let 대여목록 = [ ] 
 
 //등록 버튼 클릭 했을때 이벤트 함수
 function addContent(){
@@ -12,6 +13,7 @@ function addContent(){
 	// 배열내 입력받은 변수 저장 
 	도서목록.push( 도서명 )
 	printContent()
+	
 }
 
 function printContent(){
@@ -23,7 +25,7 @@ function printContent(){
 					<th>비고</th>
 				</tr>` 
 	// 내용추가 
-	for( let i = 0 ; i<도서목록.length; i++ ){
+	for( let i = 1 ; i<도서목록.length; i++ ){
 		html += `<tr>
 					<td>${ i }</td>
 					<td>${ 도서목록[i] }</td>
@@ -35,7 +37,6 @@ function printContent(){
 	//위에서 구성된 html를 해당 마크업에 대입			
 	document.querySelector('.contentTable').innerHTML = html
 }
-
 
 // 삭제 버튼 눌렀을 때 함수
 function onDelete( dno ){ 
