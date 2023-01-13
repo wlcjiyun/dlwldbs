@@ -108,7 +108,7 @@ function 구매추첨(){ //fun S
 	for( let value of 추첨번호목록 ){
 		if( 선택번호목록.includes( value ) == true ){ 맞은개수++ } 
 	}
-	
+	alert( 맞은개수 )
 	
 } //fun E
 
