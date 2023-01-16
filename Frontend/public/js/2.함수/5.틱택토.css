@@ -8,6 +8,6 @@
 }
 .게임판 div{
 	width: 25%; height: 150px;
-	border: 1px solid black;		
+	border: 5px solid #ffffff;		
 	background-color: #FAFAD2;
 }
