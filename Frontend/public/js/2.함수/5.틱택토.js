@@ -12,8 +12,7 @@ function 클릭이벤트( 버튼번호 ){
 	let 버튼목록 = document.querySelectorAll( '.버튼' ) 
 	console.log( 버튼목록 )
 	
-	//3. 
-		// 클릭된 번호의 div 찾기 [ 선택번호-1 ]
+	// 3. 클릭된 번호의 div 찾기 [ 선택번호-1 ]
 			// -1 : 인덱스는 0부터 시작하기에
 	버튼목록[ 버튼번호-1 ].innerHTML = 'O';
 	
