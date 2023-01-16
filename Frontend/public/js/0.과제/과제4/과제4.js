@@ -3,7 +3,7 @@
 let 도서목록 = [ '혼자공부하는자바', '이것이자바다', '열형 C언어' ]
 let 대여목록 = [ ] 
 
-//등록 버튼 클릭 했을때 이벤트 함수
+//등록버튼 클릭 했을때 이벤트 함수
 function addContent(){
 	
 	console.log('등록버튼실행') //확인용
@@ -17,7 +17,7 @@ function addContent(){
 }
 
 function printContent(){
-	// 출력할 html 구성
+	// html 구성
 	let html = `<tr>			
 					<th>번호</th>
 					<th>도서명</th>
@@ -34,11 +34,11 @@ function printContent(){
 				</tr>`												
 	} 
 	
-	//위에서 구성된 html를 해당 마크업에 대입			
+	// 구성된 html를 해당 마크업에 대입			
 	document.querySelector('.contentTable').innerHTML = html
 }
 
-// 삭제 버튼 눌렀을 때 함수
+// 삭제버튼 눌렀을 때 함수
 function onDelete( dno ){ 
 	도서목록.splice( dno , 1 )
 	printContent()
