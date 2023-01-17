@@ -92,22 +92,6 @@ function printTable(){
 			// 2. 만약에 총점이 비교할 총점보다 작으면 순위는 하락한다
 			if( total < total2 ){ rank++; }
 		})
-		
-		html += `<tr> 
-					 <td>${i+1}</td>
-					 <td>${ o.name }</td>
-					 <td>${ o.kor }</td>
-					 <td>${ o.eng }</td>
-					 <td>${ o.mat }</td>
-					 <td>${ total }</td>
-					 <td>${ parseInt(total/3) }</td>
-					 <td>${ rank }</td>
-					 <td>
-					 	<button>삭제</button>
-					 	<button>수정</button>
-					 </td>
-				</tr>`	
-	} )
 		/*
 			배열 내 순위
 			예시) 
@@ -139,9 +123,35 @@ function printTable(){
 						75 	: 100<75 	: f
 						100 : 100<100 	: f :		: rank=1
 		*/	
-				
+		
+		html += `<tr> 
+					 <td>${i+1}</td>
+					 <td>${ o.name }</td>
+					 <td>${ o.kor }</td>
+					 <td>${ o.eng }</td>
+					 <td>${ o.mat }</td>
+					 <td>${ total }</td>
+					 <td>${ parseInt(total/3) }</td>
+					 <td>${ rank }</td>
+					 <td>
+					 	<button onclick="onDelete( ${i} )">삭제</button>
+					 	<button onclick="onUpdate( ${i} )>수정</button>
+					 </td>
+				</tr>`	
+	} )
+		
+		
 	document.querySelector('.listtable').innerHTML = html;
 }
+
+// 3. 배열 내 객체 삭제 [ 삭제할 인덱스 필요 ]
+function onDelete(i){
+	studentArray.splice( i , 1 ); // 선택한 i번째 인덱스 객체 제거
+	printTable(); // 삭제 후 새로고침/업데이트
+} 
+
+
+
 
 
 
