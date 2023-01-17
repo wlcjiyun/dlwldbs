@@ -135,7 +135,7 @@ function printTable(){
 					 <td>${ rank }</td>
 					 <td>
 					 	<button onclick="onDelete( ${i} )">삭제</button>
-					 	<button onclick="onUpdate( ${i} )>수정</button>
+					 	<button onclick="onUpdate( ${i} )">수정</button>
 					 </td>
 				</tr>`	
 	} )
@@ -150,36 +150,29 @@ function onDelete(i){
 	printTable(); // 삭제 후 새로고침/업데이트
 } 
 
+// 4. 수정 버튼 클릭했을 때 [ 수정할 인덱스 !! ]
+let upindex = -1; //수정할 인덱스 // 여러 { }에서 사용하려고 밖으로 뺌 // 전역변수
+function onUpdate(i){
+	upindex = i // 내가 선택한 i번째 인덱스 // 지역변수
+	document.querySelector('.updatebox').style.display = 'block' // 1. 수정 페이지 보여주기
+	// 2. 기존의 데이터 대입
+	document.querySelector('.upname').value = studentArray[upindex].name
+	document.querySelector('.upkor').value = studentArray[upindex].kor
+	document.querySelector('.upeng').value = studentArray[upindex].eng
+	document.querySelector('.upmat').value = studentArray[upindex].mat
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	// 5. 점수 수정 버튼을 클릭했을 때
+	let updatebtn = document.querySelector('.updatebtn')
+	updatebtn.addEventListener('click', () => {	
+		
+		// 1. 수정된 데이터 가져오기 // 2. 해당 객체의 속성 값 변경
+		studentArray[upindex].kor = parseInt( document.querySelector('.upkor').value )
+		studentArray[upindex].eng = parseInt( document.querySelector('.upeng').value )
+		studentArray[upindex].mat = parseInt( document.querySelector('.upmat').value )
+		
+		// 2. 수정 페이지 보여주기
+		document.querySelector('.updatebox').style.display = 'none'
+		
+		printTable();
+	})	
+}
