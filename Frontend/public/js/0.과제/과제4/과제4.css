@@ -1,23 +1,24 @@
 @charset "UTF-8";
-*{ font-family: '맑은 고딕' }
-.content1{ 
-	background-color: #006400; 
-	color: #ffffff; 
-	padding: 15px;
+*{ 
+	background-color: green; 
+	color:  white;
+} /* 연동 확인용 */
+
+.wrap{ display: flex; }
+
+.content{
+	width: 50%;
+	border: 1px solid white; 
 	text-align: center;
 }
-.contentTable{ margin: 0 auto; }
-.contentTable th{ padding: 10px; }
-h1{
-	font-size: 20px;
-}
-.도서명{
-	padding: 9px 12px;
-	margin-bottom: 15px;
-	border: none;
+.content h1{ font-size: 20px;}
+.도서명{ 
+	padding: 5px;
+	background-color: #ffffff;
 }
 .등록버튼{
-	font-size: 15px;
-	padding: 8px;
+	padding: 5px;
+	background-color: #ffffff;
+	color: black;
 	border: none;
 }
