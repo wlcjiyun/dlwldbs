@@ -1,49 +1,51 @@
-//console.log('실행') //연동 확인용
+//console.log('실행') //확인용
 
 let 도서목록 = [ '혼자공부하는자바', '이것이자바다', '열형 C언어' ]
 let 대여목록 = [ '혼자공부하는자바' ] 
 
-//등록버튼 클릭 했을때 이벤트 함수
+// 등록버튼 눌렀을 때 
 function addContent(){
 	
-	console.log('등록버튼실행') //확인용
+	// console.log('실행') //확인용
 	
-	// <input>에서 입력받은 데이터 가져와서 변수에 저장
 	let 도서명 = document.querySelector('.도서명').value
-	// 배열내 입력받은 변수 저장 
-	도서목록.push( 도서명 )
-	printContent()
+	if( 도서명.length >= 5 && 도서명.length <= 10 ){
+		if( 도서목록.indexOf( 도서명 == -1 ) ){
+			도서목록.push(도서명)
+			alert('등록되었습니다.')
+		}else{ alert('이미 등록된 도서명입니다.') }
+	}else{ alert('도서명은 5~10글자 사이만 등록이 가능합니다.')}
 	
+	printContent()	
 }
-
+// HTML 출력
 function printContent(){
 	
-	//도서목록여부.includes('혼자공부하는자바', '이것이자바다', '열형 C언어')
-	// html 구성
 	let html = `<tr>			
 					<th>번호</th>
 					<th>도서명</th>
 					<th>도서대여여부</th>
 					<th>비고</th>
 				</tr>` 
-	// 내용추가 
+
 	for( let i = 0 ; i<도서목록.length; i++ ){
 		html += `<tr>
 					<td>${ i+1 }</td>
 					<td>${ 도서목록[i] }</td>
-					<td>${ [i+1] }</td>
+					<td>${ 도서대여여부 }</td>
 					<td><button onclick="onDelete( ${i} )">삭제</button></td>
 				</tr>`												
-	} 
-	
-	// 구성된 html를 해당 마크업에 대입			
+	} 		
 	document.querySelector('.contentTable').innerHTML = html
+	
+	printContent( )
 }
 
-// 삭제버튼 눌렀을 때 함수
+// 삭제버튼 눌렀을 때 
 function onDelete( dno ){ 
-	도서목록.splice( dno , 1 )
-	printContent()
+	if( 도서목록.indexOf(도서목록[ dno ] == -1){
+		도서목록.splice( dno , 1 )
+	}else{ alert('대여중인 도서는 삭제할 수 없습니다.')}
 	
-	// 배열명.includes(): 존재 여부 
+	printContent()
 }
