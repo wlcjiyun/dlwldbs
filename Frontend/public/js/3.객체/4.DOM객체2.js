@@ -46,7 +46,7 @@ document.addEventListener( 'DOMContentLoaded', function(){
 		console.log(object); console.log(index); 
 	})
 		// 배열명.forEach( (요소값,인덱스,배열명) => {실행문;} )
-	h1Array.forEach( ( object,index,array ) => {
+	h1Array.forEach( ( object , index , array ) => {
 		console.log(object); console.log(index); console.log(array); 
 	})
 })
