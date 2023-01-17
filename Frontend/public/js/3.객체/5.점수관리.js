@@ -151,9 +151,9 @@ function onDelete(i){
 } 
 
 // 4. 수정 버튼 클릭했을 때 [ 수정할 인덱스 !! ]
-let upindex = -1; //수정할 인덱스 // 여러 { }에서 사용하려고 밖으로 뺌 // 전역변수
+let upindex = -1; // -1 : 기본값 (인덱스가 없다) //수정할 인덱스 // 여러 { }에서 사용하려고 밖으로 뺌 // 전역변수
 function onUpdate(i){
-	upindex = i // 내가 선택한 i번째 인덱스 // 지역변수
+	upindex = i // i값을 upindex에 대입 // 내가 선택한 i번째 인덱스 // 지역변수
 	document.querySelector('.updatebox').style.display = 'block' // 1. 수정 페이지 보여주기
 	// 2. 기존의 데이터 대입
 	document.querySelector('.upname').value = studentArray[upindex].name
