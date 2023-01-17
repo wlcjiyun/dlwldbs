@@ -47,9 +47,58 @@ addbtn.addEventListener( 'click' , () => {
 	}
 	
 	// 3. 저장 [ 위 유효성 검사 하나라도 충족하지 않았을 때 ]
-	if( check ){ studentArray.push( info ); alert('학생 점수를 등록했습니다.') }
+	if( check ){ studentArray.push( info ); alert('학생 점수를 등록했습니다.'); printTable();}
 	
+	/*
+	let html = `<tr> <th>번호</th><th>이름</th>
+					 <th>국어</th><th>영어</th>
+					 <th>수학</th><th>총점</th>
+					 <th>평균</th><th>순위</th> </tr>`
+					 
+	for( let i = 0 ; i<studentArray.length ; i++ ){
+		html = `<tr>
+					<td>${i+1}</td>
+					<td>${info.name}</td>
+					<td>${info.kor}</td> 
+					<td>${info.eng}</td> 
+					<td>${info.mat}</td>
+					<td></td>
+					<td></td> 
+				</tr>`
+	}
+	document.querySelector('.listtable').innerHTML = html;
+	*/
 })
+
+// 2. 배열 내 객체를 테이블에 출력하는 함수 [ 1.js열렸을때 2.등록할때마다/업데이트 3.삭제 4.수정]
+printTable() // 함수 호출
+function printTable(){
+	
+	let html = `<tr> 
+					 <th>번호</th><th>이름</th><th>국어</th>
+					 <th>영어</th><th>수학</th><th>총점</th>
+					 <th>평균</th><th>순위</th> <th>비고</th>
+				</tr>`
+				
+	studentArray.forEach( ( o , i ) => { 
+		html += `<tr> 
+					 <td>${i+1}</td>
+					 <td>${o.name}</td>
+					 <td>${o.kor}</td>
+					 <td>${o.eng}</td>
+					 <td>${o.mat}</td>
+					 <td>${o.kor+o.eng+o.mat}</td>
+					 <td>${parseInt((o.kor+o.eng+o.mat)/3)}</td>
+					 <td>순위</td>
+					 <td>
+					 	<button>삭제</button>
+					 	<button>수정</button>
+					 </td>
+				</tr>`	
+	} )
+				
+	document.querySelector('.listtable').innerHTML = html;
+}
 
 
 
