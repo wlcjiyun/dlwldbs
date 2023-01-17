@@ -43,16 +43,9 @@ function printContent(){
 
 // 삭제버튼 눌렀을 때 
 function onDelete( dno ){ 
-	if( 도서목록.indexOf(도서목록[ dno ] == -1){
+	if( 도서목록.indexOf(도서목록[ dno ]) == -1){
 		도서목록.splice( dno , 1 )
 	}else{ alert('대여중인 도서는 삭제할 수 없습니다.')}
 	
 	printContent()
-}
-
-// 
-function 대여여부(){
-	if(대여목록.indexOf[i] == -1){
-		alert('대여가능')
-	}else{ alert('대여불가능')}
 }
