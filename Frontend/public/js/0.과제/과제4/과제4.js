@@ -1,7 +1,7 @@
 //console.log('실행') //연동 확인용
 
 let 도서목록 = [ '혼자공부하는자바', '이것이자바다', '열형 C언어' ]
-let 대여목록 = [ ] 
+let 대여목록 = [ '혼자공부하는자바' ] 
 
 //등록버튼 클릭 했을때 이벤트 함수
 function addContent(){
@@ -17,6 +17,8 @@ function addContent(){
 }
 
 function printContent(){
+	
+	//도서목록여부.includes('혼자공부하는자바', '이것이자바다', '열형 C언어')
 	// html 구성
 	let html = `<tr>			
 					<th>번호</th>
@@ -42,4 +44,6 @@ function printContent(){
 function onDelete( dno ){ 
 	도서목록.splice( dno , 1 )
 	printContent()
+	
+	// 배열명.includes(): 존재 여부 
 }
