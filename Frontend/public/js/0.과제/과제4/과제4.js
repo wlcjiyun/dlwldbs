@@ -1,4 +1,4 @@
-//console.log('실행') //확인용
+//console.log('실행')
 
 let 도서목록 = [ '혼자공부하는자바', '이것이자바다', '열형 C언어' ]
 let 대여목록 = [ '혼자공부하는자바' ] 
@@ -6,7 +6,7 @@ let 대여목록 = [ '혼자공부하는자바' ]
 // 등록버튼 눌렀을 때 
 function addContent(){
 	
-	// console.log('실행') //확인용
+	// console.log('실행')
 	
 	let 도서명 = document.querySelector('.도서명').value
 	if( 도서명.length >= 5 && 도서명.length <= 10 ){
@@ -32,7 +32,7 @@ function printContent(){
 		html += `<tr>
 					<td>${ i+1 }</td>
 					<td>${ 도서목록[i] }</td>
-					<td>${ 도서대여여부 }</td>
+					<td>${ 대여여부 }</td>
 					<td><button onclick="onDelete( ${i} )">삭제</button></td>
 				</tr>`												
 	} 		
@@ -48,4 +48,11 @@ function onDelete( dno ){
 	}else{ alert('대여중인 도서는 삭제할 수 없습니다.')}
 	
 	printContent()
+}
+
+// 
+function 대여여부(){
+	if(대여목록.indexOf[i] == -1){
+		alert('대여가능')
+	}else{ alert('대여불가능')}
 }
