@@ -25,11 +25,11 @@ function printContent(){
 					<th>비고</th>
 				</tr>` 
 	// 내용추가 
-	for( let i = 1 ; i<도서목록.length; i++ ){
+	for( let i = 0 ; i<도서목록.length; i++ ){
 		html += `<tr>
-					<td>${ i }</td>
+					<td>${ i+1 }</td>
 					<td>${ 도서목록[i] }</td>
-					<td>${ [i] }</td>
+					<td>${ [i+1] }</td>
 					<td><button onclick="onDelete( ${i} )">삭제</button></td>
 				</tr>`												
 	} 
