@@ -35,7 +35,7 @@ function printContent(){
 		html += `<tr>
 					<td>${ i+1 }</td>
 					<td>${ 도서목록[i] }</td>
-					<td>${ i }</td>
+					<td>${ 도서대여여부 }</td>
 					<td><button onclick="onDelete( ${i} )">삭제</button></td>
 				</tr>`												
 	} 		
