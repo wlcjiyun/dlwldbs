@@ -18,7 +18,7 @@ function addContent(){
 	
 	printContent()	
 }
-// HTML 출력
+// HTML 출력 : 이지윤
 function printContent(){
 	
 	let html = `<tr>			
@@ -41,7 +41,7 @@ function printContent(){
 	printContent( )
 }
 
-// 삭제버튼 눌렀을 때 
+// 삭제버튼 눌렀을 때 : 이지윤
 function onDelete( dno ){ 
 	if( 도서목록.indexOf(도서목록[ dno ]) == -1){
 		도서목록.splice( dno , 1 )
