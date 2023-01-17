@@ -37,9 +37,4 @@ document.addEventListener( 'load' , () => { console.log( '문서열림3' ) } )
 
 let 익명함수 = function (){ console.log('문서열림5') }
 let 화살표함수 = ( ) => { console.log('문서열림4') }
-let 객체 = { 행동 : () => { console.log('문서열림6') }
-
-
-
-
-
+let 객체 = { 행동 : () => { console.log('문서열림6') } }
