@@ -109,6 +109,7 @@ function order(){
 	
 				// .map( (반복변수) => { 실행문; return; } ) : 반복실행문 return 값을 배열로 반환
 	let map배열 = cartList.map( (o) => {return o;} )
+	console.log(map배열)
 
 	// 1. 주문
 		// 1. order 객체 만들기
