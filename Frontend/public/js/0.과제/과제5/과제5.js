@@ -5,14 +5,15 @@ let burgerList = [
 	{ name:'콰트로치즈X' , price:8200 , img:'버거킹버거1.png' , category:'프리미엄' } ,
 	{ name:'기네스와퍼' , price:7200 , img:'버거킹버거2.png' , category:'프리미엄' } ,
 	{ name:'몬스터와퍼' , price:9200 , img:'버거킹버거3.png' , category:'스페셜' } ,
-	{ name:'갈릭불고기와퍼' , price:6200 , img:'버거킹버거5.png' , category:'와퍼' } 
+	{ name:'갈릭불고기와퍼' , price:6200 , img:'버거킹버거5.png' , category:'와퍼' } ,
+	{ name:'BLT오믈렛킹모닝' , price:8200 , img:'버거킹버거6.png' , category:'올데이킹' } 
 ]
 
-let cartList = [  ]
+let cartList = [ ]
 
 category_print();
 categoty_select(0);
-product_ptint(0);
+product_print(0);
 
 // 1. 카테고리 출력 함수
 function category_print(){
@@ -46,11 +47,11 @@ function categoty_select( i ){ // i : 선택된 li의 인덱스
 	} // for e
 	
 	// 3. 제품목록 렌더링
-	product_ptint( i )
+	product_print( i )
 }
 
 // 3. 제품 출력 함수
-function product_ptint(index){
+function product_print(index){
 	
 	// 1. HTML 구성
 	let html = ''; //깡통
@@ -61,11 +62,11 @@ function product_ptint(index){
 		if( burgerList[i].category == categoryList[index] ){ // if S
 		// i번째 버거객체의 카테고리와 선택된 카테고리와 같으면
 		
-		html += `<div class="product">
+		html += `<div class="product" onclick="cartadd( ${i})">
 					<img src="img/${ burgerList[i].img }" width="100%"/>
 					<div class="productinfo">
 						<div class="ptitle"> ${ burgerList[i].name } </div>
-						<div class="pprice"> ${ burgerList[i].price.toLocaleString() } </div>
+						<div class="pprice"> ${ burgerList[i].price.toLocaleString() }원 </div>
 					</div>
 				</div>`
 		} // if E
@@ -75,11 +76,46 @@ function product_ptint(index){
 	document.querySelector('.productbox').innerHTML = html
 }
 
-// 4. 카트에 담기
+// 4. 선택한 제품을 카트에 담기
+function cartadd( i ){ // f s 
+	cartList.push( burgerList[i] ) // 1. 선택한 i번째 버거의 객체를 cartlist에 추가 
+	cart_print();  // 카트내 제품 화면 렌더링[새로고침]
+} // f e 
 
+// 5. 주문 취소 버튼
+function cancel(){
+	alert('주문 취소')
+	cartList.splice(0); // 개수 생략시 전체 삭제
+	cart_print(); // 카트 내 제품 렌더링
+}
 
+// 6. 주문하기 버튼
+function order(){
+	alert('주문하기');
+	// 주문목록 구현
+		// ~~~~~~~~~~ 카트리스트 --> 주문목록
+	cartList.splice(0)
+	cart_print();
+}
 
-
+// 7. 카트 내 버거 출력 [1.제품 클릭할 때마다 2.취소/주문할 때마다]
+function cart_print(){
+	// 2. 버거 개수 카운트
+	document.querySelector('.pcount').innerHTML = cartList.length
+	// 3. 버거 총 금액 
+	let total = 0;
+	for( let j = 0 ; j<cartList.length ; j++ ){ total += cartList[j].price } 
+	document.querySelector('.ptotal').innerHTML = total.toLocaleString();
+	// 4.
+	let html = ''	// 1. 기본 html 구성 
+	for( let j = 0 ; j<cartList.length ; j++ ){
+		html += `<div class="item">
+					<div class="ititle"> ${ cartList[j].name } </div>
+					<div class="iprice"> ${ cartList[j].price.toLocaleString() }원</div>
+				</div>`
+	}
+	document.querySelector('.cartbottom').innerHTML = html; // 2. 구성된 html 마크업에 대입 
+}
 
 
 
