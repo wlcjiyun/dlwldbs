@@ -1,7 +1,7 @@
-/* 공통 *///				0		  1		  2		   3		  4
+/* 공통 */
 let categoryList = [ '프리미엄' , '스페셜' , '와퍼' , '올데이킹' , '치킨버거' ]
 
-let burgerList = [ 
+let burgerList = [ /*현재 등록된 버거 목록*/
 	{ name:'콰트로치즈X' , price:8200 , img:'버거킹버거1.png' , category:'프리미엄' } ,
 	{ name:'기네스와퍼' , price:7200 , img:'버거킹버거2.png' , category:'프리미엄' } ,
 	{ name:'몬스터와퍼' , price:9200 , img:'버거킹버거3.png' , category:'스페셜' } ,
@@ -9,7 +9,9 @@ let burgerList = [
 	{ name:'BLT오믈렛킹모닝' , price:8200 , img:'버거킹버거6.png' , category:'올데이킹' } 
 ]
 
-let cartList = [ ]
+let cartList = [ ] /*카트목록*/
+
+let orderList = [ ] /*주문목록*/
 
 category_print();
 categoty_select(0);
@@ -92,8 +94,38 @@ function cancel(){
 // 6. 주문하기 버튼
 function order(){
 	alert('주문하기');
-	// 주문목록 구현
-		// ~~~~~~~~~~ 카트리스트 --> 주문목록
+	console.log('주문하기 전 카트')
+	console.log(cartList)
+	
+	// 1. 주문번호 만들기
+	let no = 0;
+	// 마지막인덱스 : 배열명.length-1
+	if( orderList.length == 0 ){ no = 1; } // 만약에 길이가 0이면 == 주문이 하나도 없으면 주문번호 1
+	else{ no = orderList[ orderList.length-1 ].no+1 } // 아니면 마지막 인덱스 주문객체의 주문번호+1을 다음 주문번호 사용
+	
+	// 2. 총가격 만들기
+	let total = 0;
+	for( let i = 0; i<cartList; i++ ){ total += cartList[i].price }
+	
+				// .map( (반복변수) => { 실행문; return; } ) : 반복실행문 return 값을 배열로 반환
+	let map배열 = cartList.map( (o) => {return o;} )
+
+	// 1. 주문
+		// 1. order 객체 만들기
+		let order = {												
+			no : no ,	
+			item : map배열 ,	
+			time : new Date() , // 현재 날짜&시간
+			state : true ,		// ture : 주문 / false : 주문완료
+			complete : 0 ,		// 주문 완료 전
+			price : total ,		// cartList 배열 내 버거 객체들의 총금액 합계
+		}
+		
+		// 2. order 객체 배열에 저장
+		orderList.push( order )
+		console.log('주문하기 후 카트')
+		console.log(orderList)
+	
 	cartList.splice(0)
 	cart_print();
 }
@@ -116,27 +148,3 @@ function cart_print(){
 	}
 	document.querySelector('.cartbottom').innerHTML = html; // 2. 구성된 html 마크업에 대입 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
