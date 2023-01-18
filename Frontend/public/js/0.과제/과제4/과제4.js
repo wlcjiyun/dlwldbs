@@ -3,6 +3,8 @@
 let 도서목록 = [ '혼자공부하는자바', '이것이자바다', '열형 C언어' ]
 let 대여목록 = [ '혼자공부하는자바' ] 
 
+도서현황( 1 );도서현황( 2 );
+
 /*-----------------------------------이지윤----------------------------------*/
 function addContent(){
 	
@@ -18,7 +20,7 @@ function addContent(){
 	}else{ alert('도서명은 5~10글자 사이만 등록이 가능합니다.')}
 	printContent()
 */
-	if( 도서명.includes(도서명)){ /* 중복 검사 */
+	if( 도서목록.includes(도서명)){ /* 중복 검사 */
 		alert('이미 등록된 도서명입니다.')
 		return false; 
 	}
@@ -27,7 +29,7 @@ function addContent(){
 		return false;
 	}
 	도서목록.push(도서명); /* 입력받은 도서명 배열에 추가 */
-	도서현황();
+	도서현황( 1 );도서현황( 2 );
 	console.log(도서목록)
 }
 
@@ -53,34 +55,32 @@ function printContent(){
 	printContent()		
 }
 */	
-도서현황();
-function 도서현황( ){
-	
-	let html = `<tr>			
-					<th>번호</th>
-					<th>도서명</th>
-					<th>도서대여여부</th>
-					<th>비고</th>
-				</tr>` 
-				
-	for( let i = 0 ; i<도서목록.length; i++ ){
+function 도서현황( 타입 ){
+	// 1. html 기본 구성 
+	let html = `<tr>
+					<th>번호</th> <th>도서명</th>
+					<th>도서대여여부</th> <th>비고</th>
+				<tr>`
+	// 2. html 구성 추가 
+	for( let i = 0 ; i< 도서목록.length ; i++ ){
+		// i는 0부터 도서목록길이 미만까지 1씩증가 
 		html += `<tr>
-					<td>${ i+1 }</td>
+					<td>${i+1}</td> 
 					<td>${ 도서목록[i] }</td>
-					<td>${ 대여목록.includes( 도서목록[i] ? '대여중' : '대여가능' ) }</td>
-					<td><button onclick="삭제( ${i} )">삭제</button></td>
-				</tr>`			
-						/*
-							js가 버튼을 생성하기 전 :
-							<button onclick="삭제( ${i} )">삭제</button>  
-							
-							js가 버튼을 생성한 후 :
-							<button onclick="삭제( 0 )">삭제</button>
-							<button onclick="삭제( 1 )">삭제</button>
-							<button onclick="삭제( 2 )">삭제</button>
-						*/									
-	}		
-	document.querySelector('.contentTable').innerHTML = html
+					<td>${ 대여목록.includes( 도서목록[i] ) ? '대여중' : '대여가능' } </td>
+				`
+		if( 타입 == 1 ){ // 만약에 함수의 인수가 타입 1 이면 관리자 쪽 테이블  
+			html +=  `<td><button onclick="삭제( ${i} )">삭제</button></td>`
+			// 3. 마크업에 html 대입
+			document.querySelector('.contentTable').innerHTML = html;
+		}else if( 타입 == 2 ){ // 만약에 함수의 인수가 타입 2 이면 고객 쪽 테이블 
+			html += `<td>
+						<button onclick="대여( ${i} )">대여</button>
+						<button onclick="반납( ${i} )">반납</button>
+					<td>`
+			document.querySelector('.customerTable').innerHTML = html;
+		}
+	}
 }
 
 /*
@@ -92,12 +92,12 @@ function onDelete( dno ){
 	printContent()
 }*/
 function 삭제( i ){
-	if( 도서목록[i].includes( 도서목록[i] ) ){
+	if( 대여목록.includes( 도서목록[i] ) ){
 		alert('대여중임으로 삭제가 불가능합니다.')
 		return false;
 	}
 	도서목록.splice( i , 1 )
-	도서현황(); //렌더링
+	도서현황( 1 );도서현황( 2 ); //렌더링
 }
 
 /*-----------------------------------김미영----------------------------------*/
@@ -122,38 +122,6 @@ function 고객페이지출력(){ // f s
 	
 } // f e
 */
-도서현황2();
-function 도서현황2(){
-	
-	let html = `<tr>			
-					<th>번호</th>
-					<th>도서명</th>
-					<th>도서대여여부</th>
-					<th>비고</th>
-				</tr>` 
-				
-	for( let i = 0 ; i<도서목록.length; i++ ){
-		html += `<tr>
-					<td>${ i+1 }</td>
-					<td>${ 도서목록[i] }</td>
-					<td>${ 대여목록.includes( 도서목록[i] ? '대여중' : '대여가능' ) }</td>
-					<td>
-						<button onclick="대여( ${i} )">삭제</button>
-						<button onclick="반납( ${i} )">반납</button>
-					</td>
-				</tr>`			
-						/*
-							js가 버튼을 생성하기 전 :
-							<button onclick="삭제( ${i} )">삭제</button>  
-							
-							js가 버튼을 생성한 후 :
-							<button onclick="삭제( 0 )">삭제</button>
-							<button onclick="삭제( 1 )">삭제</button>
-							<button onclick="삭제( 2 )">삭제</button>
-						*/									
-	}		
-	document.querySelector('.customerTable').innerHTML = html
-}
 
 /*
 function 도서대여여부( i ){ // f s
@@ -182,7 +150,7 @@ function 대여(i){
 		return;
 	}
 	대여목록.push(도서목록[i])
-	대여현황2() // 렌더링
+	도서현황( 1 );도서현황( 2 ); // 렌더링
 }
 /*
 // 도서 반납 함수
@@ -201,9 +169,9 @@ function bookReturn( rbtn ){// f s
 function 반납(i){
 	if(대여목록.includes(도서목록[i])){
 		대여목록.splice( i , 1 ) 
-		대여현황2() // 렌더링
+		도서현황( 1 );도서현황( 2 ); // 렌더링
 		return true;
 	}
-	alert('대출된 도서가 아닙니다.')
+	alert('대여중인 도서가 아닙니다.')
 	return false;
 }
