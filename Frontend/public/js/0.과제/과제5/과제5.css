@@ -1,0 +1,36 @@
+@charset "UTF-8";
+*{
+	padding: 0px; margin: 0px;
+}
+.wrap{
+	display: flex;
+	justify-content: center;
+}
+
+.contaniner{
+	width: 45%;
+	border: 1px solid #808080;
+	margin: 1%;
+}
+.kioskbox{
+	width: 100%; height: 750px;
+}
+.header{
+	height: 200px;
+	border: 1px solid red;
+}
+.categorybox li{
+	display: inline-block;
+	margin: 10px 35px; 
+}
+.content{
+	height: 500px;	
+	border: 1px solid orange;
+}
+.footer{
+	height: 50px;
+	border: 1px solid blue;
+}
+
+
+
