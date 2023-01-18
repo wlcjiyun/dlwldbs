@@ -13,20 +13,25 @@
 	margin: 1%;
 }
 .kioskbox{
-	width: 100%; height: 750px;
+	width: 100%; /* height: 800px; */
 }
+/* ------------------헤더----------------- */
 .header{
-	height: 200px;
+	height: 250px;
 	border: 1px solid red;
 }
+/* ------------------메뉴----------------- */
 .categorybox li{
 	display: inline-block;
 	margin: 10px 35px; 
 }
+/* ------------------본문----------------- */
 .content{
 	height: 500px;	
 	border: 1px solid orange;
 }
+
+/* ------------------푸터----------------- */
 .footer{
 	height: 50px;
 	border: 1px solid blue;
