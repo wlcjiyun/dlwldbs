@@ -1,22 +1,48 @@
-/* 공통 */
-let categoryList = [ '프리미엄' , '스페셜' , '와퍼' , '올데이킹' , '치킨버거' ]
+/*
+	1. 버거 객체
+		let burger = {
+			name: 버거이름 
+			price: 버거가격
+			img: 버거이미지
+			category: 버거카테고리
+		}
 
+	2. 주문객체
+		let order = {
+			no: 주문번호 
+			items: 주문된 cartList
+			time: 주문시간
+			state: 주문상태
+			complete: 주문완료시간
+			price: 주문가격 
+		}
+*/
+
+/*-----------------------------공통: 모든 데이터에서 사용됨(전역변수)--------------------------*/
+// 등록된 카테고리 '문자열' 목록/배열
+let categoryList = [ '프리미엄' , '스페셜' , '와퍼' , '올데이킹' , '치킨버거' ]
+// 등록된 '버거객체' 목록/배열
 let burgerList = [ /*현재 등록된 버거 목록*/
 	{ name:'콰트로치즈X' , price:8200 , img:'버거킹버거1.png' , category:'프리미엄' } ,
 	{ name:'기네스와퍼' , price:7200 , img:'버거킹버거2.png' , category:'프리미엄' } ,
 	{ name:'몬스터와퍼' , price:9200 , img:'버거킹버거3.png' , category:'스페셜' } ,
-	{ name:'갈릭불고기와퍼' , price:6200 , img:'버거킹버거5.png' , category:'와퍼' } ,
-	{ name:'BLT오믈렛킹모닝' , price:8200 , img:'버거킹버거6.png' , category:'올데이킹' } 
+	{ name:'BLT오믈렛킹모닝' , price:8200 , img:'버거킹버거4.png' , category:'올데이킹' } ,
+	{ name:'갈릭불고기와퍼' , price:6200 , img:'버거킹버거5.png' , category:'와퍼' }
+	 
 ]
+// 카트에 등록된 '버거객체' 목록/배열 /*카트목록*/
+let cartList = [ ]
+// '주문객체' 목록/배열 /*주문목록*/
+let orderList = [ ]
+/*-----------------------------------------------------------------------------------*/
 
-let cartList = [ ] /*카트목록*/
+/*-------------------------------JS가 열렸을 때 1번 실행되는 함수----------------------------*/
+category_print(); 	// 카테고리 1회 호출
+categoty_select(0); // 카테고리 선택시 CSS변경/카테고리별 제품출력 함수 호출(기본값:프리미엄)
+product_print(0); 	// 제품출력 함수(기본값:프리미엄)
+/*-----------------------------------------------------------------------------------*/
 
-let orderList = [ ] /*주문목록*/
-
-category_print();
-categoty_select(0);
-product_print(0);
-
+/*---------------------------------------키오스크--------------------------------------*/
 // 1. 카테고리 출력 함수
 function category_print(){
 	
@@ -29,7 +55,7 @@ function category_print(){
 		html += `</ul>`
 		
 		
-	// 2. 해당 마크업에 HTML 출력 
+	// 2. HTML 출력 
 	document.querySelector('.categorybox').innerHTML = html
 }
 
@@ -149,3 +175,74 @@ function cart_print(){
 	}
 	document.querySelector('.cartbottom').innerHTML = html; // 2. 구성된 html 마크업에 대입 
 }
+
+/*----------------------------------------포스기---------------------------------------*/
+
+/*----------------------------------------버거등록--------------------------------------*/
+let 버거 = []
+
+let 버거등록버튼 = document.querySelector('.버거등록버튼')
+
+function 등록(){
+	let 버거이름 = document.querySelector('.burgername').value;
+	let 카테고리명 = document.querySelector('.burgercategory').value;
+	let 가격 = document.querySelector('.burgerprice').value;
+	let 이미지 = document.querySelector('.burgerimg').value;
+	
+	let 버거등록 = { name : 버거이름 , category : 카테고리명 , price : 가격 , img : 이미지 }
+	
+	버거.push(버거등록)
+	출력();
+}
+
+/*-------------------------------------버거 등록 현황------------------------------------*/
+function 출력(){
+	
+	let html = `<tr>
+					<th>번호</th>
+					<th>이미지</th>
+					<th>버거이름</th>
+					<th>카테고리명</th>
+					<th>가격</th>
+					<th>비고</th>
+				</tr>`
+				
+	for( let i = 0; i<버거.length; i++ ){
+		
+		html += `<tr> 
+					<td> ${ i+1 } </td>
+					<td>  </td>
+					<td> ${ 버거[i].name }</td>
+					<td> ${ 버거[i].category }</td>
+					<td> ${ 버거[i].price }</td>
+					<td>
+						<button onclick="onDelete(${i})">삭제</button>
+						<button onclick="onChange(${i})" class="changebtn" >가격수정</button>
+					</td>
+				 </tr>`
+	}
+	document.querySelector('.ordertable').innerHTML = html
+}
+/*-----------삭제----------*/
+function onDelete( i ){
+	버거.splice( i , 1 );
+	출력();
+}
+
+/*-----------수정----------*/
+let upindex = -1;
+function onChange( i ){ //alert 창으로 수정하기
+	
+}
+/*-----------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+

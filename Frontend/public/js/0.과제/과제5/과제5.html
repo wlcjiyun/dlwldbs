@@ -6,59 +6,6 @@
 <link href="과제5.css" rel="stylesheet">
 </head>
 <body>
-	
-	<!-- 
-	
-		주제 : 키오스크
-		
-		* 공통사항
-			1. 하나의 HTML에서 2가지 요구사항 구현
-			2. 기본 카테고리
-				let categoryList = [ 프리미엄 , 스페셜 , 와퍼 , 올데이킹 , 치킨버거 ]
-			3. 버거 객체( 서로 다른 유형들의 데이터 )
-				let burger = {
-					name: 버거이름 
-					price: 버거가격
-					img: 버거이미지
-					category: 버거카테고리
-				}
-				
-				let burgerList = [ {burger} , {burger} , {burger} , {burger} ]
-				
-			4. 카트
-				let cartList = []
-				
-			5. 주문객체
-				let order = {
-					orderno: 주문번호 (중복X)
-					orderitems: 주문된 cartList
-					ordertime: 주문시간
-					orderatate: 주문상태
-					ordercomplte: 주문완료시간
-					orderprice: 주문가격 
-				}
-				
-			6. 주문목록
-				let orderList = [ {order} , {order} , {order} , {order} ]
-				
-			
-		1. 고객 요구사항
-			- 1. 프론트엔드 : 카톡 사진 참고
-				- 메뉴 슬라이드 화살표 구현X
-			- 2. 스크립트 기능 
-				- 메뉴(카테고리) : 메뉴에 맞는 제품 출력
-				- 제품 클릭 이벤트 : 클릭하면 카트에 담기 
-				- 카트
-					- 카트 개수
-					- 카트 제품 총가격
-					
-			- 3. 취소 / 주문 [ 결제X / 무조건 성공 ]
-				- 취소 : 모든 카트 내 제품 제거
-				- 주문 : 모든 카트 내 제춤을 관리자의 주문 목록에 추가 후 모든 카트 제거
-				
-		2. 관리자 요구사항
-		
-	 -->
 
 	<div class="wrap"> <!--전체 구역 -->
 	
@@ -97,9 +44,45 @@
 		</div>  <!-- 키오스크 end -->
 		
 		<div class="container">  <!-- 포스기 구현 -->
-			<div>
 			
-			</div>
+				<div class="cont">
+					<h3>버거 등록</h3>
+					<table class="burgertable">
+						<tr>
+							<td>버거이름 :</td>
+							<td><input type="text" class="burgername"></td>
+						</tr>
+						<tr>
+							<td>카테고리명 :</td>
+							<td><input type="text" class="burgercategory"></td>
+						</tr>
+						<tr>
+							<td>가격 :</td>
+							<td><input type="text" class="burgerprice"></td>
+						</tr>
+						<tr>
+							<td>이미지 :</td>
+							<td><input type="text" class="burgerimg"></td>
+						</tr>
+						<tr>
+							<td colspan="2"> <button onclick="등록()" class="버거등록버튼" type="button">등록</button> </td>
+						</tr>
+					</table>
+				</div>
+				
+				<div class="cont">
+					<h3>등록된 버거 현황</h3>
+					<table class="ordertable" border="1"></table>
+				</div>
+				
+				<div class="cont">
+					<h3>주문된 버거 현황</h3>
+				</div>
+				
+				<div class="cont">
+					<h3>매출</h3>
+				</div>
+				
 		</div>
 		
 	</div> <!-- wrap end  -->
