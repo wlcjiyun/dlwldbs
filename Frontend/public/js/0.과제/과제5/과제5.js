@@ -218,7 +218,7 @@ function 출력(){
 					<td> ${ 버거[i].price }</td>
 					<td>
 						<button onclick="onDelete(${i})">삭제</button>
-						<button onclick="onChange(${i})" class="changebtn" >가격수정</button>
+						<button onclick="onChange(${i})">가격수정</button>
 					</td>
 				 </tr>`
 	}
@@ -238,12 +238,22 @@ function onChange( i ){ //alert 창으로 수정하기
 	// 수정버튼 눌렀을 때 보여주기
 	document.querySelector('.changebox').style.display = 'block'
 	alert('가격을 수정하시겠습니까?')
-	document.querySelector('.upname').value = 버거[upindex].name
+	
+	document.querySelector('.upname').value 	= 버거[upindex].name
 	document.querySelector('.upcategory').value = 버거[upindex].category
-	document.querySelector('.price').value = 버거[upindex].price
-	document.querySelector('.upimg').value = 버거[upindex].img
+	document.querySelector('.price').value 		= 버거[upindex].price
+	document.querySelector('.upimg').value 		= 버거[upindex].img
 
-
+	let 수정버튼 = document.querySelector('.수정버튼')
+	수정버튼.addEventListener( 'click' , () => {
+		
+		버거[upindex].name 		= document.querySelector('.upname').value
+		버거[upindex].category 	= document.querySelector('.upcategory').value
+		버거[upindex].price 		= document.querySelector('.upprice').value
+		버거[upindex].img 		= document.querySelector('.upimg').value
+		
+		alert('수정하였습니다')
+	})
 
 
 
