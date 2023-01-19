@@ -192,6 +192,7 @@ function 등록(){
 	let 버거등록 = { name : 버거이름 , category : 카테고리명 , price : 가격 , img : 이미지 }
 	
 	버거.push(버거등록)
+	alert('등록하였습니다')
 	출력();
 }
 
@@ -226,6 +227,7 @@ function 출력(){
 /*-----------삭제----------*/
 function onDelete( i ){
 	버거.splice( i , 1 );
+	alert('삭제하였습니다')
 	출력();
 }
 
@@ -233,5 +235,34 @@ function onDelete( i ){
 let upindex = -1;
 function onChange( i ){ //alert 창으로 수정하기
 	
+	// 수정버튼 눌렀을 때 보여주기
+	document.querySelector('.changebox').style.display = 'block'
+	alert('가격을 수정하시겠습니까?')
+	document.querySelector('.upname').value = 버거[upindex].name
+	document.querySelector('.upcategory').value = 버거[upindex].category
+	document.querySelector('.price').value = 버거[upindex].price
+	document.querySelector('.upimg').value = 버거[upindex].img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 /*-----------------------------------------------------------------------------------*/
