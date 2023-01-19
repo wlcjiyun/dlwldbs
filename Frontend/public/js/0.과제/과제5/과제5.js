@@ -233,46 +233,22 @@ function onDelete( i ){
 
 /*-----------수정----------*/
 let upindex = -1;
-function onChange( i ){ //alert 창으로 수정하기
+function onChange( ){
 	
 	// 수정버튼 눌렀을 때 보여주기
 	document.querySelector('.changebox').style.display = 'block'
 	alert('가격을 수정하시겠습니까?')
 	
-	document.querySelector('.upname').value 	= 버거[upindex].name
-	document.querySelector('.upcategory').value = 버거[upindex].category
-	document.querySelector('.price').value 		= 버거[upindex].price
-	document.querySelector('.upimg').value 		= 버거[upindex].img
+	document.querySelector('.price').value = 버거[upindex].price
 
 	let 수정버튼 = document.querySelector('.수정버튼')
 	수정버튼.addEventListener( 'click' , () => {
 		
-		버거[upindex].name 		= document.querySelector('.upname').value
-		버거[upindex].category 	= document.querySelector('.upcategory').value
-		버거[upindex].price 		= document.querySelector('.upprice').value
-		버거[upindex].img 		= document.querySelector('.upimg').value
+		버거[upindex].price = document.querySelector('.upprice').value
 		
+		document.querySelector('.changebox').style.display = 'none'
 		alert('수정하였습니다')
+		출력();
 	})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 /*-----------------------------------------------------------------------------------*/
