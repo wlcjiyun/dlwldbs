@@ -3,10 +3,19 @@
 <head>
 <meta charset="UTF-8"> 
 <title>비회원 게시판</title>
+<style type="text/css">
+
+	.wrap{ display: flex; }
+	.box{ 
+		width: 33%;
+		border: 1px solid black; 
+	}
+	
+</style>
 </head>
 <body>
 	
-	<div class="warp">
+	<div class="wrap">
 	
 		<div class="box">
 			<h3>글쓰기 페이지</h3>
@@ -20,9 +29,11 @@
 		</div>
 		<div class="box">
 			<h3>글목록 페이지</h3>
+			<table class="boardtable"></table>
 		</div>
 		<div class="box">
 			<h3>글보기 페이지</h3>
+			<div class="viewbox"></div>
 		</div>
 	
 	</div>
