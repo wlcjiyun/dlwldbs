@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /* 웹 폰트 */
 @font-face {
-    font-family: 'LeferiPoint-WhiteObliqueA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
-    font-weight: normal;
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
     font-style: normal;
 }
 /* 기본값 */
@@ -11,10 +11,6 @@
 	font-family: '맑은 고딕';
 	color: black;
 	margin: 0; padding: 0;
-}
-a{
-	text-decoration: none;
-	color: black;
 }
 
 /* 로고 구역 */
@@ -24,7 +20,7 @@ a{
 
 /* 로고 제목 */
 .title{
-	font-family: 'LeferiPoint-WhiteObliqueA';
+	font-family: 'LINESeedKR-Bd';
 	color: black;
 	font-size: 40px;
 }
