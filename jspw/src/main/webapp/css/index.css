@@ -53,6 +53,25 @@
 	width: 20%;
 	margin: 0 auto;
 }
+
+/* 서로 다른 디바이스마다 css 달리함 -> 미디어쿼리 */
+/* @media( 조건 ){ 참일경우 css } */
+
+/* 1. 최대 가로사이즈 1000px 이하이면 */
+@media( max-width: 1000px ){ 
+	.item{ 
+		width: 45% !important; 
+		margin: 2% !important; 
+	}
+}
+/* 2. 최대 가로사이즈500px 이하이면 */
+@media( max-width: 500px ){
+	.item{ 
+		width: 90% !important; 
+		margin: 2% !important; 
+	}
+}
+/* 1200px 이상 기준 */
 .item{
 	width: 20%;
 	margin: 2%;
@@ -61,7 +80,7 @@
 	width: 100%;
 	border-radius: 20px; 
 }
-.item:hover{ opacity: 0.8%; }
+.item:hover{ opacity: 0.8; }
 .item_title{
 	font-size: 12px;
 	margin: 5% 0%;
@@ -69,7 +88,7 @@
 .item_size{
 	font-size: 10px;
 	color: #999999;
-	border: 1px solid #999999; 
+	border-bottom: 1px solid #999999; 
 	padding-bottom: 4%;	
 }
 .item_price{
@@ -90,11 +109,17 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-top: 3%;
 }
 .item_review{
 	font-size: 13px;
 	color: #999999;
 	text-align: right;
+	margin: 3%;
+}
+.itembox{
+	display: flex;
+	flex-wrap: wrap;
 }
 
 
