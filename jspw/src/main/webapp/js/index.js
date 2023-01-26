@@ -4,8 +4,8 @@ let productList = [
 	{ img:'p2.gif' , title:'내맘속 물결 반목 스판티' , size:'FREE' , price:16000 , discount:0.2 , like:80 , rivew:253},
 	{ img:'p3.gif' , title:'벤므 울 보카시 나그랑가디건' , size:'FREE' , price:27900 , discount:0.1 , like:10 , rivew:2},
 	{ img:'p4.gif' , title:'키분 더블버튼 꽈배기 카라니트' , size:'FREE' , price:23400 , discount:0.2 , like:38 , rivew:5},
-	{ img:'p5.gif' , title:'와편해 속기모 시계포켓 배기진' , size:'FREE' , price:23900 , discount:0.1 , like:26 , rivew:16},
-	{ img:'p6.gif' , title:'친퍼 기모 자수 나그랑맨투맨' , size:'FREE' , price:33900 , discount:0.2 , like:37 , rivew:54}
+	{ img:'p5.gif' , title:'와편해 속기모 시계포켓 배기진' , size:'FREE' , price:23900 , discount:0.05 , like:26 , rivew:16},
+	{ img:'p6.gif' , title:'친퍼 기모 자수 나그랑맨투맨' , size:'FREE' , price:33900 , discount:0.1 , like:37 , rivew:54}
 ]
 
 product_print();
