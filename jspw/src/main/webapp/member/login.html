@@ -24,17 +24,17 @@
 <body>
 	
 	<!-- header top menu -->			<!-- 상단 고정 -->
-	<div class="navbar navbar-expand-lg sticky-top bg-white h_top">
-		<div class="container">
-			<div class="collapse navbar-collapse"> <!-- 감추기 -->
-				<ul class="navbar-nav h_top_menu">
-					<li class="nav-item"><a class="nav-link" href="/jsp/member/login.html">로그인</a></li>
-					<li class="nav-item"><a class="nav-link" href="/jsp/member/signup.html">회원가입</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">장바구니</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">마이페이지</a></li>
-					<li class="nav-item"><a class="nav-link" href="/jsp/list.html">커뮤니티</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">문의사항</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">리뷰</a></li>
+	<div class="navbar navbar-expand-lg sticky-top bg-white h_top">	<!-- 네비케이션 [ 메뉴 ]  -->
+		<div class="container">							<!-- 구역 -->
+			<div class="collapse navbar-collapse">									<!-- 감추기 -->
+				<ul class="navbar-nav h_topmenu">													<!-- 메뉴 목록 -->
+					<li class="nav-item"> <a class="nav-link" href="/jsp/member/login.html"> 로그인 </a> </li>		<!-- 메뉴 항목 -->
+					<li class="nav-item"> <a class="nav-link" href="/jsp/member/signup.html"> 회원가입 </a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#"> 장바구니 </a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#"> 마이페이지 </a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#"> 커뮤니티 </a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#"> 문의사항 </a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#"> 리뷰 </a> </li>
 				</ul>
 			</div>
 		</div>
@@ -68,37 +68,7 @@
 		</div>
 	</div>
 	
-	<!-- img slide -->			<!---- 자동 슬라이드 ---->	<!-- 슬라이드 속도[밀리초:1000/1] -->
-	<div id="maincarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
-		<div class="carousel-inner">
-		
-			<div class="carousel-item active"><!-- 1개의 사진 active 활성화 -->
-				<img src="img/mainimg1.jpg" class="d-block w-100">
-			</div>
-			
-			<div class="carousel-item"><!-- 2 -->
-				<img src="img/justone_mainimg2.jpg" class="d-block w-100">
-			</div>
-			
-			<div class="carousel-item"><!-- 3 -->
-				<img src="img/justone_mainimg3.jpg" class="d-block w-100">
-			</div>
-			
-			<div class="carousel-item"><!-- 4 -->
-				<img src="img/justone_mainimg4.jpg" class="d-block w-100">
-			</div>
-		</div>
-		
-		<div> <!-- img slide control [ left%right ] -->
-			<button class="carousel-control-prev" type="button" data-bs-slide="prve" data-bs-target="#maincarousel">
-				<span class="carousel-control-prev-icon"></span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-slide="next" data-bs-target="#maincarousel">
-				<span class="carousel-control-next-icon"></span>
-			</button>
-		</div>
-		
-	</div>
+	로그인페이지
 	
 	<!-- 부트스트랩 : js -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
