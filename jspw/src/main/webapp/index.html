@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- 사용자 정의 CSS -->
-	<link href="/jsp/css/index.css" rel="stylesheet">
+	<link href="/jspw/css/index.css" rel="stylesheet">
 	
 	<!-- 부트스트랩 : CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 			1. http://localhost:8080/프로젝트명
 			2. http://192.168.17.70/프로젝트명
 		서버경로 절대경로 표현 [ ip주소, port 생략 ]
-			1. /프로젝트명/파일명
+			1. /프로젝트명[root:최상위경로]/파일명
 	 -->
 </head>
 <body>
@@ -28,11 +28,11 @@
 		<div class="container">
 			<div class="collapse navbar-collapse"> <!-- 감추기 -->
 				<ul class="navbar-nav h_top_menu">
-					<li class="nav-item"><a class="nav-link" href="/jsp/member/login.html">로그인</a></li>
-					<li class="nav-item"><a class="nav-link" href="/jsp/member/signup.html">회원가입</a></li>
+					<li class="nav-item"><a class="nav-link" href="/jspw/member/login.html">로그인</a></li>
+					<li class="nav-item"><a class="nav-link" href="/jspw/member/signup.html">회원가입</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">장바구니</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">마이페이지</a></li>
-					<li class="nav-item"><a class="nav-link" href="/jsp/list.html">커뮤니티</a></li>
+					<li class="nav-item"><a class="nav-link" href="/jspw/board/list.html">커뮤니티</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">문의사항</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">리뷰</a></li>
 				</ul>
@@ -42,7 +42,7 @@
 	
 	<!-- logo -->
 	<div class="container logobox">
-		<a class="title" href="/jsp/index.html">NONNON</a>
+		<a class="title" href="/jspw/index.html">NONNON</a>
 	</div>
 	
 	<!-- header bottom menu -->
@@ -72,8 +72,8 @@
 	<div id="maincarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
 		<div class="carousel-inner">
 		
-			<div class="carousel-item active"><!-- 1개의 사진 active 활성화 -->
-				<img src="img/mainimg1.jpg" class="d-block w-100">
+			<div class="carousel-item active"><!-- 1 -->
+				<img src="img/justone_mainimg1.jpg" class="d-block w-100">
 			</div>
 			
 			<div class="carousel-item"><!-- 2 -->
@@ -82,10 +82,6 @@
 			
 			<div class="carousel-item"><!-- 3 -->
 				<img src="img/justone_mainimg3.jpg" class="d-block w-100">
-			</div>
-			
-			<div class="carousel-item"><!-- 4 -->
-				<img src="img/justone_mainimg4.jpg" class="d-block w-100">
 			</div>
 		</div>
 		
@@ -97,8 +93,67 @@
 				<span class="carousel-control-next-icon"></span>
 			</button>
 		</div>
-		
 	</div>
+	
+	<div class="container">
+		<h3 class="boxtitle">Category BEST</h3>
+		<div class="itembox">
+			<div class="item">
+				<img alt="" src="img/p1.gif">
+				<div class="item_info">
+					<div class="item_title">소느아 숄카라 퍼장식 롱 패딩 코트</div>
+					<div class="item_size">FREE</div>
+					<div class="item_price">180,000</div>
+					<div>
+						<span class="item_sale">150,000</span>
+						<span class="item_discount">10%</span>
+					</div>
+				</div>
+				<div class="item_bottom">
+					<div>
+						<span class="badge rounded-pill text-bg-warning">주문폭주</span>
+						<span class="badge rounded-pill text-bg-danger">인기상품</span>
+					</div>
+					<div class="item_review">찜 54 | 리뷰 198</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	<!-- 부트스트랩 : js -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
