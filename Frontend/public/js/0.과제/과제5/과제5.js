@@ -141,7 +141,7 @@ function order(){
 		// 1. order 객체 만들기
 		let order = {												
 			no : no ,	
-			item : map배열 ,	
+			items : map배열 ,	
 			time : new Date() , // 현재 날짜&시간
 			state : true ,		// ture : 주문 / false : 주문완료
 			complete : 0 ,		// 주문 완료 전
@@ -155,6 +155,8 @@ function order(){
 	
 	cartList.splice(0)
 	cart_print();
+	orderprint();
+	salesprint();
 }
 
 // 7. 카트 내 버거 출력 [1.제품 클릭할 때마다 2.취소/주문할 때마다]
@@ -179,88 +181,211 @@ function cart_print(){
 /*----------------------------------------포스기---------------------------------------*/
 
 /*----------------------------------------버거등록--------------------------------------*/
-let 버거 = []
-
-let 버거등록버튼 = document.querySelector('.버거등록버튼')
 
 function 등록(){
-	let 버거이름 = document.querySelector('.burgername').value;
-	let 카테고리명 = document.querySelector('.burgercategory').value;
-	let 가격 = document.querySelector('.burgerprice').value;
-	let 이미지 = document.querySelector('.burgerimg').value;
-	
-	let 버거등록 = { name : 버거이름 , category : 카테고리명 , price : 가격 , img : 이미지 }
-	
-	let check = true;
+	let burger = {
+		name : document.querySelector('.burgername').value,
+		category : document.querySelector('.burgercategory').value,
+		price : parseInt( document.querySelector('.burgerprice').value ),
+		img : document.querySelector('.burgerimg').value
+	}
 	/* 카테고리명 */
-	if( 버거 == 버거등록.category ){
-		alert('존재하지 않는 카테고리명입니다.'); check = false;
-	}
+	if( !categoryList.includes( burger.category ) ){ alert('존재하지 않는 카테고리명입니다.'); return; }
 	/* 가격이 숫자인지 */
-	/*if( isNaN( 버거.price ) ){
-		alert('숫자로 입력해주세요'); check = false;
-	}*/
-	/* 둘 다 만족하지 않으면 */
-	if( check ){
-	버거.push( 버거등록 );
-	alert('등록하였습니다');
-	출력();
-	}
+	if( isNaN( burger.price ) ){ alert('숫자만 입력이 가능합니다'); return; }
+	
+	burgerList.push( burger ); alert('버거 등록 성공')
+	console.log(burger)
+	categoty_select(0);
 }
 
 /*-------------------------------------버거 등록 현황------------------------------------*/
+출력();
 function 출력(){
 	
 	let html = `<tr>
-					<th>번호</th>
-					<th>이미지</th>
-					<th>버거이름</th>
-					<th>카테고리명</th>
-					<th>가격</th>
-					<th>비고</th>
+					<th width="5%">제품번호</th>
+					<th width="10%">이미지</th>
+					<th width="30%">버거이름</th>
+					<th width="20%">카테고리명</th>
+					<th width="15%">가격</th>
+					<th width="20%">비고</th>
 				</tr>`
-				
-	for( let i = 0; i<버거.length; i++ ){
+	/* for문 */			
+	/*for( let i = 0; i<burgerList.length; i++ ){
 		
 		html += `<tr> 
 					<td> ${ i+1 } </td>
 					<td>  </td>
-					<td> ${ 버거[i].name }</td>
-					<td> ${ 버거[i].category }</td>
-					<td> ${ 버거[i].price }</td>
+					<td> ${ burger[i].name }</td>
+					<td> ${ burger[i].category }</td>
+					<td> ${ burger[i].price }</td>
 					<td>
 						<button onclick="onDelete(${i})">삭제</button>
 						<button onclick="onChange(${i})">가격수정</button>
 					</td>
 				 </tr>`
-	}
-	document.querySelector('.ordertable').innerHTML = html
+	}*/
+	/* forEach문 */
+	burgerList.forEach( (o,i) => {
+		html += `<tr> 
+					<td> ${ i+1 } </td>
+					<td> <img src="img/${o.img}" width="100%"> </td>
+					<td> ${ o.name }</td>
+					<td> ${ o.category }</td>
+					<td> ${ o.price.toLocaleString() }원</td>
+					<td>
+						<button onclick="onDelete(${i})">삭제</button>
+						<button onclick="onChange(${i})">가격수정</button>
+					</td>
+				 </tr>`
+	})
+	document.querySelector('.burgertable').innerHTML = html
 }
 /*-----------삭제----------*/
 function onDelete( i ){
-	버거.splice( i , 1 );
+	burgerList.splice( i , 1 );
 	alert('삭제하였습니다')
 	출력();
 }
 
-/*-----------수정----------*/
-let upindex = -1;
-function onChange( ){
-	
-	// 수정버튼 눌렀을 때 보여주기
-	document.querySelector('.changebox').style.display = 'block'
-	alert('가격을 수정하시겠습니까?')
-	
-	document.querySelector('.price').value = 버거[upindex].price
-
-	let 수정버튼 = document.querySelector('.수정버튼')
-	수정버튼.addEventListener( 'click' , () => {
-		
-		버거[upindex].price = document.querySelector('.upprice').value
-		
-		document.querySelector('.changebox').style.display = 'none'
-		alert('수정하였습니다')
-		출력();
-	})
+/*----------수정----------*/
+function onChange(i){
+	let newprice = prompt('새로운 금액 : ')
+	burgerList[i].price = isNaN( parseInt( newprice ) ) ? burgerList[i].price : parseInt( newprice );
+	alert('금액이 변경되었습니다')
+	출력(); categoty_select(0);
 }
-/*-----------------------------------------------------------------------------------*/
+
+/*-------------------------------------주문된 버거 현황------------------------------------*/
+orderprint();
+function orderprint(){
+	let html = `<tr>
+				<th width="5%">주문번호</th>
+				<th width="30%">버거이름</th>
+				<th width="15%">상태</th>
+				<th width="30">요청시간/완료시간</th>
+				<th width="20%">비고</th>
+			</tr>`
+			
+	orderList.forEach( (order,i) => { // 주문리스트 회전/반복
+	console.log(order)
+		order.items.forEach( (burger,j) => { // 각 주문마다 버거리스트 회전/반복
+		
+			let time = order.time.getHours()+':'+order.time.getMinutes();
+			
+			if( order.state == false ){ //주문완료 -> 주문완료시간 존재
+				time += '/' + order.time.getHours()+':'+order.time.getMinutes();
+			}
+			
+			html += `<tr>
+						<th>${order.no}</th>
+						<th>${burger.name}</th>
+						<th>${order.state ? '주문요청' : '주문완료' }</th>
+						<th>${time}</th>
+						<th>
+							${ /* 삼항연산자 */
+								order.state ?
+									'<button onclick="onComplete( ' + i + ' )">주문완료</button>' : 
+										'<span></span>' 
+							}
+						</th>
+					</tr>`
+		})
+	})
+	document.querySelector('.ordertable').innerHTML = html;
+}
+
+function onComplete(i){
+	orderList[i].state = false; /* state 상태 */
+	orderList[i].complete = new Date(); /* complete 완료시간 */
+	orderprint();
+}
+
+/*-------------------------------------------매출---------------------------------------*/
+salesprint();
+function salesprint(){
+	let html = `<tr>
+					<th width="5%">제품번호</th>
+					<th width="35%">버거이름</th>
+					<th width="20%">판매수량</th>
+					<th width="20%">매출액</th>
+					<th width="20%">순위</th>
+				</tr>`
+				
+	burgerList.forEach( (burger, i) => {
+		html += `<tr>
+					<th>${i+1}</th>
+					<th>${burger.name}</th>
+					<th>${salescount(i)}</th>
+					<th>${(salescount(i)*burger.price).toLocaleString()}원</th>
+					<th>${salesrank(i)}</th>
+				</tr>`
+	})		
+	document.querySelector('.salestable').innerHTML = html
+}
+
+// 판매 수량 찾기
+function salescount(index){
+	let count = 0 ; // 1. i번째 제품의 누적 판매수량을 체크하는 변수 
+	
+	orderList.forEach( (order,i) => {
+		order.items.forEach( (burger,j) => {
+			if( burger.name == burgerList[index].name ){ count++; }
+		})
+	})
+	
+	return count ; // * i번째 제품의 누적 판매량수 변수 반환
+}
+
+function salesrank(index){
+	
+	let rank = 1 // index번째의 버거의 순위를 저장하는 변수
+	
+	// index번 째의 버거의 순위 구하기
+	let total = salescount(index)*burgerList[index].price
+	// 모든 버거의 매출액
+	burgerList.forEach( (burger,i) => {
+		let total2 = salescount(i)*burger.price
+		if( total < total2 ){ rank++; }
+	})
+	return rank;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

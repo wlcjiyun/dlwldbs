@@ -45,57 +45,32 @@
 		
 		<div class="container">  <!-- 포스기 구현 -->
 			
-				<div class="cont">
-					<h3>버거 등록</h3>
-					<table class="burgertable">
-						<tr>
-							<td>버거이름 :</td>
-							<td><input type="text" class="burgername"></td>
-						</tr>
-						<tr>
-							<td>카테고리명 :</td>
-							<td><input type="text" class="burgercategory"></td>
-						</tr>
-						<tr>
-							<td>가격 :</td>
-							<td><input type="text" class="burgerprice"></td>
-						</tr>
-						<tr>
-							<td>이미지 :</td>
-							<td><input type="text" class="burgerimg"></td>
-						</tr>
-						<tr>
-							<td colspan="2"> <button onclick="등록()" class="버거등록버튼" type="button">등록</button> </td>
-						</tr>
-					</table>
-				</div>
+			<div class="cont">
+				<h3>버거 등록</h3>
+				<form>
+					버거이름 : <input type="text" 	class="burgername">	<br/>
+					카테고리명 : <input type="text" class="burgercategory"> <br/>
+					가격 : <input type="text" class="burgerprice"> <br/>
+					이미지 : <input type="text" class="burgerimg"> <br/>
+					<button onclick="등록()" class="burgerbtn" type="button"> 등록 </button>
+				</form>
+			</div>
 				
-				<div class="cont">
-					<h3>등록된 버거 현황</h3>
-					<table class="ordertable" border="1"></table>
-					
-					<div class="changebox">
-						<h3>가격 수정하기</h3>
-						<table class="changetable">
-							<tr>
-								<td>가격 :</td>
-								<td><input type="text" class="upprice"></td>
-							</tr>
-							<tr>
-								<td colspan="2"> <button class="수정버튼" type="button">수정하기</button> </td>
-							</tr>
-						</table>
-					</div>
-				</div>
+			<div class="cont">
+				<h3>등록된 버거 현황</h3>
+				<table class="burgertable" border="1"></table>
+			</div>
 				
-				<div class="cont">
-					<h3>주문된 버거 현황</h3>
-				</div>
+			<div class="cont">
+				<h3>주문된 버거 현황</h3>
+				<table class="ordertable" border="1"></table>
+			</div>
 				
-				<div class="cont">
-					<h3>매출</h3>
-				</div>
-				
+			<div class="cont">
+				<h3>매출</h3>
+				<table class="salestable" border="1"></table>
+			</div> 
+			
 		</div>
 		
 	</div> <!-- wrap end  -->
