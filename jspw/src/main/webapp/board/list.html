@@ -8,18 +8,11 @@
 	
 	<!-- 사용자 정의 CSS -->
 	<link href="/jspw/css/index.css" rel="stylesheet">
+	<link href="../css/board/list.css" rel="stylesheet">
 	
 	<!-- 부트스트랩 : CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	
-	<!-- 헤더에서 사용되는 경로 : 절대경로(페이지마다 헤더를 사용하는데 페이지맞다 상대경로가 다르기 때문 -->
-	<!-- 
-		서버경로
-			1. http://localhost:8080/프로젝트명
-			2. http://192.168.17.70/프로젝트명
-		서버경로 절대경로 표현 [ ip주소, port 생략 ]
-			1. /프로젝트명/파일명
-	 -->
+
 </head>
 <body>
 	
@@ -42,7 +35,7 @@
 	
 	<!-- logo -->
 	<div class="container logobox">
-		<a class="title" href="/jspw/index.html">NONNON</a>
+		<a class="title" href="/jspw/index.html">JUSTONE</a>
 	</div>
 	
 	<!-- header bottom menu -->
@@ -58,20 +51,73 @@
 				<ul class="navbar-nav h_bottom_menu">
 					<li class="nav-item"><a class="nav-link" href="#">BEST</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">NEW10%</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">MADE.N</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">RING</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">BARCELET</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">NECKLACE</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">EARRING</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">MADE.J</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">OUTER</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">TOP</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">PANTS</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">SHOES</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	
-	커뮤니티페이지
+	<div class="container">
+		<h3 class="boxtitle">커뮤니티</h3>
+		<table class="table text-center">
+			<thead>
+				<tr>
+					<th width="5%">번호</th><th width="50%">제목</th>
+					<th width="15%">작성자</th><th width="15%">작성일</th>
+					<th width="5%">조회수</th><th width="5%">좋아요</th>
+					<th width="5%">싫어요</th>
+				</tr>
+			</thead>
+			<tbody class="boradList"><!-- JS실행 --></tbody>
+		</table>
+		
+		<!-- 페이지네이션 -->
+		<div class="row"><!-- 하단 -->
+			<div class="col-md-4 offset-md-5"><!-- 페이지네이션 -->
+				<ul class="pagination">
+				    <li class="page-item"><a class="page-link" href="#"> < </a></li>
+				    <li class="page-item"><a class="page-link" href="#"> 1 </a></li>
+				    <li class="page-item"><a class="page-link" href="#"> 2 </a></li>
+				    <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+				    <li class="page-item"><a class="page-link" href="#"> 4 </a></li>
+				    <li class="page-item"><a class="page-link" href="#"> 5 </a></li>
+				    <li class="page-item"><a class="page-link" href="#"> > </a></li>
+				 </ul>
+			</div>
+			<div class="col-md-2 offset-md-1"><!-- 글쓰기 버튼 -->
+				<a href="write.html"><button class="form-control" type="button">글쓰기</button></a>
+			</div>
+		</div>
+		
+		<div class="row">						<!-- 여백제거 -->
+			<div class="col-md-5 offset-md-4 row g-0">
+				<div class="col-md-3">
+					<select class="form-select keyword">
+						<option> 키워드 </option>
+						<option value="no"> 번호 </option>
+						<option value="title"> 제목 </option>
+						<option value="writer"> 작성자 </option>
+					</select>
+				</div>
+				<div class="col-md-6">
+					<input class="form-control key" type="text" placeholder="검색어">
+				</div>
+				<div class="col-md-3">
+					<button class="form-control searchbtn" type="button">검색</button>
+				</div>
+			</div>
+		</div>
+		
+	</div>
 	
 	<!-- 부트스트랩 : js -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-	
+	<!-- 사용자 정의 JS -->
+	<script src="js/index.js"></script>
+	<script src="../js/list.js"></script>
 </body>
 </html>

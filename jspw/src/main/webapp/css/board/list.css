@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+table tr td{
+	/* 구역 사이즈보다 내용이 크면 자동 줄바꿈 처리 */
+	white-space: nowrap; /* 줄바꿈 해제 */
+	overflow: hidden; /* 넘은 내용물 숨기기 */
+	/* overflow: scroll; 넘은 내용물 스크롤 */
+	text-overflow: ellipsis; /* 넘친 텍스트를 ...으로 표현 */
+	word-break: break-all;
+	max-width: 100px; /* 반응형일 경우 최대 사이즈 */
+}
+
+
+
+
+
+
+
