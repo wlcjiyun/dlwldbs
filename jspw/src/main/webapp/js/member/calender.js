@@ -17,10 +17,11 @@
 */
 /* DB */
 	// 일정목록
-let content = [
-	{date: '20230101' , content: '새해맞이 SALE'} ,
+let contents = [
+	{date: '20230102' , content: '새해맞이 SALE'} ,
 	{date: '20230103' , content: '새해 EVENT'} ,
-	{date: '20230101' , content: '신상 소식 업데이트'} 
+	{date: '20230111' , content: '니트 재입고'} ,
+	{date: '20230105' , content: '신상 소식 업데이트'} 
 ]
 
 /*----------------------------------------------------------------------------*/
@@ -72,14 +73,51 @@ function cal_print(){
 	document.querySelector('.cal_day').innerHTML = html;
 }
 
-// 6. 모달 열기
-function openModal( fdate ){ alert( fdate + '의 모달 열기') }
+// 10. 모달에서 특정 일정 삭제
+document.querySelector('.modal_write').addEventListener( 'click' , (e) => {
+	contents.splice(contents);
+})
+// 9. 모달에 클릭된 날짜에 모든 일정 출력
+//document.querySelector('.')
+
+// 8. 등록 버튼 클릭했을 때 함수
+document.querySelector('.modal_write').addEventListener( 'click' , ( e ) => {
+	// 8-1. 입력받은 내용을 가져온다
+	let content = {
+		date : document.querySelector('.modal_date').innerHTML , 
+		content : document.querySelector('.modal_input').value
+	}; //console.log(content)
+	// 8-2. 유효성 검사 생략
+	// 8-3. 배열 저장
+	contents.push( content );
+	// 8-4. 화면 업데이트
+		// - 입력된 데이터 초기화
+		document.querySelector('.modal_input').value = ''
+		// - 모달 닫기
+		document.querySelector('.modal_wrap').style.display = 'none';
+		// - 캘린더 랜더링
+		cal_print();
+})
+
+// 7. 모달 닫기 함수 
+document.querySelector('.modal_close').addEventListener('click', (e)=>{
+	// 7-1. 모달 배경 구역 css 변경해서 모달 숨기기
+	document.querySelector('.modal_wrap').style.display = 'none';
+})
+
+// 6. 모달 열기 함수 
+function openModal( fdate ){
+	// 6-1. 모달 배경 구역 css 변경해서 모달 보이기 
+	document.querySelector('.modal_wrap').style.display ='flex';
+	// 6-2. 모달에 선택된 날짜 표시하기
+	document.querySelector('.modal_date').innerHTML = fdate;
+}
 
 // 5. 일정 출력 함수
 function content_print( fdate ){
 	// 5-1. 인수로 전달된 날짜와 동일한 일정 날짜 찾기
 	let html = ``
-	content.forEach( (o) => { // 일정목록 반복문
+	contents.forEach( (o) => { // 일정목록 반복문
 		// 만약에 인수로 전달된 날짜와 일정목록에서 동일한 날짜가 존재하면
 		if( fdate == o.date ){
 			html += `<div class="content">${ o.content }</div>`
