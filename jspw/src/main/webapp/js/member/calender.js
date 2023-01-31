@@ -18,9 +18,9 @@
 /* DB */
 	// 일정목록
 let content = [
-	{date: '20230101' , content: '새해맞이 여행'} ,
-	{date: '20230103' , content: '동창 만나기'} ,
-	{date: '20230101' , content: '쇼핑 100만원 '} 
+	{date: '20230101' , content: '새해맞이 SALE'} ,
+	{date: '20230103' , content: '새해 EVENT'} ,
+	{date: '20230101' , content: '신상 소식 업데이트'} 
 ]
 
 /*----------------------------------------------------------------------------*/
@@ -63,12 +63,17 @@ function cal_print(){
 		//console.log(date); 
 		//console.log( date_format(date) ); 
 		
-		html += `<div class="day">${ day }${ content_print( fdate ) }</div>`
+		html += `<div class="day" onclick="openModal(${ fdate })">
+					${ day }${ content_print( fdate ) }
+				</div>`
 	}
 	
 	// 2-4. html 마크업에 출력
 	document.querySelector('.cal_day').innerHTML = html;
 }
+
+// 6. 모달 열기
+function openModal( fdate ){ alert( fdate + '의 모달 열기') }
 
 // 5. 일정 출력 함수
 function content_print( fdate ){
