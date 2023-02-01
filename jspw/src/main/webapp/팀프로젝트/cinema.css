@@ -20,10 +20,6 @@ a{
 	width: 100%;
 	font-size: 15px;
 }
-.topevent:hover{
-	color: #ff0080;
-}
-
 /*---------------로고---------------*/
 .logo h1{
 	font-family: 'LINESeedKR-Bd';
@@ -31,4 +27,61 @@ a{
 	color: #ff0080;
 	text-align: center;
 	padding: 15px 0px;
+}
+/*---------------메인 메뉴---------------*/
+.mainmenu{
+	display: flex;
+	justify-content: flex-start;
+	padding: 0px 10px;
+	width: 100%;
+	font-size: 24px;
+}
+.line{ border-bottom: 2px solid #ff0080; }
+.nav-item{ margin: 0px 10px; }
+/*---------------검색---------------*/
+.searchbox{
+	padding: 4px;
+}
+.searchbtn{
+	background-color: #ff0080;
+	border: none;
+	padding: 7px 12px;
+}
+/*---------------포스터---------------*/
+.itembox{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.item{
+	width: 20%;
+    margin: 2%;
+}
+
+.img{ 
+	width: 100%; 
+	transition: all 0.3s ease-in-out;
+}
+.name{
+	padding: 15px 0px;
+	font-size: 22px;
+	width: 100%;
+	text-align: center;
+}
+/* 반응형 제작 */
+/* 최대 가로사이즈500px 이하 */
+@media( max-width: 500px ){
+	.item{ 
+		width: 45% !important; 
+		margin: 2% !important; 
+	}
+	.name{ font-size: 18px;}
+	.line{ border: none; }
+	.search{ display: none;}
+	.carousel-inner{ display: none;}
+	.logo h1{
+		font-size: 30px;
+		padding: 0px 35%;
+	}
+	
 }
