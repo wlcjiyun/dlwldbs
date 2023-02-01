@@ -1,0 +1,34 @@
+@charset "EUC-KR";
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+*{
+	margin: 0; padding: 0;
+	color: #ffffff;
+}
+a{
+	text-decoration: none;
+	color: #ffffff !important;
+}
+/*---------------헤더 메뉴---------------*/
+.topmenu{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	font-size: 15px;
+}
+.topevent:hover{
+	color: #ff0080;
+}
+
+/*---------------로고---------------*/
+.logo h1{
+	font-family: 'LINESeedKR-Bd';
+	font-size: 80px;
+	color: #ff0080;
+	text-align: center;
+	padding: 15px 0px;
+}
