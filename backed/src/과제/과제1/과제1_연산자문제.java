@@ -123,16 +123,18 @@ public class 과제1_연산자문제 {
 		 */
 		
 		/*--문제14---------------------------------------------------------*/
-		System.out.println("문제14: 키와 몸무게를 입력받아 BMI 출력하기");
-		System.out.println("키 : "); int 키 = scanner.nextInt();
-		System.out.println("몸무게 : "); int 몸무게 = scanner.nextInt();
-		System.out.println("MBI : " + 몸무게/(키/100)*(키/100));
+		 /*
+		 * System.out.println("문제14: 키와 몸무게를 입력받아 BMI 출력하기");
+		 * System.out.println("키 : "); int 키 = scanner.nextInt();
+		 * System.out.println("몸무게 : "); int 몸무게 = scanner.nextInt();
+		 * System.out.println("MBI : " + 몸무게/(키/100)*(키/100));
+		 */
 		
+		/*--문제15---------------------------------------------------------*/
+		System.out.println("문제15: inch 를 입력받아 cm 로 변환하기");
 		
-		
-		
-		
-		
+		/*--문제16---------------------------------------------------------*/
+		System.out.println("문제16: 중간고사, 기말고사, 수행평가를 입력받아 반영비율별 계산하여 소수 둘째자리까지 점수 출력하시오");
 		
 		
 		
