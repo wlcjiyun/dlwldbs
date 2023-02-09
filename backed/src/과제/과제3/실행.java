@@ -3,7 +3,7 @@ package 과제.과제3;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Day08.Ex4.Member;
+import Day07.Ex4.Member;
 
 public class 실행 { // class S
 	public static void main(String[] args) { // main S

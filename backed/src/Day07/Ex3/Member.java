@@ -1,4 +1,4 @@
-package Day08.Ex3;
+package Day07.Ex3;
 
 public class Member {
 	// 1. 필드
