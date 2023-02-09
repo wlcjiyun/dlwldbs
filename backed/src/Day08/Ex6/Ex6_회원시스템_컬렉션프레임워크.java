@@ -3,8 +3,6 @@ package Day08.Ex6;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Day08.Ex4.Member;
-
 public class Ex6_회원시스템_컬렉션프레임워크 {
 	public static void main(String[] args) {
 		
@@ -17,9 +15,7 @@ public class Ex6_회원시스템_컬렉션프레임워크 {
 			// 리스트명.size() : 리스트내 요소들의 개수	[ 가변길이 ] 
 			System.out.println("번호\t회원명\t전화번호");
 			for( int i = 0 ; i<memberList.size() ; i++ ) {
-				System.out.println(i + "\t" + 
-								memberList.get(i).name +"\t"+
-								memberList.get(i).phone );
+				System.out.println(i + "\t" + memberList.get(i).name +"\t"+ memberList.get(i).phone );
 			}
 			System.out.println(" 1.회원등록 2.회원삭제 : ");
 			int ch = scanner.nextInt();
