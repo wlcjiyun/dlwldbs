@@ -4,5 +4,6 @@ public class book {
 	// 1. 필드
 		String name;
 		String genre;
-		boolean state; 
+		boolean state;
+		Member member;
 }
