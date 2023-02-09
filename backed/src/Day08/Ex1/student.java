@@ -1,4 +1,4 @@
-package Day07.Ex1;
+package Day08.Ex1;
 
 public class student {
 	// 필드 , 생성자 , 메소드 

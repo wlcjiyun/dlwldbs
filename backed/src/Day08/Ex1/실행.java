@@ -1,4 +1,4 @@
-package Day07.Ex1;
+package Day08.Ex1;
 
 public class 실행 {
 	public static void main(String[] args) {

@@ -1,6 +1,6 @@
 // 클래스는 두 가지의 사용 목적이 있다 
 	// 1. 설계도
-package Day07.Ex2;
+package Day08.Ex2;
 
 public class car {
 	
