@@ -25,22 +25,21 @@ public class Mcontroller { // class S
 	// 2. 로그인 로직
 	public int login( String id , String pwd ) { // login S
 		
-		// 모든 멤버들 중 동일한 아이디/비밀번호 찾기
-		for(int i = 0; i<memberDb.size(); i++) { // for S
-			
-			// 1. 만약 i번 째 회원의 아이디와 입력받은 아이디와 같으면
-			if( memberDb.get(i).id.equals(id)) { // if S
+		// * 모든 멤버들중 동일한 아이디/비밀번호 찾기 
+		for( int i = 0 ; i<memberDb.size() ; i++ ) { // for S
+			// 1.만약에 i번째 회원의 아이디와 입력받은 아이디와 같으면
+			if( memberDb.get(i).id.equals( id ) ) { // if S
 				
-				// 2. 만약에 i번 째 비밀번호와 입력받은 비밀번호가 같으면
-				if(memberDb.get(i).pwd.equals(pwd)) { 
-					return i; // 회원 번호(인덱스) 반환
+				// 2. 만약에 i번째 회원의 비밀번호와 입력받은 비밀번호가 같으면
+				if( memberDb.get(i).pwd.equals(pwd) ) {
+					return i; // 회원 번호[인덱스] 반환 
 				}else {
 					return -1; // 비밀번호가 틀림
 				}
 				
-			} // if E
-		} // for E
-		return -2; // 아이디가 없음
+			} // if E 
+		} // for E 
+		return -2; // for문 다 방문했지만 동일한 아이디 없었다.
 	} // login E
 	
 	// 3. 아이디 찾기 로직
