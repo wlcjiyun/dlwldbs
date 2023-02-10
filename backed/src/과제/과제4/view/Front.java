@@ -1,9 +1,12 @@
 package 과제.과제4.view;
 // * 입출력
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import 과제.과제3.book;
 import 과제.과제4.controller.Mcontroller;
+import 과제.과제4.model.Board;
 import 과제.과제4.model.Member;
 
 public class Front { // class S
@@ -17,7 +20,7 @@ public class Front { // class S
 			System.out.println("1.회원가입 2.로그인 3.아이디찾기 4.비밀번호찾기");
 			int ch = scanner.nextInt();
 			if(ch==1) { signup(); }
-			else if(ch==2) { iogin(); }
+			else if(ch==2) { login(); }
 			else if(ch==3) { findId(); }
 			else if(ch==4) { findPassword(); }
 			else {}
@@ -41,14 +44,24 @@ public class Front { // class S
 	} // signup E
 	
 	// 3. 로그인 페이지
-	void iogin() {
+	void login() {
 		System.out.print("아이디:");	String id = scanner.next();
 		System.out.print("비밀번호:");	String pwd = scanner.next();
 		
 		int result = mc.login(id, pwd);
 		if( result >= 0 ) { // 0~숫자 -> 로그인 성공한 회원의 번호
 			System.out.println("[알림] 로그인 성공 ");
-			// 게시판으로 이동
+			System.out.println("--------------------커뮤니티-------------------");
+			System.out.println("번호\t조회수\t작성자\t제목");
+			while(true) {
+				System.out.println("1.글쓰기 2.글보기 3.로그아웃");
+				int ch = scanner.nextInt();
+				if(ch==1) { write(); }
+				else if(ch==2) { show(); } 
+				else if(ch==3) { index(); }
+				else {}
+			}
+			
 		}else if( result == -1 ) {	// -1 : 비밀번호 틀림 
 			System.out.println("[알림] 비밀번호가 다릅니다.");
 		}else if( result == -2 ) {	// -2 : 아이디 없다.
@@ -60,26 +73,49 @@ public class Front { // class S
 	void findId() {
 		System.out.println("이름 : ");		String name = scanner.next();
 		System.out.println("전화번호 : ");		String phone = scanner.next();
-		Mcontroller mc = new Mcontroller();
-		int result = mc.findId(name,phone);
-		if( result >= 0) {
-			System.out.println("[아이디 찾기 성공]");
-		}else if( result == -3 ) {
-			System.out.println("[알림] 이름 혹은 번호가 다릅니다");
+		
+		String result = mc.findId(name, phone);
+		if(result == null) {
+			System.out.println("일치하는 회원 정보가 없습니다");
+		}else {
+			System.out.println("회원님의 아이디는 : " + result);
 		}
+		
 	}
 	
 	// 5. 비밀번호 찾기 페이지
 	void findPassword() {
 		System.out.println("이름 : ");		String name = scanner.next();
 		System.out.println("아이디 : ");		String id = scanner.next();
-		Mcontroller mc = new Mcontroller();
-		int result = mc.findId(name,id);
-		if( result >= 0) {
-			System.out.println("[비밀번호 찾기 성공]");
-		}else if( result == -4 ) {
-			System.out.println("[알림] 이름 혹은 아이디가 다릅니다");
+
+		String result = mc.findId(name, id);
+		if(result == null) {
+			System.out.println("일치하는 회원 정보가 없습니다");
+		}else {
+			System.out.println("회원님의 비밀번호는 : " + result);
 		}
+	}
+	
+	// 6. 글쓰기
+	void write() {
+		System.out.println("--------------------글 쓰기-------------------");
+		System.out.println("제목 : ");		String title = scanner.next();
+		System.out.println("내용 : ");		String content = scanner.next();
+		System.out.println("작성자 : ");		String writer = scanner.next();
+		
+		Board board = new Board();
+		title = title;
+		content = content;
+		writer = writer;
+	}
+	
+	// 7. 글 출력
+	void print() {}
+	
+	// 8. 글보기
+	void show() {
+		System.out.println("게시물 번호 : ");
+		
 	}
 	
 } // class E

@@ -2,11 +2,13 @@ package 과제.과제4.model;
 
 public class Board {
 	// 필드
-	String write;
-	String show;
-	String writer;
-	String title;
+	public String write;
+	public String show;
+	public String writer;
+	public String title;
+	public String content;
 	// 생성자
+	public Board(){}
 	public Board(String write, String show, String writer, String title) {
 		super();
 		this.write = write;

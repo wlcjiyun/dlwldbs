@@ -43,30 +43,25 @@ public class Mcontroller { // class S
 	} // login E
 	
 	// 3. 아이디 찾기 로직
-	public int findId( String name , String phone ) {
-		for(int i = 0; i<memberDb.size(); i++) {
-			if(memberDb.get(i).equals(name)) {
-				if(memberDb.get(i).equals(phone)) {
-					return i;
-				}else {
-					return -3;
-				}
-			}
+	public String findId( String name , String phone ) {
+		
+		// 입력받은 이름과 전화번호와 일치한 회원찾기
+		// 향상된 for문( 타입 반복변수명 : 리스트/배열 ) { }
+		for(Member m : memberDb) {
+			if(m.name.equals(name) && m.phone.equals(phone)) { return m.id; }
 		}
-		return -4;
+		return null;
 	}
+	
 	// 4. 비밀번호 찾기 로직
-	public int findPassword( String name , String id ) {
-		for(int i = 0; i<memberDb.size(); i++) {
-			if(memberDb.get(i).equals(name)) {
-				if(memberDb.get(i).equals(id)) {
-					return i;
-				}else {
-					return -3;
-				}
-			}
+	public String findPassword( String name , String id ) {
+		
+		// 입력받은 이름과 전화번호와 일치한 회원찾기
+		// 향상된 for문( 타입 반복변수명 : 리스트/배열 ) { }
+		for(Member m : memberDb) {
+			if(m.name.equals(name) && m.phone.equals(id)) { return m.pwd; }
 		}
-		return 0;
+		return null;
 	}
 } // class E
 
