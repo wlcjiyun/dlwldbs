@@ -7,7 +7,7 @@ public class Board {
 	public String writer;
 	public String title;
 	public String content;
-	public String like;
+	public String view;
 	
 	// 생성자
 	public Board() {}
@@ -18,7 +18,7 @@ public class Board {
 		this.writer = writer;
 		this.title = title;
 		this.content = content;
-		this.like = like;
+		this.view = view;
 	}
 	
 	// 메소드

@@ -4,7 +4,6 @@ package 과제.과제4.view;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import 과제.과제3.book;
 import 과제.과제4.controller.Mcontroller;
 import 과제.과제4.model.Board;
 
@@ -102,21 +101,23 @@ public class Front { // class S
 		System.out.println("--------------------글 쓰기-------------------");
 		System.out.println("제목 : ");		String title = scanner.next();
 		System.out.println("내용 : ");		String content = scanner.next();
-		System.out.println("작성자 : ");		String writer = scanner.next();
+		
+		int result = mc.login(title, content);
 		for(int i = 0; i<boardList.size(); i++) {
 			System.out.println( i + "\t" + 
-					boardList.get(i).like + "\t" + 
+					boardList.get(i).view + "\t" + 
 					boardList.get(i).writer + "\t" + 
 					boardList.get(i).title );
+			if(result == 0) {
+				System.out.println("[알림] 게시글을 등록하였습니다");
+			}else {}
 		}
-		
 		board.title = title;
 		board.content = content;
-		board.writer = writer;
 		boardList.add(board);
 		
 	}
-	
+
 	// 7. 글보기
 	void show() {
 		System.out.println("열람할 게시물 번호 : ");
