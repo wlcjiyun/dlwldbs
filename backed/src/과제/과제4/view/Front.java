@@ -96,7 +96,7 @@ public class Front { // class S
 		}
 	}
 	
-	// 6. 글쓰기
+	// 6. 글쓰기 아앜 짜증나
 	void write() {
 		System.out.println("--------------------글 쓰기-------------------");
 		System.out.println("제목 : ");		String title = scanner.next();
@@ -115,9 +115,6 @@ public class Front { // class S
 		boardList.add(board);
 		
 	}
-	
-	// 7. 글 출력
-	void print() {}
 	
 	// 8. 글보기
 	void show() {
