@@ -13,6 +13,7 @@ public class Front { // class S
 	Scanner scanner = new Scanner(System.in);
 	Mcontroller mc = new Mcontroller();
 	ArrayList<Board> boardList = new ArrayList<>();
+	Board board = new Board();
 	
 	// 1. 메인페이지
 	public void index() { // index S
@@ -96,7 +97,7 @@ public class Front { // class S
 		}
 	}
 	
-	// 6. 글쓰기 아앜 짜증나
+	// 6. 글쓰기 아앜 짜증나 전혀 모르겠잖아?
 	void write() {
 		System.out.println("--------------------글 쓰기-------------------");
 		System.out.println("제목 : ");		String title = scanner.next();
@@ -108,7 +109,7 @@ public class Front { // class S
 					boardList.get(i).writer + "\t" + 
 					boardList.get(i).title );
 		}
-		Board board = new Board();
+		
 		board.title = title;
 		board.content = content;
 		board.writer = writer;
@@ -116,7 +117,7 @@ public class Front { // class S
 		
 	}
 	
-	// 8. 글보기
+	// 7. 글보기
 	void show() {
 		System.out.println("열람할 게시물 번호 : ");
 		
