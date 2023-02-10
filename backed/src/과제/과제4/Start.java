@@ -1,5 +1,7 @@
 package 과제.과제4;
 
+import 과제.과제4.view.Front;
+
 /*
 	MVC : 디자인 패턴( 관점별 파일 구분 )
 		M : model		데이터		DB
@@ -10,6 +12,9 @@ package 과제.과제4;
 
 public class Start {
 	public static void main(String[] args) {
+		
+		Front front = new Front();
+		front.index();
 		
 	}
 }
