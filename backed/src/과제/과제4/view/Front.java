@@ -4,6 +4,7 @@ package 과제.과제4.view;
 import java.util.Scanner;
 
 import 과제.과제4.controller.Mcontroller;
+import 과제.과제4.model.Member;
 
 public class Front { // class S
 	
@@ -44,11 +45,13 @@ public class Front { // class S
 		System.out.println("비밀번호 : "); 		String pwd = scanner.next();
 		
 		Mcontroller mc = new Mcontroller();
-		int result = mc.login(id,pwd);
-		if( result == 1) {
-			System.out.println("[로그인 실패]");
-		}else if( result == 0 ) {
-			System.out.println("[로그인 성공]");
+		int result = mc.iogin(id,pwd);
+		if( result > 0 ) {
+			// 게시판으로 이동
+		}else if( result == -1 ) {
+			System.out.println("[알림] 비밀번호가 다릅니다");
+		}else if( result == -2 ) {
+			System.out.println("[알림] 없는 회원 입니다");
 		}
 	}
 	

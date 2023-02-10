@@ -23,15 +23,24 @@ public class Mcontroller { // class S
 	} // signup E
 	
 	// 2. 로그인 로직
-	public int login(String id, String pwd) { // login S
-			
-		if(!(id).equals(id)) { return 1; }
-		Member member = new Member();
-		memberDb.add(member);
-		return 0;
+	public int iogin( String id , String pwd ) {
 		
-		} // login E
-	
+		// 모든 멤버들 중 동일한 아이디/비밀번호 찾기
+		for(int i = 0; i<memberDb.size(); i++) {
+			
+			// 1. 만약 i번 째 회원의 아이디와 입력받은 아이디와 같으면
+			if( memberDb.get(i).id.equals(id)) {
+				
+				// 2. 만약에 i번 째 비밀번호와 입력받은 비밀번호가 같으면
+				if(memberDb.get(i).pwd.equals(pwd)) {
+					return i; // 회원 번호(인덱스) 반환
+				}else {
+					return -1; // 비밀번호가 틀림
+				}
+			}
+		}
+		return -2;
+	}
 	// 3. 아이디 찾기 로직
 	
 	// 4. 비밀번호 찾기 로직
