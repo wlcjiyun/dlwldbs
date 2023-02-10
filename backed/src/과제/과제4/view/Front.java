@@ -1,14 +1,18 @@
 package 과제.과제4.view;
 // * 입출력
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import 과제.과제3.book;
 import 과제.과제4.controller.Mcontroller;
+import 과제.과제4.model.Board;
 
 public class Front { // class S
 	
 	Scanner scanner = new Scanner(System.in);
 	Mcontroller mc = new Mcontroller();
+	ArrayList<Board> boardList = new ArrayList<>();
 	
 	// 1. 메인페이지
 	public void index() { // index S
@@ -72,9 +76,9 @@ public class Front { // class S
 		
 		String result = mc.findId(name, phone);
 		if(result == null) {
-			System.out.println("일치하는 회원 정보가 없습니다");
+			System.out.println("[알림] 일치하는 회원 정보가 없습니다");
 		}else {
-			System.out.println("회원님의 아이디는 : " + result);
+			System.out.println("[알림] 회원님의 아이디는 : " + result);
 		}
 		
 	}
@@ -86,9 +90,9 @@ public class Front { // class S
 
 		String result = mc.findId(name, id);
 		if(result == null) {
-			System.out.println("일치하는 회원 정보가 없습니다");
+			System.out.println("[알림] 일치하는 회원 정보가 없습니다");
 		}else {
-			System.out.println("회원님의 비밀번호는 : " + result);
+			System.out.println("[알림] 회원님의 비밀번호는 : " + result);
 		}
 	}
 	
@@ -98,6 +102,18 @@ public class Front { // class S
 		System.out.println("제목 : ");		String title = scanner.next();
 		System.out.println("내용 : ");		String content = scanner.next();
 		System.out.println("작성자 : ");		String writer = scanner.next();
+		for(int i = 0; i<boardList.size(); i++) {
+			System.out.println( i + "\t" + 
+					boardList.get(i).like + "\t" + 
+					boardList.get(i).writer + "\t" + 
+					boardList.get(i).title );
+		}
+		Board board = new Board();
+		board.title = title;
+		board.content = content;
+		board.writer = writer;
+		boardList.add(board);
+		
 	}
 	
 	// 7. 글 출력
@@ -105,7 +121,7 @@ public class Front { // class S
 	
 	// 8. 글보기
 	void show() {
-		System.out.println("게시물 번호 : ");
+		System.out.println("열람할 게시물 번호 : ");
 		
 	}
 	
