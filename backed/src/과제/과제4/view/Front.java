@@ -45,8 +45,9 @@ public class Front { // class S
 		System.out.println("비밀번호 : "); 		String pwd = scanner.next();
 		
 		Mcontroller mc = new Mcontroller();
-		int result = mc.iogin(id,pwd);
-		if( result > 0 ) {
+		int result = mc.login(id,pwd);
+		if( result >= 0 ) { // 0~숫자 -> 로그인 성공한 회원 번호
+			System.out.println("[알림] 로그인 성공");
 			// 게시판으로 이동
 		}else if( result == -1 ) {
 			System.out.println("[알림] 비밀번호가 다릅니다");
@@ -56,9 +57,29 @@ public class Front { // class S
 	}
 	
 	// 4. 아이디 찾기 페이지
-	void findId() {}
+	void findId() {
+		System.out.println("이름 : ");		String name = scanner.next();
+		System.out.println("전화번호 : ");		String phone = scanner.next();
+		Mcontroller mc = new Mcontroller();
+		int result = mc.findId(name,phone);
+		if( result >= 0) {
+			System.out.println("[아이디 찾기 성공]");
+		}else if( result == -3 ) {
+			System.out.println("[알림] 이름 혹은 번호가 다릅니다");
+		}
+	}
 	
 	// 5. 비밀번호 찾기 페이지
-	void findPassword() {}
+	void findPassword() {
+		System.out.println("이름 : ");		String name = scanner.next();
+		System.out.println("아이디 : ");		String id = scanner.next();
+		Mcontroller mc = new Mcontroller();
+		int result = mc.findId(name,id);
+		if( result >= 0) {
+			System.out.println("[비밀번호 찾기 성공]");
+		}else if( result == -4 ) {
+			System.out.println("[알림] 이름 혹은 아이디가 다릅니다");
+		}
+	}
 	
 } // class E
