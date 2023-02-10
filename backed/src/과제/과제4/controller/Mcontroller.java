@@ -43,26 +43,25 @@ public class Mcontroller { // class S
 	} // login E
 	
 	// 3. 아이디 찾기 로직
-	public String findId( String name , String phone ) {
+	public String findId( String name , String phone ) { // findId S
 		
 		// 입력받은 이름과 전화번호와 일치한 회원찾기
 		// 향상된 for문( 타입 반복변수명 : 리스트/배열 ) { }
-		for(Member m : memberDb) {
+		for(Member m : memberDb) { // for S
 			if(m.name.equals(name) && m.phone.equals(phone)) { return m.id; }
-		}
+		} // for E
 		return null;
-	}
+	} // findId E
 	
 	// 4. 비밀번호 찾기 로직
-	public String findPassword( String name , String id ) {
+	public String findPassword( String name , String id ) { // findPassword S
 		
-		// 입력받은 이름과 전화번호와 일치한 회원찾기
-		// 향상된 for문( 타입 반복변수명 : 리스트/배열 ) { }
-		for(Member m : memberDb) {
+		for(Member m : memberDb) { // for S
 			if(m.name.equals(name) && m.phone.equals(id)) { return m.pwd; }
-		}
+		} // for E
 		return null;
-	}
+	} // findPassword E
+	
 } // class E
 
 /* 헿 난 바본가봐~ 아무것도 모르겠다~ */

@@ -1,13 +1,9 @@
 package 과제.과제4.view;
 // * 입출력
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import 과제.과제3.book;
 import 과제.과제4.controller.Mcontroller;
-import 과제.과제4.model.Board;
-import 과제.과제4.model.Member;
 
 public class Front { // class S
 	
@@ -102,11 +98,6 @@ public class Front { // class S
 		System.out.println("제목 : ");		String title = scanner.next();
 		System.out.println("내용 : ");		String content = scanner.next();
 		System.out.println("작성자 : ");		String writer = scanner.next();
-		
-		Board board = new Board();
-		title = title;
-		content = content;
-		writer = writer;
 	}
 	
 	// 7. 글 출력
