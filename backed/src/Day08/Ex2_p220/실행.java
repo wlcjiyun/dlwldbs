@@ -1,4 +1,4 @@
-package Day08.Ex1_p220;
+package Day08.Ex2_p220;
 
 public class 실행 { // class S
 	public static void main(String[] args) { // main S

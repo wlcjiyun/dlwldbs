@@ -1,4 +1,4 @@
-package Day08.Ex1_p220;
+package Day08.Ex2_p220;
 
 public class Korean {
 	// 필드
