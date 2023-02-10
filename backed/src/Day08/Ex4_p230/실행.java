@@ -8,8 +8,8 @@ public class 실행 { // class S
 		
 		// * 2. 객체를 통한 멤버 함수 호출
 		// 1번
-		myCalc.powerOn(/* 함수가 들어가는 곳 : 공백*/);
-		
+		myCalc.powerOn(/* 함수가 들어가는 곳 : 공백 */);
+	
 		// 3. 3번
 		int result1 = myCalc.plus( 3 , 5 );
 		System.out.println(result1);
