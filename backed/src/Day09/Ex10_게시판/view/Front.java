@@ -23,9 +23,10 @@ public class Front {
 		public void index() {
 			while( true ) {
 				print_page(); // 출력함수 
-				System.out.print(" 1.쓰기 : ");
+				System.out.print(" 1.쓰기 2.게시물보기 ");
 				int ch = scanner.nextInt(); // 지역변수 
 				if( ch == 1 ) { write_page(); } // 쓰기함수
+				if( ch == 2 ) { view_page(); } // 상세 페이지 보기 함수
 			}
 		}
 		
@@ -57,12 +58,37 @@ public class Front {
 		
 		// 4. 출력 페이지 함수 
 		private void print_page() {
-			
+			// 1. 싱글톤 객체를 통해 boardDb 리스트 객체 반환 받기
 			ArrayList<Board> result = BController.getInstance().print();
-			
+			// 2. 반환된 리스트 객체 수 만큼 반복
 			System.out.println("번호\t제목\t작성자\t조회수\t작성일");
 			for( int i = 0 ; i< result.size() ; i++ ) {
+				// 3. 리스트 내 i번 째 객체물 출력
 				System.out.println( i+"\t" + result.get(i).toString() );
 			}
 		}
+		
+		// 5. 상세 페이지 함수
+		private void view_page(){
+			
+			// 1. 입력받기
+			System.out.println("게시물 번호 : "); int bno = scanner.nextInt();
+			// 2. 입력받은 게시물번호의 게시물 정보를 컨트롤에게 요청 [ bno 넘겨주고 ]
+			Board result = BController.getInstance().view(bno);
+				// BController.getInstance() -> bc -> new BController(); 
+				// new BController().view(bno) -> bno번 인덱스의 board 객체
+				// board 객체 -> result 저장
+			
+			System.out.println("----------------게시물("+bno+")---------------");
+			System.out.println("제목 : " + result.getTitle());
+			System.out.println("작성자 : " + result.getWriter());
+			System.out.println("내용 : " + result.getContent());
+			System.out.println("작성일 : " + result.getDate());
+			System.out.println("1.이전 2.삭제 3.수정");
+			
+			// 뒤로가기
+			int ch2 = scanner.nextInt();
+			if(ch2==1) {return;}
+		}
+		
 }
