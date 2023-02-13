@@ -112,10 +112,6 @@ public class Front { // class S
 				System.out.println("[알림] 게시글을 등록하였습니다");
 			}else {}
 		}
-		board.title = title;
-		board.content = content;
-		boardList.add(board);
-		
 	}
 
 	// 7. 글보기
