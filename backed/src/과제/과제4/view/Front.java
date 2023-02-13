@@ -96,7 +96,7 @@ public class Front { // class S
 		}
 	}
 	
-	// 6. 글쓰기 아앜 짜증나 전혀 모르겠잖아?
+	// 6. 글쓰기 아앜 짜증나 전혀 모르겠잖아? -> 길을 잃었다..
 	void write() {
 		System.out.println("--------------------글 쓰기-------------------");
 		System.out.println("제목 : ");		String title = scanner.next();
@@ -105,13 +105,11 @@ public class Front { // class S
 		int result = mc.login(title, content);
 		for(int i = 0; i<boardList.size(); i++) {
 			System.out.println( i + "\t" + 
-					boardList.get(i).view + "\t" + 
 					boardList.get(i).writer + "\t" + 
-					boardList.get(i).title );
-			if(result == 0) {
-				System.out.println("[알림] 게시글을 등록하였습니다");
-			}else {}
+					boardList.get(i).title + "\t" +
+					boardList.get(i).content );
 		}
+		System.out.println("번호\t작성자");
 	}
 
 	// 7. 글보기
