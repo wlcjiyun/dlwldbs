@@ -9,7 +9,7 @@ import Day09.Ex10_게시판.model.Board;
 
 public class Front {
 	
-	// 1. 싱글톤 객체 [ 1. 프로그램내 하나의 객체 - 공유 메모리 ]
+	// 1. 프론트 싱글톤 객체 [ 1. 프로그램내 하나의 객체 - 공유 메모리 ]
 		private static Front front = new Front();
 		private Front() {}
 		public static Front getInstance() {
@@ -39,7 +39,6 @@ public class Front {
 			System.out.print("내용 : ");		String content = scanner.next();
 			System.out.print("작성자 : ");	String writer = scanner.next();
 			System.out.print("비밀번호 : ");	String password = scanner.next();
-			
 			Date date = new Date();	// 현재 날짜/시간 생성 객체
 			int view = 0;	// 조회수는 0부터 시작 
 			
@@ -56,7 +55,7 @@ public class Front {
 			}
 		}
 		
-		// 4. 출력 페이지 함수 
+		// 4. 모든 게시물 출력 페이지 함수 
 		private void print_page() {
 			// 1. 싱글톤 객체를 통해 boardDb 리스트 객체 반환 받기
 			ArrayList<Board> result = BController.getInstance().print();
@@ -68,7 +67,7 @@ public class Front {
 			}
 		}
 		
-		// 5. 상세 페이지 함수
+		// 5. 특정 게시물 출력 페이지 함수
 		private void view_page(){
 			
 			// 1. 입력받기
@@ -79,14 +78,14 @@ public class Front {
 				// new BController().view(bno) -> bno번 인덱스의 board 객체
 				// board 객체 -> result 저장
 			
-			System.out.println("----------------게시물("+bno+")---------------");
+			System.out.println("-------------------게시물("+bno+")------------------");
 			System.out.println("제목 : " + result.getTitle());
 			System.out.println("작성자 : " + result.getWriter());
 			System.out.println("내용 : " + result.getContent());
 			System.out.println("작성일 : " + result.getDate());
 			System.out.println("1.이전 2.삭제 3.수정");
 			
-			// 뒤로가기
+			// 이전
 			int ch2 = scanner.nextInt();
 			if(ch2==1) {return;}
 		}
