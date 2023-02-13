@@ -1,4 +1,7 @@
 package Day09.Ex10_게시판;
+
+import Day09.Ex10_게시판.view.Front;
+
 /*
 	Ex10_게시판
 		controller 패키지
@@ -16,5 +19,13 @@ package Day09.Ex10_게시판;
 
 */
 public class start {
-
+	public static void main(String[] args) {
+		/*
+		 * Front front = new start(); 
+		 * front.index();
+		 */
+		
+		// 1. 싱글톤
+		Front.getInstance().index();
+	}
 }
