@@ -21,6 +21,11 @@ import 과제.과제4_싱글톤.model.Board;
 */
 public class Bcontroller {
 	
+	// 싱글톤
+	private static Bcontroller bc = new Bcontroller();
+	private Bcontroller() {} 
+	public static Bcontroller getInstance() {return bc;}
+	
 	private ArrayList<Board> boardDB = new ArrayList<>();
 	
 	// 5. 글 쓰기 
@@ -60,5 +65,5 @@ public class Bcontroller {
 		boardDB.get(bno).setContent(content); 	// 인수로 전달받은 인덱스의 게시물 내용 수정
 		return true;
 	}
-	
+
 }

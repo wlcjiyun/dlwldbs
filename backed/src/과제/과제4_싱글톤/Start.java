@@ -1,5 +1,7 @@
 package 과제.과제4_싱글톤;
 
+import 과제.과제4_싱글톤.view.Front;
+
 /*
 	M(model) 		: 데이터 모델링 : 저장하고자 하는 데이터들의 설계
 	V(view) 		: 입·출력
@@ -11,11 +13,7 @@ package 과제.과제4_싱글톤;
 		M : 컨트롤이 데이터를 저장할 때 사용되는 모델링
 */
 public class Start { // class S
-	
-	
-	
-	
-	
-	
-	
+	public static void main(String[] args) { // main S
+		Front.getInstance().index();
+	} // main E
 } // class E

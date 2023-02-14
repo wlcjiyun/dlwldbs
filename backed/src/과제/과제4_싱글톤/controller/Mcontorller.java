@@ -12,7 +12,7 @@ import 과제.과제4_싱글톤.model.Member;
 	3. 아이디 찾기
 		- 인수 : name, phone 					- 반환 : 찾은 아이디/null			
 	4. 비밀번호 찾기
-		- 인수 : id, phone						- 반환 : 찾은 비밀번호
+		- 인수 : id, phone						- 반환 : 찾은 비밀번호/null
 	10. 로그아웃 
 		- 인수 : X								- 반환 : true(성공)/false(실패)
 */
