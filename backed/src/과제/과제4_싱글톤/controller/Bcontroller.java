@@ -2,10 +2,10 @@ package 과제.과제4_싱글톤.controller;
 
 import java.util.ArrayList;
 
-import Day09.Ex10_게시판.model.Board;
+import 과제.과제4_싱글톤.model.Board;
 
 /*
-5. 글 쓰기
+	5. 글 쓰기
 		- 인수 : id, title, content				- 반환 : true(성공)/false(실패)
 	6. 글 출력
 		- 인수 :	X[페이징처리, 검색처리 -> 추후 기능]	- 반환 : 모든 글이 담긴 ArrayList 							
@@ -21,28 +21,43 @@ import Day09.Ex10_게시판.model.Board;
 */
 public class Bcontroller {
 	
+	private ArrayList<Board> boardDB = new ArrayList<>();
+	
 	// 5. 글 쓰기 
 	public boolean write(String title, String content) {
-		return true;
+		// 5-1. 유효성 검사 [ 로그인이 안 되어 있는 겨우 false ] 
+		if( Mcontorller.getInstance().LogSession == null ) { return false; }
+		// 5-2. DB에 저장
+			// 5-2-1. 객체화 [ 글 작성 : 입력받은 데이터 2개, 초기값 0, 로그인 회원 객체 = 글쓴이 ]
+			Board board = new Board( title, content, 0, Mcontorller.getInstance().getLogSession() );
+			// 5-2-2. DB에 저장
+			boardDB.add(board);
+			// 5-2-3. 멤버 객체에 내가 쓴 글 등록
+			Mcontorller.getInstance().getLogSession().getBoardList().add(board);
+			return true;
 	}
 	
 	// 6. 글 출력 
 	public ArrayList<Board> getList() {
-		return null;
+		// 추후에 페이징처리, 검색처리 등등 로직이 들어갈 예정
+		return boardDB;
 	}
 	
 	// 7. 글 상세보기 
 	public Board getBoard(int bno) {
-		return null;
+		return boardDB.get(bno); // 인수로 전달받은 인덱스의 게시물을 반환
 	}
 	
 	// 8. 글 삭제 
 	public boolean delete(int bno) {
+		boardDB.remove(bno);
 		return true;
 	}
 	
 	// 9. 글 수정 
 	public boolean update(int bno, String title, String content) {
+		boardDB.get(bno).setTitle(title); 		// 인수로 전달받은 인덱스의 게시물 제목 수정
+		boardDB.get(bno).setContent(content); 	// 인수로 전달받은 인덱스의 게시물 내용 수정
 		return true;
 	}
 	

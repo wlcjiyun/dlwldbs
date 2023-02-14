@@ -20,7 +20,7 @@ public class Member {
 	private String phone;
 	
 		// 1-1. 한 명의 회원(객체)이 여러 개의 board 객체를 가질 수 있다
-		private ArrayList<Board> boardList/* = new ArrayList<>() */;
+		private ArrayList<Board> boardList = new ArrayList<>();
 
 	// 2. 생성자
 	public Member() {}
@@ -47,10 +47,10 @@ public class Member {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPassword() {
+	public String getPw() {
 		return pw;
 	}
-	public void setPassword(String password) {
+	public void setPw(String password) {
 		this.pw = password;
 	}
 	public String getName() {
