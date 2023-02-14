@@ -125,18 +125,39 @@ public class Front {
 		// 메뉴
 		System.out.println("1.삭제 2.수정 3.이전 : ");
 		int ch3 = scanner.nextInt();
-		if(ch3 ==1 ) {delete_page();}
-		else if(ch3==2){update_page();}
+		if(ch3 ==1 ) {delete_page(bno);}
+		else if(ch3==2){update_page(bno);}
 		else if(ch3==3) {return;}
 	}
 	
 	// 9. 게시물 삭제 페이지
-	public void delete_page() {
-		
+	public void delete_page(int bno) {
+		// 9-1. 유효성 검사 : 해당 글의 작성자와 현재 로그인된 회원과 같으면
+		if( Bcontroller.getInstance().getBoard(bno).getMember().
+			equals( Mcontorller.getInstance().getLogSession() )
+				) {
+			//System.out.println("*내가 쓴 글");
+			Bcontroller.getInstance().delete(bno);
+			System.out.println("삭제되었습니다");
+			return;
+		}
+		// 9-2. 
+		System.out.println("삭제 권한이 없습니다");
 	}
 	
 	// 10. 게시물 수정 페이지
-	public void update_page() {
-		
+	public void update_page(int bno) {
+		// 10-1. 유효성 검사
+		if(Bcontroller.getInstance().getBoard(bno).getMember().
+				equals( Mcontorller.getInstance().getLogSession() )
+				) {
+			System.out.println("새로운 제목 : "); 	String title = scanner.next();
+			System.out.println("새로운 내용 : ");	String content = scanner.next();
+			Bcontroller.getInstance().update(bno, title, content);
+			System.out.println("수정되었습니다");
+			return;
+		}
+		// 10-2.
+		System.out.println("수정 권한이 없습니다");
 	}
 }

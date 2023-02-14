@@ -55,7 +55,8 @@ public class Bcontroller {
 	
 	// 8. 글 삭제 
 	public boolean delete(int bno) {
-		boardDB.remove(bno);
+		boardDB.remove(bno); // 인수로 전달받은 인덱스의 게시물을 삭제
+		//Mcontorller.getInstance().getLogSession().setBoardList(boardDB);
 		return true;
 	}
 	
