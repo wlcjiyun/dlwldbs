@@ -5,7 +5,8 @@ import java.util.Arrays;
 
 public class 실행 {
 	public static void main(String[] args) {
-		// 객페
+		
+		// * 객체 3개 만들기
 		Member m1 = new Member();
 		m1.id ="qwe"; m1.password="qwe";
 		
