@@ -1,4 +1,4 @@
-package Day11.Ex5;
+package Day11.Ex6;
 
 public class KumhoTire  extends Tire {
 	@Override

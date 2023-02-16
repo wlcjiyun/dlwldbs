@@ -1,10 +1,9 @@
 package Day11.Ex7;
-import Day11.Ex5.KumhoTire;
-
 import java.util.ArrayList;
 
-import Day11.Ex5.HankookTire;
-import Day11.Ex5.Tire;
+import Day11.Ex6.HankookTire;
+import Day11.Ex6.KumhoTire;
+import Day11.Ex6.Tire;
 public class 실행2 {
 	public static void main(String[] args) {
 		

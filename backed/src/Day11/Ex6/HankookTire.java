@@ -1,4 +1,4 @@
-package Day11.Ex5;
+package Day11.Ex6;
 
 public class HankookTire extends Tire { // 하위클래스
 			// 하위클래스 extends 상위클래스명
