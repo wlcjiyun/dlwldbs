@@ -1,4 +1,4 @@
-package Day09.Ex6;
+package Day09.Ex6_p245;
 
 import Day08.Ex4_p230.calculator;
 

@@ -1,4 +1,4 @@
-package Day09.Ex6;
+package Day09.Ex6_p245;
 
 /*
 	정적멤버

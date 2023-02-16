@@ -1,4 +1,4 @@
-package Day09.Ex5;
+package Day09.Ex5_p243;
 
 public class 실행 { // class S
 	public static void main(String[] args) { // main S 

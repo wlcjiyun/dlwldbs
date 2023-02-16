@@ -1,4 +1,4 @@
-package Day09.Ex5;
+package Day09.Ex5_p243;
 /*
 	객체 내부 멤버 호출시 this
 		- 내부 필드 호출 this.필드명()
