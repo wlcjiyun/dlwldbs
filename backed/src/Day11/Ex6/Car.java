@@ -5,7 +5,8 @@ public class Car {
 	public void run() {
 		tire.roll();
 	}
-	public void parking( Tire tire ) {
+	public Tire parking( Tire tire ) {
 		tire.stop();
+		return tire;
 	}
 }	
