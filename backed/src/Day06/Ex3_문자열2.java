@@ -4,7 +4,7 @@ import java.io.FileOutputStream;
 import java.util.Scanner;
 
 public class Ex3_문자열2 { // class S
-	public static void main(String[] args) { // main S
+	public static void main(String[] args) throws Exception { // main S
 		
 		while( true ) { // whlie S
 			
