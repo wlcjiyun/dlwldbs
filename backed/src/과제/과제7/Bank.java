@@ -9,14 +9,14 @@ package 과제.과제7;
 		예금() : 해당 계좌번호와 예금액을 입력받아 해당 계좌번호에 금액을 더해준다.
 */
 public class Bank {
-	public int account; 		// 계좌번화
-	public int bankpassword;	// 비밀번호	
+	public String account; 		// 계좌번호
+	public String bankpassword;	// 비밀번호	
 	public String name;			// 예금주
 	public int balance;			// 잔금
 	
 	public Bank() {}
 	
-	public Bank(int account, int bankpassword, String name, int balance) {
+	public Bank(String account, String bankpassword, String name, int balance) {
 		this.account = account;
 		this.bankpassword = bankpassword;
 		this.name = name;
@@ -24,19 +24,19 @@ public class Bank {
 	}
 
 	//----------------------------------------------------------------------------
-	public int getAccount() {
+	public String getAccount() {
 		return account;
 	}
 
-	public void setAccount(int account) {
+	public void setAccount(String account) {
 		this.account = account;
 	}
 
-	public int getBankpassword() {
+	public String getBankpassword() {
 		return bankpassword;
 	}
 
-	public void setBankpassword(int bankpassword) {
+	public void setBankpassword(String bankpassword) {
 		this.bankpassword = bankpassword;
 	}
 
