@@ -10,7 +10,8 @@ package Day08.Ex1_p218;
 public class Car { // class S
 	
 	// 1. 필드
-		/* private */ String model;
+		/* private */ 
+		String model;
 		String color;
 		int maxSpeed;
 		
@@ -25,7 +26,7 @@ public class Car { // class S
 		Car() { }
 		// 2 . 생성자 = 2개의 매개변수를 받는다
 		Car( String model, String color){
-			this.model = model;
+			this.model = model; // this.내부필드명 = 매개변수
 			this.color = color;
 			// this.내부필드명 = 매개변수
 		}
