@@ -41,9 +41,20 @@ public class Front {
 				System.out.println("1.제품등록 2.제품보기");
 				int ch1 = scanner.nextInt();
 				if( ch1 == 1 ) { }
-				else if( ch1 == 2) {}
+				else if( ch1 == 2) { }
 				else {}
 			}
 		}
 	}
+	
+	// 제품 등록
+	public int product_print() {
+		return 0;
+	}
+
+	public static Front getInstance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
