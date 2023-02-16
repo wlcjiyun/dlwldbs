@@ -1,13 +1,13 @@
 package 과제.과제7.view;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Front { // class S
 	
 	Scanner scanner = new Scanner(System.in);
-	
 	// 계좌번호[ 은행코드-난수2자리-난수2자리 ] , 계좌비밀번호[4자리] , 계좌주 , 잔금 [초기 0원 ]
-	int num = 0; String password = ""; String name =""; int balance = 0;
+	int num = 0; String password = ""; String name = ""; int balance = 0;
 	
 	// main 페이지
 	public void index() {
@@ -33,10 +33,10 @@ public class Front { // class S
 			System.out.println(">> 선택 : ");
 			int check2 = scanner.nextInt();
 			if(check2 == 1) {
-				System.out.println("계좌주 : ");			String name = scanner.next();
-				System.out.println("계좌 비밀번호 : ");	String password = scanner.next();
-				System.out.println("계좌번호 : " + num);	int num = scanner.nextInt();
-				System.out.println("잔금 : " + balance);	int balance = scanner.nextInt();
+				System.out.println("계좌주 : ");								String name = scanner.next();
+				System.out.println("계좌 비밀번호 : ");						String password = scanner.next();
+				System.out.println("계좌번호 : " + (int)Math.random()*100);		int num = scanner.nextInt();
+				System.out.println("잔금 : " + balance);						int balance = scanner.nextInt();
 			} 
 		}
 	}
