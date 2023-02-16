@@ -7,12 +7,14 @@ public class Ex6_회원시스템_컬렉션프레임워크 {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
+		
 		// 배열 대신 컬렉션 프레임워크 
 		ArrayList<Member> memberList = new ArrayList<>(); // 가변길이
-			// ArrayList : 리스트 선언 사용되는 클래스 // <클래스명> : 리스트 안에 들어갈 항목의 클래스
+		// ArrayList : 리스트 선언 사용되는 클래스 // <클래스명> : 리스트 안에 들어갈 항목의 클래스
+		
 		while(true) {
-			// 배열명.length : 배열내 길이			[ 고정길이 ] 
-			// 리스트명.size() : 리스트내 요소들의 개수	[ 가변길이 ] 
+			// 배열명.length		: 배열내 길이			[ 고정길이 ] 
+			// 리스트명.size()	: 리스트내 요소들의 개수	[ 가변길이 ] 
 			System.out.println("번호\t회원명\t전화번호");
 			for( int i = 0 ; i<memberList.size() ; i++ ) {
 				System.out.println(i + "\t" + memberList.get(i).name +"\t"+ memberList.get(i).phone );
