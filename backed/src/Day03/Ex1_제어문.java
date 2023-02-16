@@ -2,11 +2,11 @@ package Day03;
 
 import java.util.Random;
 
-public class Ex1_조건문 {
+public class Ex1_제어문 {
 	public static void main(String[] args) {
 		
 		// if형태
-			// 1. if(조건식) 실행문;
+			// 1. if(조건식) 실행문; -> 실행문 1개 {} 생략 가능
 			// 2. if(조건식) {실행문; 실행문;}
 			/* 3. if(조건식){
 						true
@@ -24,7 +24,14 @@ public class Ex1_조건문 {
 			  
 			 */
 			/*
-			 	5. 
+			 	5. if 중첩
+			 	if(조건식){
+			 		if(조건식){
+			 			
+			 		}else if{
+			 		
+			 		}
+			 	}else{}
 			 		
 			 
 			 

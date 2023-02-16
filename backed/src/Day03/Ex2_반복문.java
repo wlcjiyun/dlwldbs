@@ -47,10 +47,18 @@ public class Ex2_반복문 {
 				System.out.println("\t\t" + 단 + "x" + 곱 + "=" + (단*곱));
 			}
 		}
+		/*
+		 * 단 : 2 3 4 5 6 7 8 9
+		 * 곱 : 1 2 3 4 5 6 7 8 9
+		 * 
+		 * * 곱은 단마다 반복 
+		 * 	-> 단 : 8회 / 곱 : 9회 --> 8*9 = 72회 
+		 * 
+		*/
 		
-		// 6. break; : 반복문 탈출 / (!=)return; : 함수종료
+		// 6. break; : 반복문 탈출 / return; : 함수종료
 		while(true) { // 무한루프
-			int num = (int)(Math.random()*6) + 1;
+			int num = (int)(Math.random()*6) + 1; // 1~6
 			System.out.println(num);
 			if(num == 6) { // 만약에 난수가 6이면
 				System.out.println("while{}탈출");
@@ -59,6 +67,8 @@ public class Ex2_반복문 {
 		}
 		
 		// 7. p.135
+			// 이름 : for(){}
+			// break 이름;
 		// for1
 		첫번째for : for(char upper = 'A'; upper <= 'Z'; upper++) {
 					// 'A' ~ 'Z'까지 문자 하나씩 증가/반복
