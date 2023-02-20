@@ -9,9 +9,10 @@ public class Ex3_477 { // class S
 
 	public static void main(String[] args) throws Exception{ 
 		try {
+			findClass();
+		} 
+		catch (Exception e) {
 			
-		} catch (Exception e) {
-			e.printStackTrace(); // 프론트 쪽에서 담당
 		}
 		System.out.println("실행");
 	} 
