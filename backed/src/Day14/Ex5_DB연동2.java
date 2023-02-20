@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Day08.Ex4_p230.calculator;
-
 public class Ex5_DB연동2 { // class S
 	public static void main(String[] args) { // main S
 		
