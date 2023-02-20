@@ -28,7 +28,7 @@ public class DB과제1 { // class S
 					System.out.println("*** DB 연결에 성공하였습니다 ***");
 				}
 				else if(ch==2) {
-					System.out.println("--- SQL 구문 입력하세요 : ");
+					System.out.println("--- 생성할 테이블 SQL 입력하세요 : ");
 					scanner.nextLine();
 					String sql = null;
 					PreparedStatement ps = conn.prepareStatement(sql);
