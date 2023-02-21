@@ -48,7 +48,7 @@ public class System클래스 { // class S		// 예외 던지기
 		System.out.println(Arrays.toString(arr1));
 		
 		// 문자열 -> 바이트열 변환 getBytes()			인코딩 타입 : EUC_KR
-		byte[] arr2 = data.getBytes("EUC_KR");
+		byte[] arr2 = data.getBytes("EUC_KR");                                                                                                                                                                                                                 
 		System.out.println(Arrays.toString(arr2)); 
 		
 		// 바이트열 -> 문자열 변환 new String(배열명)
