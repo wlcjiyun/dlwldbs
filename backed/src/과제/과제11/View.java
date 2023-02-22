@@ -31,12 +31,12 @@ public class View {
 			}
 			else if(check==2) { // 사용자 페이지
 				while(true) {
-					System.out.println("1.제품출력 2.제품선택 3.장바구니 4.결제하기");
+					System.out.println("1.제품출력 2.제품선택 3.장바구니 0.결제하기");
 					int ch = scanner.nextInt();
 					if(ch==1) {list2();}
-					else if(ch==2) {}
-					else if(ch==3) {}
-					else if(ch==4) {}
+					else if(ch==2) {product_choose();}
+					else if(ch==3) {product_basket();}
+					else if(ch==0) {product_payment();}
 					/*
 					 * 1. 제품 목록
 					 * 2. 제품 선택
@@ -125,19 +125,24 @@ public class View {
 			for(ProductDto dto : result) {
 				System.out.printf(
 						"%2s \t %10s \t %10s \n", 
-						dto.getPno(), dto.getPname(), dto.getPprice(), dto.getPstock()
+						dto.getPno(), dto.getPname(), dto.getPprice()
 						);
 			}
 		}
 		
 	// 2. 제품 선택 ---------------------------------------------------------------------
-		public void product_contect() {
-			// 재고가 있으면 장바구니에 담기
+		public void product_choose() {
 			
 		}
 	// 3. 장바구니 ---------------------------------------------------------------------
+		public void product_basket() {
+			// 재고가 있으면 장바구니에 담기
+			
+		}
 	// 4. 결제 ---------------------------------------------------------------------
-		
+		public void product_payment() {
+			
+		}
 		
 		
 		
