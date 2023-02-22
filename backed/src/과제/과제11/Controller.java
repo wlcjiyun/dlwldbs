@@ -17,8 +17,8 @@ public class Controller {
 	}
 	
 	// 2. 제품목록 -----------------------------------------------------------------
-	public ArrayList list() {
-		ArrayList result = ProductDao.getInstance().list();
+	public ArrayList<ProductDto> list() {
+		ArrayList<ProductDto> result = ProductDao.getInstance().list();
 		return result;
 	}
 	

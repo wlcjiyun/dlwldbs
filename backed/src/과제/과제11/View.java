@@ -14,16 +14,43 @@ public class View {
 	
 	// 1. 메인페이지
 	public void index() {
+		
+		System.out.println("1.관리자 2.사용자");
 		while(true) {
-			System.out.println("1.제품등록 2.제품출력 3.제품수정 4.재고수정/변경 5.제품삭제");
-			int ch = scanner.nextInt();
-			if(ch==1) {registration();}
-			else if(ch==2) {list();}
-			else if(ch==3) {product_update();}
-			else if(ch==4) {stock_update();}
-			else if(ch==5) {delete();}
+			int check = scanner.nextInt();
+			if(check==1) { // 관리자 페이지
+				while(true) {
+					System.out.println("1.제품등록 2.제품출력 3.제품수정 4.재고수정/변경 5.제품삭제");
+					int ch = scanner.nextInt();
+					if(ch==1) {registration();}
+					else if(ch==2) {list();}
+					else if(ch==3) {product_update();}
+					else if(ch==4) {stock_update();}
+					else if(ch==5) {delete();}
+				}
+			}
+			else if(check==2) { // 사용자 페이지
+				while(true) {
+					System.out.println("1.제품출력 2.제품선택 3.장바구니 4.결제하기");
+					int ch = scanner.nextInt();
+					if(ch==1) {list2();}
+					else if(ch==2) {}
+					else if(ch==3) {}
+					else if(ch==4) {}
+					/*
+					 * 1. 제품 목록
+					 * 2. 제품 선택
+					 * 3. 장바구니
+					 * 4. 결제
+					 * 
+					*/
+				}
+			}
 		}
+		
 	}
+	
+	////////////////////////////////////////////////관리자 페이지//////////////////////////////////////////////
 	
 	// 2. 제품 등록 ---------------------------------------------------------------------
 	public void registration() {
@@ -42,11 +69,11 @@ public class View {
 		public void list() {
 			System.out.println("-----------------제품목록----------------");
 			System.out.printf("%2s \t %10s \t %10s \n" , "번호", "제품명", "가격", "재고");
-			ArrayList result = Controller.getInstance().list();
-			for(int i = 0; i<result.size(); i++) {
+			ArrayList<ProductDto> result = Controller.getInstance().list();
+			for(ProductDto dto : result) {
 				System.out.printf(
-						"%2s \t %10s \t %10s \n",  
-						"pno", "pname", "pprice", "p" 
+							"%2s \t %10s \t %10s \n",  
+							dto.getPno(), dto.getPname(), dto.getPprice(), dto.getPstock()
 						);
 			}
 		}
@@ -66,7 +93,6 @@ public class View {
 	// 4. 재고 수정 ---------------------------------------------------------------------
 		public void stock_update() {
 			System.out.println("-----------------재고수정----------------");
-			System.out.println("-----------------제품수정----------------");
 			System.out.println("제품번호 : ");			int pno = scanner.nextInt();
 			System.out.println("재고 : ");			int pstock = scanner.nextInt();
 			
@@ -86,4 +112,36 @@ public class View {
 			if(result) {System.out.println("삭제 성공");}
 			else {System.out.println("삭제 실패");}
 		}
+		
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+	////////////////////////////////////////////////사용자 페이지//////////////////////////////////////////////
+		
+	// 1. 제품 목록 ---------------------------------------------------------------------
+		public void list2() {
+			System.out.println("-----------------제품목록----------------");
+			System.out.printf("%2s \t %10s \t %10s \n" , "번호", "제품명", "가격", "상태");
+			ArrayList<ProductDto> result = Controller.getInstance().list();
+			for(ProductDto dto : result) {
+				System.out.printf(
+						"%2s \t %10s \t %10s \n", 
+						dto.getPno(), dto.getPname(), dto.getPprice(), dto.getPstock()
+						);
+			}
+		}
+		
+	// 2. 제품 선택 ---------------------------------------------------------------------
+		public void product_contect() {
+			// 재고가 있으면 장바구니에 담기
+			
+		}
+	// 3. 장바구니 ---------------------------------------------------------------------
+	// 4. 결제 ---------------------------------------------------------------------
+		
+		
+		
+		
+		
+		
+		
 }

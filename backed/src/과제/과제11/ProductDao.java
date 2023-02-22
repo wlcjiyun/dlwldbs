@@ -20,7 +20,7 @@ public class ProductDao {
 	private ProductDao() {
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/product","root","1234");
-			System.out.println("DB 연동 성공");
+			// System.out.println("DB 연동 성공");
 		} 
 		catch (Exception e) {
 			System.out.println("DB 연동 실패: " + e);
@@ -29,7 +29,7 @@ public class ProductDao {
 	
 	// 1. 메인페이지
 	public boolean registration(ProductDto dto) {
-		String sql = "insert into member(pname, pprice, pstock) values(?, ?, ?)";
+		String sql = "insert into product(pname, pprice, pstock) values(?, ?, ?)";
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, dto.getPname());
@@ -45,9 +45,9 @@ public class ProductDao {
 	}
 	
 	// 2. 제품 목록
-	public ArrayList list() {
-		ArrayList list = new ArrayList<>();
-		String sql = "select * from member";
+	public ArrayList<ProductDto> list() {
+		ArrayList<ProductDto> list = new ArrayList<>();
+		String sql = "select * from product";
 		try {
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -66,7 +66,7 @@ public class ProductDao {
 	
 	// 3. 제품 수정
 	public boolean product_update(int pno, String pname) {
-		String sql = "update member set pname = ? where pno = ?";
+		String sql = "update product set pname = ? where pno = ?";
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, pname);
@@ -82,7 +82,7 @@ public class ProductDao {
 	
 	// 4. 재고 수정
 	public boolean stock_update(int pno, int pstock) {
-		String sql = "update member set pstock = ? where pno = ?";
+		String sql = "update product set pstock = ? where pno = ?";
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, pstock);
@@ -98,7 +98,7 @@ public class ProductDao {
 	
 	// 5. 제품 삭제
 	public boolean delete( int pno ) {
-		String sql = "delete from member where pno = ? "; // 1. 
+		String sql = "delete from product where pno = ? "; // 1. 
 		try {
 			ps = conn.prepareStatement(sql); // 2.
 			ps.setInt( 1 , pno ); // 3.

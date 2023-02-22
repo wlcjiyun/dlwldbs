@@ -21,7 +21,7 @@ public class ProductDto {
 	// 메소드( setter&getter | toString() )
 	@Override
 	public String toString() {
-		return "MemberDto [pno=" + pno + ", pname=" + pname + ", pprice=" + pprice + ", pstock=" + pstock + "]";
+		return "productDto [pno=" + pno + ", pname=" + pname + ", pprice=" + pprice + ", pstock=" + pstock + "]";
 	}
 	public int getPno() {
 		return pno;
