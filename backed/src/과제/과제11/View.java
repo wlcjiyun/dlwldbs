@@ -117,15 +117,15 @@ public class View {
 		
 	////////////////////////////////////////////////사용자 페이지//////////////////////////////////////////////
 		
-	// 1. 제품 목록 ---------------------------------------------------------------------
+	// 1. 제품 출력 ---------------------------------------------------------------------
 		public void list2() {
 			System.out.println("-----------------제품목록----------------");
 			System.out.printf("%2s \t %10s \t %10s \n" , "번호", "제품명", "가격", "상태");
 			ArrayList<ProductDto> result = Controller.getInstance().list();
 			for(ProductDto dto : result) {
 				System.out.printf(
-						"%2s \t %10s \t %10s \n", 
-						dto.getPno(), dto.getPname(), dto.getPprice()
+							"%2s \t %10s \t %10s \n", 
+							dto.getPno(), dto.getPname(), dto.getPprice()
 						);
 			}
 		}
