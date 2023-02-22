@@ -21,8 +21,8 @@ public class View {
 			int ch = scanner.nextInt();
 			if( ch == 1 ) { signup(); }
 			else if( ch == 2 ) { list(); }
-			else if( ch == 3 ) { }
-			else if( ch == 4 ) { }
+			else if( ch == 3 ) { update( ); }
+			else if( ch == 4 ) { delete(); }
 		}
 	} // index end 
 	
@@ -62,4 +62,35 @@ public class View {
 		if(result) {System.out.println("[알림] 수정 성공");}
 		else {System.out.println("[알림] 수정 실패");}
 	}
+	
+	// 5. 회원 삭제 ----------------------------------------------------------------------------------
+	public void delete() {
+		System.out.println("-------------------------");
+		System.out.println("삭제할 회원 번호 : ");
+		int mno = scanner.nextInt();
+		
+		boolean result = Controller.getInController().delete(mno); // * 컨트롤에게 mno 전달 후 결과 받기
+		
+		if(result) {System.out.println("[알림] 탈퇴 성공");}
+		else {System.out.println("[알림] 탈퇴 실패");}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

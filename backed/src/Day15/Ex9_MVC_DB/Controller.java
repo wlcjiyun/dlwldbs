@@ -30,4 +30,9 @@ public class Controller {
 	public boolean update( int mno , String mpw ) {
 		return MemberDao.getInstance().update(mno, mpw);
 	}
+	
+	// 4. 회원 삭제 ----------------------------------------------------------------------------------
+	public boolean delete(int mno) {
+		return MemberDao.getInstance().delete(mno);
+	}
 }

@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MemberDao {
@@ -97,4 +96,24 @@ public class MemberDao {
 		}catch (Exception e) { System.out.println("DB 오류 : " + e); }
 		return false;
 	}	
+	
+	// 4. 회원 삭제 ----------------------------------------------------------------------------------
+	// [ 인수 : 누구[식별 mno]의 회원을 삭제할 건지 / 반환 : 성공[true] 실패[false] ]
+	public boolean delete(int mno) {
+		
+		// 1.
+		String sql = "delete from member where mno=?";
+
+		try {
+			ps = conn.prepareStatement(sql); // 2.
+			ps.setInt(1, mno); // 3. 
+			ps.executeUpdate(); // 4.
+			return true; // 5.
+		}
+		catch (Exception e) {
+			System.out.println("DB 오류 : " + e);
+		}
+		return false;
+	}
+	
 }
