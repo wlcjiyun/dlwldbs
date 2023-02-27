@@ -13,6 +13,7 @@ public class Bank {
 	public String bankpassword;	// 비밀번호	
 	public String name;			// 예금주
 	public int balance;			// 잔금
+	public String bankcode;		// 은행코드
 	
 	public Bank() {}
 	
