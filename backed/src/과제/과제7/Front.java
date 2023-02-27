@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Front {
 	
-	private static final Bank Kookmin = null;
 	Scanner scanner = new Scanner(System.in);
 	Bank bank = new Bank();
 	ArrayList< Bank > banks = new ArrayList<>();
@@ -35,11 +34,11 @@ public class Front {
 			String account = Shinhan.bankcode; // 은행코드 03
 
 			Random random = new Random();
-			int ran = random.nextInt(100)+1; 			// 1~99 사이의 난수 
+			int ran = random.nextInt(99)+1; 			// 1~99 사이의 난수 
 			if( ran < 10 ) { account += "-0"+ran+"-"; } // 은행코드 + 난수2자리 
 			else {account += "-"+ran+"-";}
 
-			ran = random.nextInt(100)+1; 			// 1~99 사이의 난수 
+			ran = random.nextInt(99)+1; 			// 1~99 사이의 난수 
 			if( ran < 10 ) { account += "0"+ran; } 	// 은행코드 + 난수2자리 
 			else { account += ran;}
 
@@ -57,14 +56,14 @@ public class Front {
 			System.out.println("예금주 : "); 		String name = scanner.next();
 			System.out.println("계좌 비밀번호 : "); String password = scanner.next();
 
-			// String account = Kookmin.bankcode; // 은행코드 04
+			String account = Kookmin.bankcode; // 은행코드 04
 
 			Random random = new Random();
-			int ran = random.nextInt(100)+1; 			// 1~99 사이의 난수 
+			int ran = random.nextInt(99)+1; 			// 1~99 사이의 난수 
 			if( ran < 10 ) { account += "-0"+ran+"-"; } // 은행코드 + 난수2자리 
 			else {account += "-"+ran+"-";}
 
-			ran = random.nextInt(100)+1; 			// 1~99 사이의 난수 
+			ran = random.nextInt(99)+1; 			// 1~99 사이의 난수 
 			if( ran < 10 ) { account += "0"+ran; } 	// 은행코드 + 난수2자리 
 			else { account += ran;}
 
@@ -84,11 +83,11 @@ public class Front {
 			String account = Woori.bankcode; // 은행코드 05
 
 			Random random = new Random();
-			int ran = random.nextInt(100)+1; 			// 1~99 사이의 난수 
+			int ran = random.nextInt(99)+1; 			// 1~99 사이의 난수 
 			if( ran < 10 ) { account += "-0"+ran+"-"; } // 은행코드 + 난수2자리 
 			else {account += "-"+ran+"-";}
 
-			ran = random.nextInt(100)+1; 			// 1~99 사이의 난수 
+			ran = random.nextInt(99)+1; 			// 1~99 사이의 난수 
 			if( ran < 10 ) { account += "0"+ran; } 	// 은행코드 + 난수2자리 
 			else { account += ran;}
 
@@ -106,17 +105,19 @@ public class Front {
 	// 입금 페이지
 	public void deposit() {
 		System.out.println("------------- 계좌 입금 ---------------");
-		System.out.println("입금할 게좌번호 : ");	String account = scanner.next();
-		System.out.println("예금액 : ");			int balance = scanner.nextInt();
-		
-		String inaccount = scanner.next();
-		
-		if( account.equals(inaccount) ) { 
-			balance += scanner.nextInt();
-			System.out.println("*** 잔액 : " + balance + "***");
-		}else {
-			System.out.println("[알림] 옳지 않은 계좌번호 입니다");
+		System.out.println("입금할 게좌번호 : "); 	String account = scanner.next();
+		System.out.println("예금액 : "); 			int balance = scanner.nextInt();
+
+		// 2. 통장목록[리스트] 하나씩 꺼내서 비교 
+		for( int i = 0 ; i<banks.size() ; i++) {
+			if( banks.get(i).getAccount().equals(account) ) {
+	
+			banks.get(i).setBalance( banks.get(i).getBalance()+balance );
+	
+			System.out.println("*** 잔액 : " + banks.get(i).getBalance() + "***");
+				return;
+			}
 		}
-		
+		System.out.println("[알림] 옳지 않은 계좌번호 입니다");
 	}
 }
