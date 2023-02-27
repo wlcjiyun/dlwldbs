@@ -13,8 +13,6 @@ public class Front {
 	
 	public void index() {
 		while(true) { // while S
-			System.out.println("------------- 계좌 관리 ---------------");
-			System.out.println("\t은행명\t계좌번호\t예금액");
 			System.out.println("-------------------------------------");
 			System.out.println("메뉴 >>> 1.계좌개설 2.입금하기");
 			int ch = scanner.nextInt();
