@@ -23,7 +23,7 @@ public class 연습 {
 			배열[3] = 이름4;
 			배열[4] = 이름5;
 			
-			배열[0]
+
 			
 		ArrayList< String > 리스트 = new ArrayList<>();
 		
