@@ -26,11 +26,26 @@ public static void main(String[] args) {
 //		sumThread.start();	// 계산시작 
 //		System.out.println( sumThread.getSum() ); // 결과출력
 		
-		sumThread sumThread = new sumThread();
-		sumThread.start(); // 계산시작 
-		try {
-			sumThread.join(); // --현스레드(main) 와 조인[합치기]
-		}catch (Exception e) {	}
-		System.out.println( sumThread.getSum() );
+//		sumThread sumThread = new sumThread();
+//		sumThread.start(); // 계산시작 
+//		try {
+//			sumThread.join(); // --현스레드(main) 와 조인[합치기]
+//		}catch (Exception e) {	}
+//		System.out.println( sumThread.getSum() );
+	
+		// 4. 
+		WorkThread workThreadA = new WorkThread("workThreadA"); // 스레드A 객체 생성
+		WorkThread workThreadB = new WorkThread("workThreadB"); // 스레드B 객체 생성
+		workThreadA.start();	// 스레드A 실행
+		workThreadB.start();	// 스레드B 실행
+		
+		try { Thread.sleep(5000); }	// 5초간 일시정지
+		catch (Exception e) {}	
+		workThreadA.work = false;	// 스레드A 필드 변경 스레드 양보 상태
+		
+		try { Thread.sleep(5000); }	// 5초간 일시정지
+		catch (Exception e) {}
+		workThreadA.work = true;	// 스레드A 필드 변경 스레드 대기 상태
+		
 	}
 }
