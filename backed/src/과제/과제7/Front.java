@@ -13,7 +13,6 @@ public class Front {
 	
 	public void index() {
 		while(true) { // while S
-			System.out.println("-------------------------------------");
 			System.out.println("메뉴 >>> 1.계좌개설 2.입금하기");
 			int ch = scanner.nextInt();
 			if( ch == 1 ) { account_creation(); } 	// 1번 입력시 계좌생성 페이지
@@ -25,7 +24,7 @@ public class Front {
 	// 계좌생성 페이지
 	public void account_creation() {
 		System.out.println("------------- 계좌 개설 ---------------");
-		System.out.println("만드실 계좌의 은행을 선택하세요.");
+		System.out.println("*** 만드실 계좌의 은행을 선택하세요 ***");
 		System.out.println("1.신한은행 2.국민은행 3.우리은행 :");
 		int ch2 = scanner.nextInt();
 		if( ch2 == 1 ) { // 신한은행
@@ -58,7 +57,7 @@ public class Front {
 			System.out.println("예금주 : "); 		String name = scanner.next();
 			System.out.println("계좌 비밀번호 : "); String password = scanner.next();
 
-			String account = Kookmin.bankcode; // 은행코드 04
+			// String account = Kookmin.bankcode; // 은행코드 04
 
 			Random random = new Random();
 			int ran = random.nextInt(100)+1; 			// 1~99 사이의 난수 
