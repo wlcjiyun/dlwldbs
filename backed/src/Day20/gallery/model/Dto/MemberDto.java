@@ -1,15 +1,15 @@
 package Day20.gallery.model.Dto;
 
-public class memberDto {
+public class MemberDto {
 	private int mno;
-    private String mid;
-    private String mpw;	
+    private String mid; 
+    private String mpw;
     private String mname;
     private String mphone;
     
-    public memberDto() {}
+    public MemberDto() {}
 
-	public memberDto(int mno, String mid, String mpw, String mname, String mphone) {
+	public MemberDto(int mno, String mid, String mpw, String mname, String mphone) {
 		super();
 		this.mno = mno;
 		this.mid = mid;
@@ -17,10 +17,10 @@ public class memberDto {
 		this.mname = mname;
 		this.mphone = mphone;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "memberDto [mno=" + mno + ", mid=" + mid + ", mpw=" + mpw + ", mname=" + mname + ", mphone=" + mphone
+		return "MemberDto [mno=" + mno + ", mid=" + mid + ", mpw=" + mpw + ", mname=" + mname + ", mphone=" + mphone
 				+ "]";
 	}
 
@@ -63,5 +63,4 @@ public class memberDto {
 	public void setMphone(String mphone) {
 		this.mphone = mphone;
 	}
-    
 }

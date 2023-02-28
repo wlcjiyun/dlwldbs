@@ -4,25 +4,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class Dao {
-	
 	// 1. JDBC 인터페이스 3개
-	public Connection con;			// DB 연동 인터페이스 
-	public PreparedStatement ps;	// SQL 조작 인터페이스
-	public ResultSet rs;			// SQL 결과 조작 인터페이스
+	public Connection con;			// DB연동 인터페이스 
+	public PreparedStatement ps;	// SQL 조작 인터페이스 
+	public ResultSet rs;			// SQL 결과 조작 인터페이스 
 	
 	public Dao() {
-		try {
+		try {	// DB연동 
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/boardDB",
-					"root",
-					"1234"
-					);
-		} catch (SQLException e) {
-			System.out.println(e);
-		}
+				"jdbc:mysql://localhost:3306/boardDb"
+				, "root" 
+				, "1234" );
+		}catch (Exception e) {System.out.println(e);}
 	}
-	
 }

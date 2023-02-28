@@ -1,16 +1,18 @@
 package Day20.gallery.model.Dto;
 
-public class replyDto {
-	private int rno;
+public class ReplyDto {
+	private int rno	;
 	private String rcontent;
 	private String rdate;
 	private int rindex;
 	private String mid;
-	private int bno;
+	private int	bno;
 	
-	public replyDto() {}
+	public ReplyDto() {
+		// TODO Auto-generated constructor stub
+	}
 
-	public replyDto(int rno, String rcontent, String rdate, int rindex, String mid, int bno) {
+	public ReplyDto(int rno, String rcontent, String rdate, int rindex, String mid, int bno) {
 		super();
 		this.rno = rno;
 		this.rcontent = rcontent;
@@ -22,7 +24,7 @@ public class replyDto {
 
 	@Override
 	public String toString() {
-		return "replyDto [rno=" + rno + ", rcontent=" + rcontent + ", rdate=" + rdate + ", rindex=" + rindex + ", mid="
+		return "ReplyDto [rno=" + rno + ", rcontent=" + rcontent + ", rdate=" + rdate + ", rindex=" + rindex + ", mid="
 				+ mid + ", bno=" + bno + "]";
 	}
 
@@ -73,5 +75,4 @@ public class replyDto {
 	public void setBno(int bno) {
 		this.bno = bno;
 	}
-	
 }

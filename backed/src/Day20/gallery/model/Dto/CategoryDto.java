@@ -1,21 +1,20 @@
 package Day20.gallery.model.Dto;
 
-public class categoryDto {
-	
+public class CategoryDto {
 	private int cno;
-    private String cname;
-    
-    public categoryDto() {}
-    
-    public categoryDto(int cno, String cname) {
+	private String cname;
+	
+	public CategoryDto() {}
+
+	public CategoryDto(int cno, String cname) {
 		super();
 		this.cno = cno;
 		this.cname = cname;
 	}
-    
+
 	@Override
 	public String toString() {
-		return "categoryDto [cno=" + cno + ", cname=" + cname + "]";
+		return "CategortDto [cno=" + cno + ", cname=" + cname + "]";
 	}
 
 	public int getCno() {
@@ -33,5 +32,4 @@ public class categoryDto {
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
-
 }

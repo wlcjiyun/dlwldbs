@@ -1,18 +1,19 @@
 package Day20.gallery.model.Dto;
 
-public class boardDto {
-	
+public class BoardDto {
 	private int bno;
 	private String btitle;
 	private String bcontent;
 	private String bdate;
-	private int bview;
-    private String mid;
-    private String cname;
-    
-    public boardDto() {}
- 
-	public boardDto(int bno, String btitle, String bcontent, String bdate, int bview, String mid, String cname) {
+	private int	bview ;
+	private String mid;	
+	private String cname; 
+	
+	public BoardDto() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public BoardDto(int bno, String btitle, String bcontent, String bdate, int bview, String mid, String cname) {
 		super();
 		this.bno = bno;
 		this.btitle = btitle;
@@ -25,7 +26,7 @@ public class boardDto {
 
 	@Override
 	public String toString() {
-		return "boardDto [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bdate=" + bdate
+		return "BoardDto [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bdate=" + bdate
 				+ ", bview=" + bview + ", mid=" + mid + ", cname=" + cname + "]";
 	}
 
@@ -84,5 +85,4 @@ public class boardDto {
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
-    
 }
