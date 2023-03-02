@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* 기본값 ---------------------------------------------- */
+*{
+	color: black;
+	margin: 0; padding: 0;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+li{
+	list-style: none;
+}
+
+/* 헤더(로고,메뉴1,메뉴2) ---------------------------------------------- */
+#header{background-color: #f5efe9;}
+.top1{display: flex;}
+/* 로고 */
+.logo{ 
+	text-align: center;
+	padding: 40px;
+	font-size: 45px;
+	font-weight: bold;
+}
+/* 상단메뉴 */
+.top_navbox{
+	display: flex;
+	justify-content: flex-end;	
+}
+.tmenu{ 
+	margin: 10px 15px; 
+	font-size: 15px;
+}
+/* 하단메뉴 */
+.bottom_nav{ 
+	display: flex; 
+	margin: 10px;
+}
+.bmenu{ padding: 15px 25px; }
+
+/* 컨텐츠 ---------------------------------------------- */
+#content{
+	border: 1px solid red;
+	margin: 0 auto;
+	width: 1400px;
+	height: 1600px;
+}
+.title{
+	font-size: 30px;
+	text-align: center;
+	padding: 20px 0px;
+}
+
+/* 푸터 ---------------------------------------------- */
+#footer{
+	border: 1px solid red;
+	height: 300px;
+	background-color: #f5efe9;
+}
+
+
+
+
+
+
