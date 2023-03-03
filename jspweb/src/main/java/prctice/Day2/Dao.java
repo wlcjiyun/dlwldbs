@@ -72,6 +72,8 @@ public class Dao {
 			ps.setBoolean(8, dto.isData8());
 			ps.setString(9, dto.getData9());
 			ps.setString(10, dto.getData10());
+			ps.executeUpdate();
+			return true;
 		} 
 		catch (Exception e) {System.out.println(e);}
 		return false;
