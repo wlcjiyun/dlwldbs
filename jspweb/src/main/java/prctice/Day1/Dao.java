@@ -1,4 +1,4 @@
-package jspweb.model;
+package prctice.Day1;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

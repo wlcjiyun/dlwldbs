@@ -26,7 +26,7 @@
 	<!-- 최신 jquery( js 라이브러리 ) 가져오기 -->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<!-- 사용자 정의 JS 가져오기 -->
-	<script src="JS/index.js"></script>
+	<script src="index.js"></script>
 	
 </body>
 </html>
