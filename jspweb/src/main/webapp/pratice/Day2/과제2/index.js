@@ -15,7 +15,7 @@ function 과제2(){
 	console.log(info);
 	
 	$.ajax({
-		url : "http://localhost:8080/jspweb/과제2",
+		url : "/jspweb/과제2",
 		method : "post",
 		data : info,
 		success : function(result){
@@ -34,7 +34,7 @@ getData();
 function getData(){
 	
 	$.ajax({
-		url : "http://localhost:8080/jspweb/과제2",
+		url : "/jspweb/과제2",
 		method : "get",
 		// data : {},
 		success : function(result){
