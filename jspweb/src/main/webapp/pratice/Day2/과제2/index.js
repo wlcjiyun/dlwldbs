@@ -38,6 +38,7 @@ function getData(){
 		method : "get",
 		// data : {},
 		success : function(result){
+			console.log(result);
 			let html = `
 						<table border="1">
 							<tr>

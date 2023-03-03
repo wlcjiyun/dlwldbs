@@ -41,7 +41,7 @@ public class 과제2 extends HttpServlet {
 		System.out.println(jsonArray);
 		
 		response.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("application/json");
+		response.setContentType("application/json");
 		response.getWriter().print(jsonArray);
 	}
 
