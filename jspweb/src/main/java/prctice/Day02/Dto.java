@@ -1,4 +1,4 @@
-package prctice.Day2;
+package prctice.Day02;
 
 public class Dto {
 	

@@ -1,4 +1,4 @@
-package prctice.Day1;
+package prctice.Day01;
 
 import java.io.IOException;
 import java.util.ArrayList;
