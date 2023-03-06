@@ -21,6 +21,11 @@
 	
 	<table class="boardtable" border="1"></table>
 	
+	<h3>과제) 제품</h3>
+	제품명 : <input type="text" class="pname"> <br>
+	제품 가격 : <input type="text" class="pprice"> <br>
+	<button type="button" onclick="onproduct()">등록하기</button>
+	<table class="producttable" border="1"></table>
 	
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="index.js" type="text/javascript"></script>

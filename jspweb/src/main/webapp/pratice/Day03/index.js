@@ -16,7 +16,7 @@ function doGET(){
 	})
 }
 
-function odDELETE(){
+function doDELETE(){
 	alert('http DELETE 메소드를 실행합니다')
 	$a.ajax({
 		url : "/jspweb/Ex3" , 
@@ -136,3 +136,122 @@ function onUpdate(bno){
 	})	
 }
 
+// ---------------------------------------------
+// 과제
+function doPOST(){
+	alert('http POST 메소드를 실행합니다')
+	$a.ajax({
+		url : "/jspweb/과제" , 
+		method : "post" , 
+		success : ( result ) => { }
+	})
+}
+
+function doGET(){
+	alert('http GET 메소드를 실행합니다')
+	$a.ajax({
+		url : "/jspweb/과제" , 
+		method : "get" , 
+		success : function( result ) { }
+	})
+}
+
+function doDELETE(){
+	alert('http DELETE 메소드를 실행합니다')
+	$a.ajax({
+		url : "/jspweb/과제" , 
+		method : "delete" , 
+		success : ( result ) => { }
+	})
+}
+
+// 1. 등록하기
+function onproduct(){
+	console.log('onproduct S')
+	let info = {
+		
+		pname : document.querySelector('.pname').value,
+		pprice : document.querySelector('.pprice').value
+	}
+	console.log(info);
+}
+// 2. 출력
+onprolist();
+function onprolist(){
+	
+	$.ajax({
+		url : "/jspweb/과제/ProductBoard" ,
+		method : "get" ,
+		success : (r) => {
+			console.log('GET 응답 성공');
+			console.log(r);
+			
+			// 1. 테이블 제목 구성
+			let html = `<tr>
+							<th> 번호 </th>
+							<th> 제품명 </th>
+							<th> 제품가격 </th>
+						</tr>`;
+			// 2. 테이블 내용 구성
+			r.forEach((o,p) => {
+				html += `<tr>
+							<td> ${ o.pno } </td>
+							<td> ${ o.pname }</td>
+							<td> ${ o.pprice } </td>
+							<td> 
+								<button type="button" onclick="onDelete(${o.pno})">삭제</button> 
+								<button type="button" onclick="onUpdate(${o.pno})">수정</button>
+							</td>
+						</tr>`;
+			});
+			// 3. 구성된 html 대입
+			document.querySelector('.producttable').innerHTML = html;
+		}
+	})
+	
+}
+
+// 3. 특정 제품 삭제
+function onproDelete(pno){
+	console.log("onproDelete() 열림" + pno);
+	
+	$.ajax({
+		url : "/jspweb/과제/ProductBoard",
+		method : "delete",
+		data : {"pno" : pno},
+		success : ( r ) => {
+			console.log('delete 응답 성공 ')
+			console.log(r)
+			if(r == 'true'){
+				alert('삭제 성공');
+				onprolist();
+			}else{
+				alert('삭제 실패')
+			}
+		}
+	})	
+}
+
+// 4. 특정 제품 수정
+function onproUpdate(pno){
+	console.log("onproUpdate() 열림" + pno);
+
+	let newPname = prompt('수정할 제품명 : ');
+	let newPprice = prompt('수정할 제품가격 : ');
+	
+	$.ajax({
+		url : "/jspweb/과제/ProductBoard",
+		method : "put",
+		data : {"pno" : pno, "pname" : newPname, "pprice" : newPprice},
+		success : ( r ) => {
+			console.log('put 응답 성공 ')
+			console.log(r)
+			if(r == 'true'){
+				alert('수정 성공');
+				onprolist();
+			}else{
+				alert('수정 실패')
+			}
+		}
+	})	
+}

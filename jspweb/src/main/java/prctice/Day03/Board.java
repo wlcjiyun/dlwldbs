@@ -82,6 +82,9 @@ public class Board extends HttpServlet{
 		response.getWriter().print(result);
 	}
 	
+	
+	
+	
 }
 
 /*
