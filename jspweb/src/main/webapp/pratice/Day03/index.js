@@ -103,6 +103,12 @@ function onDelete(bno){
 		success : ( r ) => {
 			console.log('delete 응답 성공 ')
 			console.log(r)
+			if(r == 'true'){
+				alert('삭제 성공');
+				onlist();
+			}else{
+				alert('삭제 실패')
+			}
 		}
 	})	
 }
@@ -120,6 +126,12 @@ function onUpdate(bno){
 		success : ( r ) => {
 			console.log('put 응답 성공 ')
 			console.log(r)
+			if(r == 'true'){
+				alert('수정 성공');
+				onlist();
+			}else{
+				alert('수정 실패')
+			}
 		}
 	})	
 }

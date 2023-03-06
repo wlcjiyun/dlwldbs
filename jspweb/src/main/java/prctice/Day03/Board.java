@@ -60,6 +60,10 @@ public class Board extends HttpServlet{
 		// 1. 삭제할 게시물 번호 요청( 매개변수 null ) 
 		int bno = Integer.parseInt( request.getParameter("bno") );
 		System.out.println("삭제할 번호 요청" + bno);
+		// 2. Dao 호출해서 결과 얻기
+		boolean result = BoardDao.getInstance().onDelete(bno);
+		// 3. Dao에서 얻은 결과를 응답
+		response.getWriter().print(result);
 	}
 	
 	// 4. 수정
@@ -72,6 +76,10 @@ public class Board extends HttpServlet{
 		// 2. 수정할 게시물 내용 요청
 		String newContent = request.getParameter("newContent");
 		System.out.println("수정할 내용 요청 : " + newContent);
+		// 3. Dao 호출해서 결과 얻기
+		boolean result = BoardDao.getInstance().onUpdate(bno, newContent);
+		// 4. 결과 응답하기
+		response.getWriter().print(result);
 	}
 	
 }
