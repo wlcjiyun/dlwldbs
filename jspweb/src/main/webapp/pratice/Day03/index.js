@@ -165,7 +165,7 @@ function doDELETE(){
 	})
 }
 
-// 1. 등록하기
+// 1. 등록
 function onproduct(){
 	console.log('onproduct S')
 	let info = {
@@ -186,13 +186,12 @@ function onprolist(){
 			console.log('GET 응답 성공');
 			console.log(r);
 			
-			// 1. 테이블 제목 구성
 			let html = `<tr>
 							<th> 번호 </th>
 							<th> 제품명 </th>
 							<th> 제품가격 </th>
 						</tr>`;
-			// 2. 테이블 내용 구성
+			
 			r.forEach((o,p) => {
 				html += `<tr>
 							<td> ${ o.pno } </td>
@@ -204,14 +203,13 @@ function onprolist(){
 							</td>
 						</tr>`;
 			});
-			// 3. 구성된 html 대입
 			document.querySelector('.producttable').innerHTML = html;
 		}
 	})
 	
 }
 
-// 3. 특정 제품 삭제
+// 3. 삭제
 function onproDelete(pno){
 	console.log("onproDelete() 열림" + pno);
 	
@@ -232,7 +230,7 @@ function onproDelete(pno){
 	})	
 }
 
-// 4. 특정 제품 수정
+// 4. 수정
 function onproUpdate(pno){
 	console.log("onproUpdate() 열림" + pno);
 
