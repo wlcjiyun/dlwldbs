@@ -26,9 +26,9 @@ public class ProductBoard extends HttpServlet {
     	request.setCharacterEncoding("UTF-8");
     	
     	String pname = request.getParameter("pname");
-    	String pprice = request.getParameter("pprice");
+    	int pprice = Integer.parseInt(request.getParameter("pprice"));
     	
-    	ProductDto productDto = new ProductDto(pname, 0);
+    	ProductDto productDto = new ProductDto(0, pname, pprice);
     	
     	boolean result = ProductDao.getInstance().onproduct(productDto);
     	
@@ -67,8 +67,8 @@ public class ProductBoard extends HttpServlet {
 		
 		int pno = Integer.parseInt( request.getParameter("pno") );
 		
-		String newPname = request.getParameter("newPname");
-		int newPprice = Integer.parseInt(request.getParameter("newPprice"));
+		String newPname = request.getParameter("pname");
+		int newPprice = Integer.parseInt(request.getParameter("pprice"));
 
 		boolean result = ProductDao.getInstance().onproUpdate(pno, newPname, newPprice);
 

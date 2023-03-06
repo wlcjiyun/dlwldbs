@@ -70,7 +70,7 @@ public class BoardDao {
 		
 	// 4. 수정
 		public boolean onUpdate(int bno, String newContent) {
-			String sql = "update ex3 set bcontetn = ? where bno = ?";
+			String sql = "update ex3 set bcontent = ? where bno = ?";
 			try {
 				ps = con.prepareStatement(sql);
 				ps.setString(1, newContent);

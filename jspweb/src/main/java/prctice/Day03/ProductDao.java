@@ -49,8 +49,9 @@ public class ProductDao {
 			rs = ps.executeQuery();
 			while( rs.next() ) { // 레코드1개 = if / 레코드여러개 = while 
 				ProductDto dto = new ProductDto( 
-						rs.getString( 1 ), 
-						rs.getInt(2));
+						rs.getInt(1),
+						rs.getString( 2 ), 
+						rs.getInt(3));
 				list.add(dto);
 			}
 		}catch (Exception e) {System.out.println(e);}
@@ -73,12 +74,12 @@ public class ProductDao {
 	
 	// 4. 수정
 	public boolean onproUpdate(int pno, String newPname, int newPprice) {
-		String sql = "update 과제 set bcontetn = ? where pno = ?";
+		String sql = "update 과제 set pname = ?, pprice =? where pno = ?";
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, pno);
-			ps.setString(2, newPname);
-			ps.setInt(3, newPprice);
+			ps.setInt(3, pno);
+			ps.setString(1, newPname);
+			ps.setInt(2, newPprice);
 			ps.executeUpdate();
 			return true;
 		} catch (Exception e) {

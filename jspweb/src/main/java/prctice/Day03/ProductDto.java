@@ -1,20 +1,30 @@
 package prctice.Day03;
 
 public class ProductDto {
+	private int pno;
 	private String pname;
 	private int pprice;
 	
 	public ProductDto() {}
 
-	public ProductDto(String pname, int pprice) {
+	public ProductDto(int pno, String pname, int pprice) {
 		super();
+		this.pno = pno;
 		this.pname = pname;
 		this.pprice = pprice;
 	}
 
 	@Override
 	public String toString() {
-		return "ProductDto [pname=" + pname + ", pprice=" + pprice + "]";
+		return "ProductDto [pno=" + pno + ", pname=" + pname + ", pprice=" + pprice + "]";
+	}
+
+	public int getPno() {
+		return pno;
+	}
+
+	public void setPno(int pno) {
+		this.pno = pno;
 	}
 
 	public String getPname() {
@@ -32,5 +42,6 @@ public class ProductDto {
 	public void setPprice(int pprice) {
 		this.pprice = pprice;
 	}
+
 	
 }

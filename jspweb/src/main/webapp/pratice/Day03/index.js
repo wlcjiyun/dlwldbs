@@ -122,7 +122,7 @@ function onUpdate(bno){
 	$.ajax({
 		url : "/jspweb/Ex3/Board",
 		method : "put",
-		data : {"bno" : bno, "newcontent" : newContent},
+		data : {"bno" : bno, "newContent" : newContent},
 		success : ( r ) => {
 			console.log('put 응답 성공 ')
 			console.log(r)
@@ -174,13 +174,21 @@ function onproduct(){
 		pprice : document.querySelector('.pprice').value
 	}
 	console.log(info);
+	$.ajax({
+		url:"/jspweb/ProductBoard",
+		method : "post",
+		data : info,
+		success : function(result){
+			
+		}
+	})
 }
 // 2. 출력
 onprolist();
 function onprolist(){
 	
 	$.ajax({
-		url : "/jspweb/과제/ProductBoard" ,
+		url : "/jspweb/ProductBoard" ,
 		method : "get" ,
 		success : (r) => {
 			console.log('GET 응답 성공');
@@ -198,8 +206,8 @@ function onprolist(){
 							<td> ${ o.pname }</td>
 							<td> ${ o.pprice } </td>
 							<td> 
-								<button type="button" onclick="onDelete(${o.pno})">삭제</button> 
-								<button type="button" onclick="onUpdate(${o.pno})">수정</button>
+								<button type="button" onclick="onproDelete(${o.pno})">삭제</button> 
+								<button type="button" onclick="onproUpdate(${o.pno})">수정</button>
 							</td>
 						</tr>`;
 			});
@@ -214,7 +222,7 @@ function onproDelete(pno){
 	console.log("onproDelete() 열림" + pno);
 	
 	$.ajax({
-		url : "/jspweb/과제/ProductBoard",
+		url : "/jspweb/ProductBoard",
 		method : "delete",
 		data : {"pno" : pno},
 		success : ( r ) => {
@@ -238,7 +246,7 @@ function onproUpdate(pno){
 	let newPprice = prompt('수정할 제품가격 : ');
 	
 	$.ajax({
-		url : "/jspweb/과제/ProductBoard",
+		url : "/jspweb/ProductBoard",
 		method : "put",
 		data : {"pno" : pno, "pname" : newPname, "pprice" : newPprice},
 		success : ( r ) => {
